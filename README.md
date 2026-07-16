@@ -38,3 +38,25 @@ MKDOCS_PUBLIC=1 mkdocs gh-deploy
 mkdocs build
 open site/index.html
 ```
+
+## Publish to GitHub Pages (`*.github.io`)
+
+This repo has a GitHub Action that builds with `MKDOCS_PUBLIC=1` (no passwords) and deploys to Pages on every push to `main`.
+
+**One-time setup in GitHub**
+
+1. Open the repo → **Settings** → **Pages**
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**
+3. Push to `main` (or run the workflow manually under **Actions**)
+
+Site URL (after the first successful deploy):
+
+https://machtlp.github.io/Documentation_ISSW/
+
+**Note:** Your repo is **private**. GitHub Pages on a private repo needs GitHub Pro/Team (or make the repo public). The Action still builds either way.
+
+**Manual deploy alternative (from your Mac):**
+
+```bash
+MKDOCS_PUBLIC=1 mkdocs gh-deploy
+```

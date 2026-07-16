@@ -1,5 +1,6 @@
 site_name: ISSW
 site_description: ISSW Project Documentation
+site_url: https://machtlp.github.io/Documentation_ISSW/
 
 extra_css:
   - stylesheets/extra.css
