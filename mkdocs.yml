@@ -1,0 +1,20 @@
+site_name: ISSW
+site_description: ISSW Project Documentation
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/image-lightbox.js
+
+hooks:
+  - hooks/private_include.py
+  - hooks/todos.py
+  - hooks/changelog.py
+
+nav:
+  - Home: index.md
+  - Avapro Point location: avapro/index.md
+  - Spatial config: spatial-config.md
+  - HRDPS: hrdps.md
+  - Info ex: info-ex.md

@@ -1,0 +1,212 @@
+.note-box {
+  border: 1px solid #7eb6e0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 1.25rem 0;
+  background: #e8f4fc;
+}
+
+.note-box__title {
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  background: #1a6fad;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.note-box__body {
+  padding: 0.85rem 0.9rem;
+  color: #1a3a52;
+}
+
+.note-box__body a {
+  color: #0d5a8f;
+  word-break: break-all;
+}
+
+.map-frame {
+  display: block;
+  width: 100%;
+  height: 520px;
+  margin: 1.25rem 0;
+  border: 1px solid #c5d4e0;
+  border-radius: 6px;
+  background: #f4f7fa;
+}
+
+/* Numbered section headers with grey background */
+#content article h1,
+#content article h2,
+#content article h3,
+#content article h4,
+#content article h5,
+#content article h6,
+.col-md-9 h1,
+.col-md-9 h2,
+.col-md-9 h3,
+.col-md-9 h4,
+.col-md-9 h5,
+.col-md-9 h6 {
+  background: #e6e6e6;
+  padding: 0.45rem 0.75rem;
+  border-radius: 4px;
+  margin-top: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.todo-box {
+  border: 1px solid #e0a060;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 1rem 0 1.25rem;
+  background: #fff4e8;
+}
+
+.todo-box__title {
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  background: #e67e22;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.todo-box__body {
+  padding: 0.85rem 0.9rem;
+  color: #5a3a1a;
+}
+
+.todo-box__body ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.todo-box__body li {
+  margin: 0.25rem 0;
+}
+
+.quote-box {
+  border: 1px solid #c5c5c5;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0.75rem 0 1.25rem;
+  background: #ececec;
+}
+
+.quote-box__body {
+  padding: 0.9rem 1rem;
+  color: #444;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.quote-box__body p {
+  margin: 0 0 0.75rem;
+}
+
+.quote-box__body p:last-child {
+  margin-bottom: 0;
+}
+
+.section-updated {
+  margin: -0.45rem 0 1rem;
+  padding: 0 0.15rem;
+  font-size: 0.8rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* Tables: borders + horizontal scroll wrapper via caption sibling pattern */
+.col-md-9 .table-caption,
+#content article .table-caption {
+  display: block;
+  margin: 1.1rem 0 0.35rem;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+.col-md-9 .table-caption strong,
+#content article .table-caption strong {
+  color: #222;
+}
+
+.col-md-9 table,
+#content article table {
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #9aa3ad;
+  font-size: 0.85rem;
+  margin: 0 0 1.25rem;
+  background: #fff;
+}
+
+.col-md-9 th,
+.col-md-9 td,
+#content article th,
+#content article td {
+  border: 1px solid #9aa3ad;
+  padding: 0.45rem 0.65rem;
+  vertical-align: top;
+  white-space: normal;
+}
+
+.col-md-9 thead th,
+.col-md-9 tr:first-child th,
+.col-md-9 tr:first-child td,
+#content article thead th,
+#content article tr:first-child th,
+#content article tr:first-child td {
+  background: #eef1f4;
+  font-weight: 700;
+}
+
+/* Keep wide tables scrollable without breaking borders */
+.col-md-9,
+#content article {
+  overflow-x: auto;
+}
+
+/* Click-to-zoom images */
+a.image-zoom {
+  display: inline-block;
+  max-width: 100%;
+  cursor: zoom-in;
+}
+
+a.image-zoom img {
+  max-width: 100%;
+  height: auto;
+  transition: opacity 0.15s ease;
+}
+
+a.image-zoom:hover img {
+  opacity: 0.92;
+}
+
+/* Table & figure captions */
+figure {
+  margin: 1.25rem 0;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption,
+.fig-caption {
+  display: block;
+  margin: 0.45rem 0 1.1rem;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+figcaption strong,
+.fig-caption strong {
+  color: #222;
+}
