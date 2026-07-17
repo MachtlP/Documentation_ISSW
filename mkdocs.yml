@@ -7,6 +7,7 @@ extra_css:
 
 extra_javascript:
   - javascripts/image-lightbox.js
+  - javascripts/mermaid-init.js
 
 hooks:
   - hooks/private_include.py
@@ -15,7 +16,7 @@ hooks:
 
 nav:
   - Home: index.md
-  - Avapro Point location: avapro/index.md
-  - Spatial config: spatial-config.md
+  - Avapro Point Location: avapro/index.md
+  - Spatial Config: spatial-config.md
   - HRDPS: hrdps.md
-  - Info ex: info-ex.md
+  - Info Ex: info-ex.md

@@ -187,6 +187,17 @@ a.image-zoom:hover img {
   opacity: 0.92;
 }
 
+/* Mermaid flowcharts */
+.mermaid {
+  margin: 1rem 0 0.5rem;
+  text-align: center;
+  background: #fafbfc;
+  border: 1px solid #e0e4e8;
+  border-radius: 6px;
+  padding: 1rem 0.5rem;
+  overflow-x: auto;
+}
+
 /* Table & figure captions */
 figure {
   margin: 1.25rem 0;
@@ -209,4 +220,56 @@ figcaption,
 figcaption strong,
 .fig-caption strong {
   color: #222;
+}
+
+/* Collapsible detail tables (overview pages) */
+.col-md-9 details.table-dropdown,
+#content article details.table-dropdown {
+  margin: 1.1rem 0 1.25rem;
+  border: 1px solid #c5cdd6;
+  border-radius: 4px;
+  background: #fafbfc;
+  padding: 0 0.85rem 0.15rem;
+}
+
+.col-md-9 details.table-dropdown > summary,
+#content article details.table-dropdown > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.65rem 0;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+.col-md-9 details.table-dropdown > summary::-webkit-details-marker,
+#content article details.table-dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+
+.col-md-9 details.table-dropdown > summary::before,
+#content article details.table-dropdown > summary::before {
+  content: "▸ ";
+  color: #666;
+  font-weight: 600;
+}
+
+.col-md-9 details.table-dropdown[open] > summary::before,
+#content article details.table-dropdown[open] > summary::before {
+  content: "▾ ";
+}
+
+.col-md-9 details.table-dropdown > summary strong,
+#content article details.table-dropdown > summary strong {
+  color: #222;
+}
+
+.col-md-9 details.table-dropdown[open],
+#content article details.table-dropdown[open] {
+  padding-bottom: 0.35rem;
+}
+
+.col-md-9 details.table-dropdown table,
+#content article details.table-dropdown table {
+  margin-top: 0.25rem;
 }

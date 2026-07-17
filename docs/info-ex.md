@@ -1,4 +1,4 @@
-# Info ex
+# Info Ex
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 
@@ -16,7 +16,7 @@
 </div>
 </div>
 
-## 1. Dangerlevels overview
+## 1. Danger Levels Overview
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 
@@ -31,6 +31,6 @@
 
 <p class="fig-caption"><strong>Figure 1.</strong> Forecast avalanche danger levels for Banff North (banff_n) over winter 2025/26, shown separately for alpine, treeline, and below treeline.</p>
 
-## 2. Avalanche problems
+## 2. Avalanche Problems
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>

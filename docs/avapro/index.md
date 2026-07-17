@@ -1,4 +1,4 @@
-# Avapro Point location
+# Avapro Point Location
 
 This project evaluates the use of physics-based snowpack simulations to automatically identify avalanche problems and support operational avalanche forecasting. Using the AvaPro algorithm with SNOWPACK simulations, the study compares algorithm-derived avalanche problems with expert hazard assessments and observed avalanche activity across four representative snow climates in western Canada under both weather-station-driven and fully numerical weather prediction forcing. The goal of this documentation is to summarize the project's development, methodology, preliminary findings, and ongoing progress throughout the research.
 
@@ -12,7 +12,7 @@ This project evaluates the use of physics-based snowpack simulations to automati
 ## 1. Data
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
-### 1.1 Study areas
+### 1.1 Study Areas
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 Study areas span four representative snow climates in western Canada:
@@ -44,7 +44,7 @@ See the [HRDPS](../hrdps/) page for data handling and crushing (download, GRIB p
 | Weather stations raw | Path |
 | Weatherstation patched | Path |
 
-### 1.2 Snowpack simulations
+### 1.2 Snowpack Simulations
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 Snowpack is simulated at point locations with a physics-based model (e.g. SNOWPACK / CROCUS-class setup) forced by:
@@ -54,7 +54,7 @@ Snowpack is simulated at point locations with a physics-based model (e.g. SNOWPA
 
 Simulations produce the layered snowpack state (grain type, hardness, density, weak layers) that Avapro uses to flag avalanche problems over the season.
 
-### 1.3 Validation dataset
+### 1.3 Validation Dataset
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 The validation set is built from operational forecast products:
@@ -68,7 +68,7 @@ This dataset is the ground truth for daily comparison and agreement metrics.
 ## 2. Methods
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
-### 2.1 Avalanche problem identification
+### 2.1 Avalanche Problem Identification
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 Avapro rules are applied to each simulated profile to detect candidate avalanche problems (e.g. persistent slab, wind slab, storm slab, wet snow), using thresholds on weak-layer presence, slab properties, and meteorological drivers.
@@ -86,7 +86,7 @@ For each site and day:
 
 Comparisons are reported per problem type and pooled across types where useful.
 
-### 2.3 Evaluation metrics
+### 2.3 Evaluation Metrics
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 Core metrics:
@@ -102,7 +102,7 @@ Core metrics:
 
 Confidence intervals or season-wise breakdowns can be included for robustness.
 
-### 2.4 Operational feedback
+### 2.4 Operational Feedback
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 Results are reviewed with operational partners to check:
@@ -114,12 +114,12 @@ Results are reviewed with operational partners to check:
 ## 3. Results
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
-### 3.1 Agreement statistics
+### 3.1 Agreement Statistics
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 Overall day-level agreement between Avapro and operational problems is summarized by site, season, and problem type. Persistent and storm-related problems typically show different skill; report the strongest and weakest categories explicitly once numbers are finalized.
 
-### 3.2 Temporal behavior
+### 3.2 Temporal Behavior
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 Agreement varies through the season:
@@ -161,6 +161,6 @@ Avapro at point locations is a useful diagnostic of automated avalanche problem 
 <p class="section-updated">Last updated: 16 Jul 2026</p>
 
 <div class="todo-box">
-<p class="todo-box__title">ToDo — Avapro Point location › 6. Operational Mode</p>
+<p class="todo-box__title">ToDo — Avapro Point Location › 6. Operational Mode</p>
 <div class="todo-box__body">no tackel yet</div>
 </div>

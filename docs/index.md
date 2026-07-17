@@ -1,4 +1,4 @@
-# ISSW Project overview
+# ISSW Project Overview
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 

@@ -1,6 +1,6 @@
 # HRDPS
 
-## 1. Fir alliance download
+## 1. Fir Alliance Download
 
 <p class="section-updated">Last updated: 16 Jul 2026</p>
 
@@ -15,7 +15,7 @@ Connection details for Alliance / Fir (password and key paths) are kept in a **l
 </div>
 </div>
 
-## 2. Grib file explorer
+## 2. GRIB File Explorer
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 
@@ -38,7 +38,7 @@ Example temperature plot:
 
 <p class="fig-caption"><strong>Figure 2.</strong> Example HRDPS 2‑m temperature field (K) for valid time 2025-09-01 12:00 UTC over the continental domain.</p>
 
-### 2.1 Region gribs
+### 2.1 Region Gribs
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 
@@ -51,7 +51,7 @@ This notebook clips full-domain HRDPS GRIB files down to the research-area polyg
 </div>
 </div>
 
-## 3. Single location to SMET
+## 3. Single Location to SMET
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 
@@ -64,7 +64,7 @@ GRIB file from archive downloaded → extract a single point → convert to SMET
 </div>
 </div>
 
-## 4. DEM analysis
+## 4. DEM Analysis
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 

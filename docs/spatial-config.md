@@ -1,4 +1,4 @@
-# Spatial config
+# Spatial Config
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 
@@ -15,17 +15,102 @@ This project investigates how different spatial sampling strategies influence av
 
 <p class="section-updated">Last updated: 16 Jul 2026</p>
 
-### Research idea: Investigate the impact of instability distribution of different spatial grid configs
+### Brainstorm Summary – Spatial Configurations for Distributed SNOWPACK Simulations
 
-How does the spatial configuration of snowpack simulations influence the simulated distribution of instability and the resulting identification and regional prominence of avalanche problems?
+#### Research Question
 
-## 2. Grid configs
+The study is about understanding how the spatial representation of snowpack simulations influences the distribution of simulated instability and, consequently, the regional interpretation of avalanche problems.
+
+**How does the spatial configuration of distributed snowpack simulations influence the simulated distribution of instability and the resulting identification and regional relevance of avalanche problems?**
+
+```mermaid
+flowchart TD
+    Q["Key question:<br/>How much horizontal spatial detail<br/>is required?"] --> M1[Preserve meaningful<br/>instability patterns]
+    Q --> M2[Preserve avalanche<br/>problem information]
+    Q --> M3[Reduce computational<br/>complexity]
+
+    M1 --> O[Operational interpretation<br/>for operations]
+    M2 --> O
+    M3 --> O
+
+    style Q fill:#1a6fad,color:#fff,stroke:#0d4a75
+    style O fill:#e67e22,color:#fff,stroke:#b85e14
+```
+
+<p class="fig-caption"><strong>Figure A.</strong> Framing: spatial detail vs. operational meaning and computational cost.</p>
+
+#### Conceptual Framework
+
+```mermaid
+flowchart TD
+    H["HRDPS-raw<br/>• 2.5 km resolution<br/>• smoothen topography"]
+    G["Grid configurations"]
+    C1["1. Full-grid<br/>• HRDPS elevation correction<br/>• 30 m DEM, median elevation<br/>• temp lapse-rate correction<br/>• Simulate each grid point"]
+    C2["2. Semi-distributed<br/>• Hexagons with 7× grid spacing ‘pixel’<br/>• Within each pixel: aggregate all points in<br/>  a 100 m elevation band and generate<br/>  Median Meteo condition for band<br/>• Only simulate every 200 m"]
+    C3["3. Single Point<br/>• 1 location within a pixel<br/>  or within operation<br/>  e.g. weather-station location<br/>• Median or condition for avg<br/>  ALP / TL / BTL height"]
+    I["Impact and Simulations Hypothesis"]
+    I1["1. Full-grid<br/>• Full distribution — each grid point calculated<br/>• How many points within each band<br/>  show instability / avy problem?<br/>• Aggregate only then to ALP / TL / BTL"]
+    I2["2. Semi-distributed<br/>• Reduced computing power<br/>• Loss of full distribution<br/>• Maybe sufficient to show median<br/>  instability or 90th percentile?<br/>• Actually enough to assess<br/>  the predominant problem?"]
+    I3["3. Single Point<br/>• Lowest computing power<br/>• No distribution at all<br/>• Is that one point representative?"]
+    F["Future Grid thoughts / improvements"]
+    F1["Terrain informed — Avalanche release area<br/>• Use AutoATES for information of<br/>  avalanche release areas<br/>• Simulate 1 sim for each avalanche<br/>  release area with the respective aspect<br/>• Use the closest meteo grid point for that"]
+
+    H ~~~ G
+    G ~~~ C1
+    G ~~~ C2
+    G ~~~ C3
+    C1 ~~~ I
+    C2 ~~~ I
+    C3 ~~~ I
+    I ~~~ I1
+    I ~~~ I2
+    I ~~~ I3
+    I1 ~~~ F
+    I2 ~~~ F
+    I3 ~~~ F
+    F ~~~ F1
+
+    style H fill:#1a6fad,color:#fff,stroke:#0d4a75
+    style G fill:transparent,stroke:none,color:#222
+    style C1 fill:#2d6a4f,color:#fff,stroke:#1b4332
+    style C2 fill:#2d6a4f,color:#fff,stroke:#1b4332
+    style C3 fill:#2d6a4f,color:#fff,stroke:#1b4332
+    style I fill:transparent,stroke:none,color:#222
+    style I1 fill:#ffe4c4,color:#5a3a1a,stroke:#e0a060
+    style I2 fill:#ffe4c4,color:#5a3a1a,stroke:#e0a060
+    style I3 fill:#ffe4c4,color:#5a3a1a,stroke:#e0a060
+    style F fill:transparent,stroke:none,color:#222
+    style F1 fill:#d9d9d9,color:#333,stroke:#9a9a9a
+```
+
+<p class="fig-caption"><strong>Figure B.</strong> From HRDPS-raw to three spatial configurations, impact / simulation hypotheses, and future grid thoughts.</p>
+
+| Configuration | Elevation Treatment |
+|---------------|---------------------|
+| 1 – Full-Grid | Representative elevation per HRDPS cell (30 m DEM, median) |
+| 2 – Semi-Distributed | Representative elevation per 100 m band within each hexagon pixel |
+| 3 – Single Point | Representative elevation (ALP / TL / BTL avg) for the chosen location |
+
+#### Contribution
+
+Frame the paper as a study of **spatial representation (or spatial sampling)** in distributed snowpack modelling, rather than a technical comparison of grid configurations.
+
+Main contribution: understanding how different spatial representations influence the translation from distributed snowpack simulations to regional avalanche information.
+
+## 2. Grid Configs
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 
-### 2.1 Full grid
+### 2.1 Full Grid - HRDPS RAW DEM
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
+
+<div class="note-box">
+<p class="note-box__title">DEM Analysis Notebook</p>
+<div class="note-box__body">
+<a href="file:///Users/machtl/Documents/Projects_Data/DEM/explore_dem_topography.ipynb">/Users/machtl/Documents/Projects_Data/DEM/explore_dem_topography.ipynb</a>
+</div>
+</div>
 
 Full HRDPS orography clipped to the four study areas (from HRDPS DEM analysis):
 
@@ -45,7 +130,8 @@ Hypsometry inside operation polygons:
 
 <p class="fig-caption"><strong>Figure 3.</strong> Hypsometry (grid-cell counts by 200 m elevation band) inside the four operation polygons, coloured by treeline class.</p>
 
-<p class="table-caption"><strong>Table 1.</strong> Summary statistics of HRDPS grid cells inside each operation polygon, including elevation range, treeline definition, and area fractions below / at / above treeline.</p>
+<details class="table-dropdown">
+<summary><strong>Table 1.</strong> Summary statistics of HRDPS grid cells inside each operation polygon (elevation range, treeline, area fractions)</summary>
 
 | region | n_cells | area_km2_approx | z_min | z_median | z_mean | z_max | treeline_m | treeline_band_m | n_below | n_treeline | n_alpine | frac_below | frac_treeline | frac_alpine | area_below_km2 | area_treeline_km2 | area_alpine_km2 |
 |--------|--------:|----------------:|------:|---------:|-------:|------:|-----------:|-----------------|--------:|-----------:|---------:|-----------:|--------------:|------------:|---------------:|------------------:|----------------:|
@@ -54,7 +140,10 @@ Hypsometry inside operation polygons:
 | Banff | 437 | 2731 | 1452 | 2180 | 2135 | 2695 | 2300 | 2200–2400 | 229 | 138 | 70 | 52.4% | 31.6% | 16.0% | 1431 | 862 | 438 |
 | Mike Wiegele Heliskiing | 729 | 4556 | 715 | 1638 | 1611 | 2524 | 2100 | 2000–2200 | 628 | 71 | 30 | 86.1% | 9.7% | 4.1% | 3925 | 444 | 188 |
 
-<p class="table-caption"><strong>Table 2.</strong> Number of SNOWPACK simulations for the full-grid configuration (9 simulations per HRDPS cell).</p>
+</details>
+
+<details class="table-dropdown">
+<summary><strong>Table 2.</strong> Number of SNOWPACK simulations for the full-grid configuration (9 simulations per HRDPS cell)</summary>
 
 | region | n_cells | snowpack simulations |
 |--------|--------:|---------------------:|
@@ -63,16 +152,132 @@ Hypsometry inside operation polygons:
 | Banff | 437 | 3933 |
 | Mike Wiegele Heliskiing | 729 | 6561 |
 
+</details>
+
+<div class="note-box">
+<p class="note-box__title">Region Gribs Notebook</p>
+<div class="note-box__body">
+<a href="file:///Users/machtl/Documents/Projects_Data/FirAliance%20download/grib_clip_research_area.ipynb">/Users/machtl/Documents/Projects_Data/FirAliance download/grib_clip_research_area.ipynb</a>
+</div>
+</div>
+
+<div class="note-box">
+<p class="note-box__title">HRDPS Raw Files (External Drive)</p>
+<div class="note-box__body">
+<a href="file:///Volumes/Machtl_1.1/HRDPS_clipped">/Volumes/Machtl_1.1/HRDPS_clipped</a>
+</div>
+</div>
+
+### 2.2 Full Grid - Elevation Corrected
+
+<p class="section-updated">Last updated: 16 Jul 2026</p>
+
+- HRDPS elevation correction using 30 m DEM (median elevation)
+
+<div class="note-box">
+<p class="note-box__title">Download 30 m DEM</p>
+<div class="note-box__body">
+<a href="file:///Users/machtl/Documents/Projects_Data/DEM/download_mrdem30_for_research_areas.ipynb">/Users/machtl/Documents/Projects_Data/DEM/download_mrdem30_for_research_areas.ipynb</a>
+</div>
+</div>
+
+- Temperature lapse-rate correction
+- Simulate each grid point
+
+#### 2.2.1 30m DEM Topo
+
+<p class="section-updated">Last updated: 16 Jul 2026</p>
+
+MRDEM-30 orography clipped to the four study areas:
+
+![MRDEM-30 orography — Whistler-Blackcomb, Rogers Pass, Banff, Mike Wiegele Heliskiing](assets/images/mrdem30_orography_sites.png)
+
+<p class="fig-caption"><strong>Figure 4.</strong> MRDEM-30 orography (elevation, m) clipped to the four operation polygons: Whistler Blackcomb Heliskiing, Rogers Pass, Banff, and Mike Wiegele Heliskiing.</p>
+
+Elevation bands (below treeline / treeline / alpine):
+
+![MRDEM-30 elevation bands by site — below treeline, treeline, alpine](assets/images/mrdem30_elevation_bands.png)
+
+<p class="fig-caption"><strong>Figure 5.</strong> MRDEM-30 elevation-band classification within each operation polygon (below treeline, treeline ±100 m, alpine) using site-specific treeline heights.</p>
+
+Hypsometry inside operation polygons:
+
+![MRDEM-30 hypsometry inside operation polygons by elevation band](assets/images/mrdem30_hypsometry.png)
+
+<p class="fig-caption"><strong>Figure 6.</strong> MRDEM-30 hypsometry (30 m cell counts by 200 m elevation band) inside the four operation polygons, coloured by treeline class.</p>
+
+#### 2.2.2 HRDPS Topo to 30m DEM
+
+<p class="section-updated">Last updated: 16 Jul 2026</p>
+
+Map HRDPS topography onto the 30 m DEM (median elevation per HRDPS cell) for elevation-corrected full-grid simulations.
+
+![HRDPS elevation correction delta z](assets/images/hrdps_elevation_correction_delta.png)
+
+<p class="fig-caption"><strong>Figure 7.</strong> HRDPS elevation correction Δz = MRDEM-30 cell median − HRDPS elevation (m) for the four operation polygons (diverging scale ±427 m).</p>
+
+![Corrected HRDPS orography from MRDEM-30 cell median](assets/images/hrdps_corrected_orography.png)
+
+<p class="fig-caption"><strong>Figure 8.</strong> Corrected HRDPS orography (elevation, m) using the MRDEM-30 cell-median elevation for each HRDPS grid cell.</p>
+
+![Three-zone maps from corrected HRDPS orography](assets/images/hrdps_corrected_elevation_bands.png)
+
+<p class="fig-caption"><strong>Figure 9.</strong> Three-zone classification (below treeline / treeline ±100 m / alpine) from corrected HRDPS orography, using site-specific treeline heights.</p>
+
+![Hypsometry: HRDPS vs MRDEM-30 vs corrected](assets/images/hypsometry_hrdps_mrdem30_corrected.png)
+
+<p class="fig-caption"><strong>Figure 10.</strong> Hypsometry comparison: raw HRDPS, MRDEM-30, and corrected HRDPS as fraction of cells by 200 m elevation band, with site-specific below-treeline / treeline / alpine shading.</p>
+
 <div class="todo-box">
-<p class="todo-box__title">Next to do's — Spatial config › 2.1 Full grid</p>
+<p class="todo-box__title">Next to do's — Spatial Config › 2.2.2 HRDPS Topo to 30m DEM</p>
 <div class="todo-box__body">
 <ul>
-<li>run awsome for full grid</li>
+<li>define elevation correction workflow</li>
+<li>run simulations</li>
 </ul>
 </div>
 </div>
 
-### 2.2 Terrain informed grid
+### 2.3 Semi Distributed
+
+<p class="section-updated">Last updated: 16 Jul 2026</p>
+
+- **Downscale** onto a coarser spatial unit (hexagon aggregation)
+- Hexagons with ~7× grid spacing (“pixel”)
+- Within each pixel: aggregate all points in a 100 m elevation band → Median Meteo
+- Only simulate every 200 m
+- **Temperature:** CanHydro / Pomeroy-style lapse rate
+- **Precipitation:** no lapse / adjustment yet
+- **Open question:** is there actually variability across aggregated units?
+
+<div class="todo-box">
+<p class="todo-box__title">Next to do's — Spatial Config › 2.3 Semi Distributed</p>
+<div class="todo-box__body">
+<ul>
+<li>define strategy</li>
+</ul>
+</div>
+</div>
+
+### 2.4 Single Point
+
+<p class="section-updated">Last updated: 16 Jul 2026</p>
+
+- 1 location within a pixel or within the operation (e.g. weather-station location)
+- Median or condition for average ALP / TL / BTL height
+- Lowest computing power; no spatial distribution
+
+<div class="todo-box">
+<p class="todo-box__title">Next to do's — Spatial Config › 2.4 Single Point</p>
+<div class="todo-box__body">
+<ul>
+<li>choose representative points</li>
+<li>run simulations</li>
+</ul>
+</div>
+</div>
+
+### 2.5 Terrain Informed Grid
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 
@@ -92,32 +297,12 @@ Below: mail from John:
 </div>
 
 <div class="todo-box">
-<p class="todo-box__title">Next to do's — Spatial config › 2.2 Terrain informed grid</p>
+<p class="todo-box__title">Next to do's — Spatial Config › 2.5 Terrain Informed Grid</p>
 <div class="todo-box__body">
 <ul>
 <li>get johns maps</li>
 <li>choose grid strategie</li>
 <li>run sim</li>
-</ul>
-</div>
-</div>
-
-### 2.3 Aggregated grid
-
-<p class="section-updated">Last updated: 15 Jul 2026</p>
-
-- **Downscale** onto a coarser spatial unit (e.g. hexagon aggregation)
-- **Hexagon** tiling as the aggregation geometry
-- **Temperature:** CanHydro / Pomeroy-style lapse rate for temp
-- **Precipitation:** nothing applied for precip (no lapse / adjustment yet)
-- **Pixel size:** ~6–7× HRDPS grid resolution (Y)
-- **Open question:** is there actually variability across aggregated units?
-
-<div class="todo-box">
-<p class="todo-box__title">Next to do's — Spatial config › 2.3 Aggregated grid</p>
-<div class="todo-box__body">
-<ul>
-<li>define strategy</li>
 </ul>
 </div>
 </div>
