@@ -222,6 +222,14 @@ figcaption strong,
   color: #222;
 }
 
+/* Display equations (MathJax) */
+.col-md-9 .eq-block,
+#content article .eq-block {
+  margin: 1rem 0 1.25rem;
+  overflow-x: auto;
+  text-align: center;
+}
+
 /* Collapsible detail tables (overview pages) */
 .col-md-9 details.table-dropdown,
 #content article details.table-dropdown {

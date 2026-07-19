@@ -181,7 +181,6 @@ Hypsometry inside operation polygons:
 </div>
 </div>
 
-- Temperature lapse-rate correction
 - Simulate each grid point
 
 #### 2.2.1 30m DEM Topo
@@ -238,7 +237,127 @@ Map HRDPS topography onto the 30 m DEM (median elevation per HRDPS cell) for ele
 </div>
 </div>
 
-### 2.3 Semi Distributed
+### 2.3 Lapse Rate Correction
+
+<p class="section-updated">Last updated: 18 Jul 2026</p>
+
+Temperature and humidity lapse-rate correction is applied after mapping HRDPS topography to the 30 m DEM (median elevation per HRDPS cell).
+
+For lapse-rate correction we follow the **Avalanche Canada (AvCan) operational approach**, which follows the Canadian Hydrological Model (CHM) method described by Marsh (2024), building on Kunkel (1989) and Shea et al. (2004). This uses **constant monthly lapse rates** for temperature and humidity when adjusting model meteorology from the native HRDPS elevation to the corrected elevation.
+
+<div class="note-box">
+<p class="note-box__title">AvCan grib2smet</p>
+<div class="note-box__body">
+<p>AvCan operational script for lapse-rate correction.</p>
+<a href="file:///Users/machtl/Documents/Projects_Data/DEM/grib2smet.py">/Users/machtl/Documents/Projects_Data/DEM/grib2smet.py</a>
+</div>
+</div>
+
+<div class="note-box">
+<p class="note-box__title">Lapse-Rate Correction Explorer Notebook</p>
+<div class="note-box__body">
+<a href="file:///Users/machtl/Documents/Projects_Data/DEM/Lapsrate_correction.ipynb">/Users/machtl/Documents/Projects_Data/DEM/Lapsrate_correction.ipynb</a>
+</div>
+</div>
+
+#### Flowchart LR
+
+```mermaid
+flowchart LR
+    A[MRDEM-30 + HRDPS DEM] --> B[Compute z_corr and dz_hr]
+    B --> C[GeoJSON points<br/>z, dz_hr, dz_rd]
+    D[HRDPS/RDPS GRIB] --> E[grib2smet.py]
+    C --> E
+    E --> F[SMET files<br/>lapse-corrected TA/RH]
+
+    style A fill:#1a6fad,color:#fff,stroke:#0d4a75
+    style B fill:#2d6a4f,color:#fff,stroke:#1b4332
+    style C fill:#2d6a4f,color:#fff,stroke:#1b4332
+    style D fill:#1a6fad,color:#fff,stroke:#0d4a75
+    style E fill:#e67e22,color:#fff,stroke:#b85e14
+    style F fill:#ffe4c4,color:#5a3a1a,stroke:#e0a060
+```
+
+<p class="fig-caption"><strong>Figure 11.</strong> Lapse-rate correction workflow: DEM-derived elevation offsets feed <code>grib2smet.py</code> to produce lapse-corrected SMET files (TA/RH).</p>
+
+#### Temperature Lapse Rate
+
+Temperature is corrected with a **constant monthly** temperature lapse rate:
+
+<div class="eq-block">
+\[
+T_{\mathrm{corr}} = T_{\mathrm{HRDPS}} + \Gamma_T \, \Delta z
+\]
+</div>
+
+where:
+
+<ul>
+<li>\(T_{\mathrm{HRDPS}}\) = interpolated HRDPS 2-m temperature</li>
+<li>\(\Delta z\) = model elevation − HRDPS elevation</li>
+<li>\(\Gamma_T\) = temperature lapse rate (monthly constant)</li>
+</ul>
+
+#### Humidity Lapse Rate
+
+Humidity uses a **constant monthly** humidity lapse rate. Correction is applied via dew point (not directly on relative humidity):
+
+```mermaid
+flowchart LR
+    H1[Relative humidity] --> H2[Vapor pressure]
+    H2 --> H3[Dew point]
+    H3 --> H4[Humidity lapse-rate<br/>correction to dew point]
+    H4 --> H5[New relative humidity<br/>from corrected T and dew point]
+
+    style H1 fill:#1a6fad,color:#fff,stroke:#0d4a75
+    style H2 fill:#2d6a4f,color:#fff,stroke:#1b4332
+    style H3 fill:#2d6a4f,color:#fff,stroke:#1b4332
+    style H4 fill:#e67e22,color:#fff,stroke:#b85e14
+    style H5 fill:#ffe4c4,color:#5a3a1a,stroke:#e0a060
+```
+
+<p class="fig-caption"><strong>Figure 12.</strong> Humidity lapse-rate workflow: RH → vapor pressure → dew point → lapse-corrected dew point → updated RH using corrected temperature and dew point.</p>
+
+#### Monthly Lapse Rate Constants
+
+Constant monthly lapse rates used for temperature (`TA`) and humidity (`RH`) corrections (AvCan / CHM):
+
+<p class="table-caption"><strong>Table 3.</strong> Monthly lapse rates for temperature and humidity corrections (TA in °C&nbsp;km<sup>−1</sup>; RH in the tabulated CHM / AvCan units). In code, both arrays are divided by 1000 for use per metre of elevation difference.</p>
+
+| | Jan | Feb | Mar | Apr | May | Jun | Jul | Aug | Sep | Oct | Nov | Dec |
+|---|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|
+| TA (°C/km) | 4.4 | 5.9 | 7.1 | 7.8 | 8.1 | 8.2 | 8.1 | 8.1 | 7.7 | 6.8 | 5.5 | 4.7 |
+| RH | 0.41 | 0.42 | 0.40 | 0.39 | 0.38 | 0.36 | 0.33 | 0.33 | 0.36 | 0.37 | 0.40 | 0.40 |
+
+#### Grib2smet with Lapse Rate Correction
+
+Example output from the AvCan operational `grib2smet` lapse-rate correction for Whistler Blackcomb Heliskiing:
+
+![Whistler Blackcomb — TA raw, TA corrected, and delta T](assets/images/lapse_rate_ta_whistler_example.png)
+
+<p class="fig-caption"><strong>Figure 13.</strong> Example temperature lapse-rate correction for Whistler Blackcomb Heliskiing (HRDPS_20250901.nc, 2025-09-01 00:00 UTC): raw TA, corrected TA from <code>grib2smet.apply_lapse_rate</code>, and ΔT = corr − raw (°C).</p>
+
+![Whistler Blackcomb — RH raw, RH corrected, and delta RH](assets/images/lapse_rate_rh_whistler_example.png)
+
+<p class="fig-caption"><strong>Figure 14.</strong> Example humidity lapse-rate correction for Whistler Blackcomb Heliskiing (HRDPS_20250901.nc, 2025-09-01 00:00 UTC): raw RH, corrected RH from <code>grib2smet.apply_lapse_rate</code>, and ΔRH = corr − raw (%).</p>
+
+- **Precipitation / Radiation / Wind:** no lapse / adjustment
+
+<div class="note-box">
+<p class="note-box__title">HRDPS Lapse-Rate Corrected Files</p>
+<div class="note-box__body">
+<a href="file:///Volumes/Machtl_1.1/HRDPS_lapse_rate">/Volumes/Machtl_1.1/HRDPS_lapse_rate</a>
+</div>
+</div>
+
+<div class="note-box">
+<p class="note-box__title">SMET Files</p>
+<div class="note-box__body">
+<a href="file:///Volumes/Machtl_1.1/SMET">/Volumes/Machtl_1.1/SMET</a>
+</div>
+</div>
+
+### 2.4 Semi Distributed
 
 <p class="section-updated">Last updated: 16 Jul 2026</p>
 
@@ -246,12 +365,10 @@ Map HRDPS topography onto the 30 m DEM (median elevation per HRDPS cell) for ele
 - Hexagons with ~7× grid spacing (“pixel”)
 - Within each pixel: aggregate all points in a 100 m elevation band → Median Meteo
 - Only simulate every 200 m
-- **Temperature:** CanHydro / Pomeroy-style lapse rate
-- **Precipitation:** no lapse / adjustment yet
 - **Open question:** is there actually variability across aggregated units?
 
 <div class="todo-box">
-<p class="todo-box__title">Next to do's — Spatial Config › 2.3 Semi Distributed</p>
+<p class="todo-box__title">Next to do's — Spatial Config › 2.4 Semi Distributed</p>
 <div class="todo-box__body">
 <ul>
 <li>define strategy</li>
@@ -259,7 +376,7 @@ Map HRDPS topography onto the 30 m DEM (median elevation per HRDPS cell) for ele
 </div>
 </div>
 
-### 2.4 Single Point
+### 2.5 Single Point
 
 <p class="section-updated">Last updated: 16 Jul 2026</p>
 
@@ -268,7 +385,7 @@ Map HRDPS topography onto the 30 m DEM (median elevation per HRDPS cell) for ele
 - Lowest computing power; no spatial distribution
 
 <div class="todo-box">
-<p class="todo-box__title">Next to do's — Spatial Config › 2.4 Single Point</p>
+<p class="todo-box__title">Next to do's — Spatial Config › 2.5 Single Point</p>
 <div class="todo-box__body">
 <ul>
 <li>choose representative points</li>
@@ -277,7 +394,7 @@ Map HRDPS topography onto the 30 m DEM (median elevation per HRDPS cell) for ele
 </div>
 </div>
 
-### 2.5 Terrain Informed Grid
+### 2.6 Terrain Informed Grid
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 
@@ -297,7 +414,7 @@ Below: mail from John:
 </div>
 
 <div class="todo-box">
-<p class="todo-box__title">Next to do's — Spatial Config › 2.5 Terrain Informed Grid</p>
+<p class="todo-box__title">Next to do's — Spatial Config › 2.6 Terrain Informed Grid</p>
 <div class="todo-box__body">
 <ul>
 <li>get johns maps</li>

@@ -2,12 +2,22 @@ site_name: ISSW
 site_description: ISSW Project Documentation
 site_url: https://machtlp.github.io/Documentation_ISSW/
 
+theme:
+  name: mkdocs
+  navigation_depth: 4
+
+markdown_extensions:
+  - toc:
+      toc_depth: 4
+
 extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
   - javascripts/image-lightbox.js
   - javascripts/mermaid-init.js
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 hooks:
   - hooks/private_include.py
