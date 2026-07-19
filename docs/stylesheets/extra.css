@@ -25,6 +25,36 @@
   word-break: break-all;
 }
 
+.summary-box {
+  border: 1px solid #7eb896;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 1.25rem 0;
+  background: #eaf6ef;
+}
+
+.summary-box__title {
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  background: #2d6a4f;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.summary-box__body {
+  padding: 0.85rem 0.9rem;
+  color: #1b4332;
+}
+
+.summary-box__body p {
+  margin: 0 0 0.65rem;
+}
+
+.summary-box__body p:last-child {
+  margin-bottom: 0;
+}
+
 .map-frame {
   display: block;
   width: 100%;

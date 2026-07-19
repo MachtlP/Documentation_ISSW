@@ -227,13 +227,11 @@ Map HRDPS topography onto the 30 m DEM (median elevation per HRDPS cell) for ele
 
 <p class="fig-caption"><strong>Figure 10.</strong> Hypsometry comparison: raw HRDPS, MRDEM-30, and corrected HRDPS as fraction of cells by 200 m elevation band, with site-specific below-treeline / treeline / alpine shading.</p>
 
-<div class="todo-box">
-<p class="todo-box__title">Next to do's — Spatial Config › 2.2.2 HRDPS Topo to 30m DEM</p>
-<div class="todo-box__body">
-<ul>
-<li>define elevation correction workflow</li>
-<li>run simulations</li>
-</ul>
+<div class="summary-box">
+<p class="summary-box__title">Summary — Elevation Corrections</p>
+<div class="summary-box__body">
+<p>Raw HRDPS (~2.5&nbsp;km) topography is strongly smoothed: peaks and ridges are lowered relative to real terrain. As a result, <strong>below-treeline terrain is overrepresented</strong> and <strong>alpine terrain is underrepresented</strong> in the raw grid hypsometry.</p>
+<p>The 30&nbsp;m DEM (MRDEM-30) resolves elevation much better within each operation polygon. To improve the HRDPS elevation field without changing the horizontal grid, each HRDPS cell is reassigned the <strong>median MRDEM-30 elevation</strong> of the 30&nbsp;m cells that fall inside that ~2.5&nbsp;km grid cell. The corrected hypsometry then aligns much more closely with the high-resolution DEM (Figure&nbsp;10).</p>
 </div>
 </div>
 
@@ -357,9 +355,23 @@ Example output from the AvCan operational `grib2smet` lapse-rate correction for 
 </div>
 </div>
 
+<div class="summary-box">
+<p class="summary-box__title">Summary — Lapse Rate Correction</p>
+<div class="summary-box__body">
+<p>Lapse-rate correction aligned with the <strong>AvCan operational mode</strong> is applied to <strong>temperature and relative humidity</strong> only (not precipitation, radiation, or wind). This corrected meteorology is the <strong>common baseline for all grid configurations</strong> compared in this study.</p>
+</div>
+</div>
+
 ### 2.4 Semi Distributed
 
 <p class="section-updated">Last updated: 16 Jul 2026</p>
+
+<div class="note-box">
+<p class="note-box__title">Semi-Distributed Initial Investigation Notebook</p>
+<div class="note-box__body">
+<a href="file:///Users/machtl/Documents/Projects_Data/DEM/Semi_distributed_initial_investigation.ipynb">/Users/machtl/Documents/Projects_Data/DEM/Semi_distributed_initial_investigation.ipynb</a>
+</div>
+</div>
 
 - **Downscale** onto a coarser spatial unit (hexagon aggregation)
 - Hexagons with ~7× grid spacing (“pixel”)
@@ -367,29 +379,158 @@ Example output from the AvCan operational `grib2smet` lapse-rate correction for 
 - Only simulate every 200 m
 - **Open question:** is there actually variability across aggregated units?
 
+#### Semi-Distributed Approach — Initial Investigation
+
+**Idea (Herla / AWSOME, Norway):** Instead of running snowpack on every weather-model cell, aggregate meteorology inside larger spatial units and topographic classes (elevation, later aspect), then run fewer “virtual stations.” Aggregation is on the **inputs**, not only on the outputs.
+
+**What we set up here**
+
+- 15 km hex grid over each operation (circumradius 15 km; labels W/R/B/M + number)
+- Elevation-corrected HRDPS over the hex ∪ operation domain (MRDEM-30 median per cell → `*_semidistr` products), so hexes that stick outside the ops still have corrected heights
+- Assign HRDPS cells to hexes and map them (static + Folium)
+- Per-hex hypsometry (200 m bands, treeline zones) to see how elevation is distributed inside each hex — first check before aggregating weather
+
+**Not done yet:** median forcing per hex(/band), comparison to fully distributed, or snowpack runs.
+
+```mermaid
+flowchart LR
+    A[Corrected HRDPS cells<br/>hex domain] --> B[15 km hexagons]
+    B --> C[Cells per hex]
+    C --> D[Hypsometry / class design]
+    D -.-> E[Later: aggregate meteo<br/>→ fewer SMETs / sims]
+
+    style A fill:#1a6fad,color:#fff,stroke:#0d4a75
+    style B fill:#2d6a4f,color:#fff,stroke:#1b4332
+    style C fill:#2d6a4f,color:#fff,stroke:#1b4332
+    style D fill:#e67e22,color:#fff,stroke:#b85e14
+    style E fill:#d9d9d9,color:#333,stroke:#9a9a9a
+```
+
+<p class="fig-caption"><strong>Figure 15.</strong> Semi-distributed workflow so far: corrected HRDPS cells → 15 km hexagons → cells per hex → hypsometry / class design; meteo aggregation and fewer SMET/simulations come later.</p>
+
+![Three-zone maps — hex-domain corrected HRDPS](assets/images/semidist_hex_three_zone.png)
+
+<p class="fig-caption"><strong>Figure 16.</strong> Three-zone maps (below treeline / treeline ±100 m / alpine) from hex-domain corrected HRDPS for the four operations (solid outline = operation; dashed = hex domain).</p>
+
+![HRDPS grid points within 15 km hexagons](assets/images/semidist_hex_hrdps_points.png)
+
+<p class="fig-caption"><strong>Figure 17.</strong> HRDPS grid points within 15 km hexagons (hex-domain corrected elevations), labelled W/R/B/M + number for each operation.</p>
+
+![Hypsometry per hex — Whistler Blackcomb Heliskiing](assets/images/semidist_hex_hypsometry_whistler.png)
+
+<p class="fig-caption"><strong>Figure 18.</strong> Per-hex hypsometry for Whistler Blackcomb Heliskiing (corrected HRDPS; 200 m bands coloured by treeline class) — first check of elevation distribution inside each hex before aggregating weather.</p>
+
 <div class="todo-box">
 <p class="todo-box__title">Next to do's — Spatial Config › 2.4 Semi Distributed</p>
 <div class="todo-box__body">
 <ul>
-<li>define strategy</li>
+<li>median forcing per hex(/band)</li>
+<li>compare to fully distributed</li>
+<li>snowpack runs</li>
 </ul>
 </div>
 </div>
 
 ### 2.5 Single Point
 
-<p class="section-updated">Last updated: 16 Jul 2026</p>
+<p class="section-updated">Last updated: 18 Jul 2026</p>
 
-- 1 location within a pixel or within the operation (e.g. weather-station location)
-- Median or condition for average ALP / TL / BTL height
-- Lowest computing power; no spatial distribution
+<div class="note-box">
+<p class="note-box__title">Single-Point Investigation Notebook</p>
+<div class="note-box__body">
+<a href="file:///Users/machtl/Documents/Projects_Data/DEM/single_point_investigation.ipynb">/Users/machtl/Documents/Projects_Data/DEM/single_point_investigation.ipynb</a>
+</div>
+</div>
+
+#### Single-Point / Band Approach (Config 3) — Documentation Summary
+
+##### Concept
+
+Following the French SAFRAN–Crocus idea of a semi-distributed massif, but simplified for this analysis:
+
+| French S2M | This configuration |
+|------------|--------------------|
+| Expert meteorological massif | Operation boundary (= one massif) |
+| Elevation × aspect × slope classes | 3 elevation bands only (no aspect) |
+| SAFRAN analyzed atmospheric profile | Median of all HRDPS SMETs in the band |
+
+##### Elevation Bands
+
+Using corrected HRDPS elevation \(z\) and operation-specific treeline \(t\) (±100 m):
+
+<ul>
+<li><strong>BTL</strong> — \(z &lt; t - 100\)</li>
+<li><strong>TL</strong> — \(t - 100 \le z \le t + 100\)</li>
+<li><strong>Alpine</strong> — \(z &gt; t + 100\)</li>
+</ul>
+
+##### Representative Forcing
+
+For each massif × band:
+
+1. Select all HRDPS cells in that band inside the operation
+2. Load their SMET time series
+3. At each timestamp, take the **median** across cells (circular mean for wind direction)
+
+That median series is the band’s single representative meteorological forcing. Map markers at the geographic median of cell centres are **display anchors only**.
+
+##### Role vs Other Configurations
+
+| Config | Spatial unit | Forcing | Sims / massif |
+|--------|--------------|---------|---------------|
+| 1 Fully distributed | Every HRDPS cell | Each cell (+ lapse) | Hundreds–thousands |
+| 2 Hex semi-distributed | Hex × elev classes | Aggregate per hex class | Tens–hundreds |
+| 3 Single-point / band | Massif × 3 bands | Median of all cells in band | **3** |
+
+##### Assumption
+
+Within one massif, synoptic-scale meteorology is represented by elevation band (BTL / TL / Alpine), not by exact horizontal position or aspect.
+
+```mermaid
+flowchart TD
+    A[Operation boundary<br/>= massif] --> B[Corrected HRDPS cells<br/>inside massif]
+    B --> C{Classify by elevation}
+    C --> D1[BTL]
+    C --> D2[TL]
+    C --> D3[Alpine]
+    D1 --> E1[All SMETs in BTL]
+    D2 --> E2[All SMETs in TL]
+    D3 --> E3[All SMETs in Alpine]
+    E1 --> F1[Median time series<br/>BTL]
+    E2 --> F2[Median time series<br/>TL]
+    E3 --> F3[Median time series<br/>Alpine]
+    F1 --> G[3 representative forcings<br/>per massif]
+    F2 --> G
+    F3 --> G
+    G -.-> H[Later: snowpack / diagnostics]
+
+    style A fill:#1a6fad,color:#fff,stroke:#0d4a75
+    style B fill:#2d6a4f,color:#fff,stroke:#1b4332
+    style C fill:#ffe4c4,color:#5a3a1a,stroke:#e0a060
+    style D1 fill:#2d6a4f,color:#fff,stroke:#1b4332
+    style D2 fill:#2d6a4f,color:#fff,stroke:#1b4332
+    style D3 fill:#2d6a4f,color:#fff,stroke:#1b4332
+    style E1 fill:#e67e22,color:#fff,stroke:#b85e14
+    style E2 fill:#e67e22,color:#fff,stroke:#b85e14
+    style E3 fill:#e67e22,color:#fff,stroke:#b85e14
+    style F1 fill:#ffe4c4,color:#5a3a1a,stroke:#e0a060
+    style F2 fill:#ffe4c4,color:#5a3a1a,stroke:#e0a060
+    style F3 fill:#ffe4c4,color:#5a3a1a,stroke:#e0a060
+    style G fill:#1a6fad,color:#fff,stroke:#0d4a75
+    style H fill:#d9d9d9,color:#333,stroke:#9a9a9a
+```
+
+<p class="fig-caption"><strong>Figure 19.</strong> Single-point / band workflow: massif → corrected HRDPS cells → BTL / TL / Alpine → median SMET time series → 3 representative forcings per massif.</p>
+
+![Whistler Blackcomb — single-point / band median forcing anchors](assets/images/singlepoint_band_whistler.png)
+
+<p class="fig-caption"><strong>Figure 20.</strong> Example for Whistler Blackcomb Heliskiing: HRDPS cells by elevation band and display anchors at the geographic median of cell centres for BTL / TL / Alpine (band median forcing; no aspect).</p>
 
 <div class="todo-box">
 <p class="todo-box__title">Next to do's — Spatial Config › 2.5 Single Point</p>
 <div class="todo-box__body">
 <ul>
-<li>choose representative points</li>
-<li>run simulations</li>
+<li>snowpack / diagnostics on the 3 band forcings</li>
 </ul>
 </div>
 </div>
