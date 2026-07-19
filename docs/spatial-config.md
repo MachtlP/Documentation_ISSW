@@ -235,6 +235,15 @@ Map HRDPS topography onto the 30 m DEM (median elevation per HRDPS cell) for ele
 </div>
 </div>
 
+<div class="todo-box">
+<p class="todo-box__title">Next to do's — Spatial Config › 2.2.2 HRDPS Topo to 30m DEM</p>
+<div class="todo-box__body">
+<ul>
+<li>BTL lower elevation cut-off TBD</li>
+</ul>
+</div>
+</div>
+
 ### 2.3 Lapse Rate Correction
 
 <p class="section-updated">Last updated: 18 Jul 2026</p>
@@ -383,9 +392,9 @@ Example output from the AvCan operational `grib2smet` lapse-rate correction for 
 
 **Idea (Herla / AWSOME, Norway):** Instead of running snowpack on every weather-model cell, aggregate meteorology inside larger spatial units and topographic classes (elevation, later aspect), then run fewer “virtual stations.” Aggregation is on the **inputs**, not only on the outputs.
 
-**What we set up here**
+**Set up:**
 
-- 15 km hex grid over each operation (circumradius 15 km; labels W/R/B/M + number)
+- 15 km hex grid over each operation (circumradius 15 km; 2.5 km HRDPS grid × 6; labels W/R/B/M + number)
 - Elevation-corrected HRDPS over the hex ∪ operation domain (MRDEM-30 median per cell → `*_semidistr` products), so hexes that stick outside the ops still have corrected heights
 - Assign HRDPS cells to hexes and map them (static + Folium)
 - Per-hex hypsometry (200 m bands, treeline zones) to see how elevation is distributed inside each hex — first check before aggregating weather
@@ -446,25 +455,7 @@ flowchart LR
 
 ##### Concept
 
-Following the French SAFRAN–Crocus idea of a semi-distributed massif, but simplified for this analysis:
-
-| French S2M | This configuration |
-|------------|--------------------|
-| Expert meteorological massif | Operation boundary (= one massif) |
-| Elevation × aspect × slope classes | 3 elevation bands only (no aspect) |
-| SAFRAN analyzed atmospheric profile | Median of all HRDPS SMETs in the band |
-
-##### Elevation Bands
-
-Using corrected HRDPS elevation \(z\) and operation-specific treeline \(t\) (±100 m):
-
-<ul>
-<li><strong>BTL</strong> — \(z &lt; t - 100\)</li>
-<li><strong>TL</strong> — \(t - 100 \le z \le t + 100\)</li>
-<li><strong>Alpine</strong> — \(z &gt; t + 100\)</li>
-</ul>
-
-##### Representative Forcing
+Following the French SAFRAN–Crocus idea: each operation is treated as **1 massif**, with **3 elevation bands**. The representative forcing for each band is the **median of all HRDPS points** within that elevation band.
 
 For each massif × band:
 
@@ -474,17 +465,7 @@ For each massif × band:
 
 That median series is the band’s single representative meteorological forcing. Map markers at the geographic median of cell centres are **display anchors only**.
 
-##### Role vs Other Configurations
-
-| Config | Spatial unit | Forcing | Sims / massif |
-|--------|--------------|---------|---------------|
-| 1 Fully distributed | Every HRDPS cell | Each cell (+ lapse) | Hundreds–thousands |
-| 2 Hex semi-distributed | Hex × elev classes | Aggregate per hex class | Tens–hundreds |
-| 3 Single-point / band | Massif × 3 bands | Median of all cells in band | **3** |
-
-##### Assumption
-
-Within one massif, synoptic-scale meteorology is represented by elevation band (BTL / TL / Alpine), not by exact horizontal position or aspect.
+##### Conceptual Workflow
 
 ```mermaid
 flowchart TD
