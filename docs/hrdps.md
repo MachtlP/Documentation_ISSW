@@ -114,3 +114,16 @@ This DEM analysis clips HRDPS orography to the four operation polygons and class
 - **Whistler Blackcomb** spans a wide elevation range (730–2340 m) with a more balanced split: ~53% below, ~29% treeline, ~18% alpine.
 
 **Takeaway for AvaPro / snowpack work:** the four sites sample different snow climates and elevation mixes. MWHS is dominated by forested elevations; Banff and Whistler retain substantial treeline–alpine terrain where alpine slab problems are more relevant; Rogers Pass is intermediate but still majority below treeline in the HRDPS grid. Treeline definition strongly controls the band fractions, so results should be read relative to the chosen treeline heights above.
+
+## 5. Local HRDPS to Single Location Elevation Corrected
+
+<p class="section-updated">Last updated: 22 Jul 2026</p>
+
+We built a single-point HRDPS→SMET pipeline that, for four reference stations (Whistler Rendezvous 1920 m, Bow Summit 2040 m, Fidelity 1905 m, MWHS 1900 m), finds the nearest HRDPS grid cell by lat/lon only, extracts season-long meteorology from the daily GRIBs in [`/Volumes/Machtl_1.1/HRDPS/2026`](file:///Volumes/Machtl_1.1/HRDPS/2026), and writes elevation-corrected SMETs to [`/Volumes/Machtl_1.1/SMET/single_points/`](file:///Volumes/Machtl_1.1/SMET/single_points/) using `grib2smet`: TA/RH are lapse-adjusted with `dz_hr = z_station − z_HRDPS`, where model orography is taken once from `HRDPS_DEM.grib2` at that same cell.
+
+<div class="note-box">
+<p class="note-box__title">Single-Point HRDPS→SMET (Elevation Corrected) Notebook</p>
+<div class="note-box__body">
+<a href="file:///Users/machtl/Documents/Projects_Data/DEM/extract_single_point_HRDPS_to_SMET_elevation_corrected.ipynb">/Users/machtl/Documents/Projects_Data/DEM/extract_single_point_HRDPS_to_SMET_elevation_corrected.ipynb</a>
+</div>
+</div>

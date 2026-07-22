@@ -36,13 +36,13 @@ See the [HRDPS](../hrdps/) page for data handling and crushing (download, GRIB p
 
 <p class="table-caption"><strong>Table 1.</strong> Meteo data sources and local paths used for AvaPro point-location runs.</p>
 
-| Data | Path |
-|------|------|
-| RAW HRDPS DATA | [`/Users/machtl/Documents/Projects_Data/FirAliance download/smet_output`](file:///Users/machtl/Documents/Projects_Data/FirAliance%20download/smet_output) |
-| HRDPS Downscaled Data | Path |
-| RAW Station data | `folderpath` |
-| Weather stations raw | Path |
-| Weatherstation patched | Path |
+| Data | Path | Script / Documentation |
+|------|------|------------------------|
+| RAW HRDPS DATA | [`/Users/machtl/Documents/Projects_Data/FirAliance download/smet_output`](file:///Users/machtl/Documents/Projects_Data/FirAliance%20download/smet_output) | [HRDPS](../hrdps/) |
+| HRDPS Downscaled Data | Path | [Local HRDPS to Single Location Elevation Corrected](../hrdps/#5-local-hrdps-to-single-location-elevation-corrected) |
+| RAW Station data | `folderpath` | |
+| Weather stations raw | Path | |
+| Weatherstation patched | Path | |
 
 ### 1.2 Snowpack Simulations
 

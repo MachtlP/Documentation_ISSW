@@ -311,3 +311,32 @@ figcaption strong,
 #content article details.table-dropdown table {
   margin-top: 0.25rem;
 }
+
+/* Local paths → open / reveal in Finder */
+a.finder-link {
+  cursor: pointer;
+}
+
+.finder-link-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%) translateY(8px);
+  max-width: min(92vw, 34rem);
+  padding: 0.7rem 1rem;
+  background: #1a3a52;
+  color: #fff;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10000;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.finder-link-toast--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
