@@ -47,12 +47,24 @@ See the [HRDPS](../hrdps/) page for data handling and crushing (download, GRIB p
 ### 1.2 Snowpack Simulations
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
+
+<div class="note-box">
+<p class="note-box__title">Project Simulations Folder</p>
+<div class="note-box__body">
+<a href="file:///Users/machtl/Documents/Projects_PhD/SNP_runs_for_ISSW26">/Users/machtl/Documents/Projects_PhD/SNP_runs_for_ISSW26</a>
+</div>
+</div>
+
 Snowpack is simulated at point locations with a physics-based model (e.g. SNOWPACK / CROCUS-class setup) forced by:
 
 1. **AWS** — observed station meteorology (temperature, humidity, wind, precipitation / snow height)
 2. **HRDPS** — downscaled numerical weather prediction fields for the same points
 
 Simulations produce the layered snowpack state (grain type, hardness, density, weak layers) that Avapro uses to flag avalanche problems over the season.
+
+#### Simulations Inputs
+
+##### .sno Files
 
 ### 1.3 Validation Dataset
 

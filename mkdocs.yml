@@ -26,7 +26,9 @@ hooks:
 
 nav:
   - Home: index.md
+  - Avapro General: avapro/general.md
   - Avapro Point Location: avapro/index.md
   - Spatial Config: spatial-config.md
   - HRDPS: hrdps.md
+  - SNOWPACK: snowpack.md
   - Info Ex: info-ex.md
