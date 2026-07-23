@@ -127,3 +127,32 @@ We built a single-point HRDPS→SMET pipeline that, for four reference stations 
 <a href="file:///Users/machtl/Documents/Projects_Data/DEM/extract_single_point_HRDPS_to_SMET_elevation_corrected.ipynb">/Users/machtl/Documents/Projects_Data/DEM/extract_single_point_HRDPS_to_SMET_elevation_corrected.ipynb</a>
 </div>
 </div>
+
+## 6. Spatial Aggregation to One Point: Spatial_to_single_point
+
+<p class="section-updated">Last updated: 22 Jul 2026</p>
+
+Each heliski operation is treated as one massif. Corrected HRDPS cell points (`geojson_corrected`, elevation `z` from MRDEM) inside the operation boundary are split into three bands relative to that operation’s treeline (±100 m): **BTL**, **TL**, and **ALP**. Band membership uses the corrected DEM elevation only; aspect is not used.
+
+For every massif × band, the notebook loads the existing elevation-corrected cell SMETs from [`/Volumes/Machtl_1.1/SMET/<op>/`](file:///Volumes/Machtl_1.1/SMET/) (already lapse-adjusted with `dz_hr`). At each timestamp it takes the median across all cells in the band for ILWR, ISWR, PSUM, RH, TA, and VW, and a circular mean for wind direction DW. No second lapse is applied.
+
+The result is three representative SMETs per operation (`BTL.smet`, `TL.smet`, `ALP.smet`) under [`/Volumes/Machtl_1.1/SMET/band_medians/<op>/`](file:///Volumes/Machtl_1.1/SMET/band_medians/). The SMET header uses the band’s median corrected altitude and the geographic median of cell centres as lat/lon (map anchor only).
+
+```mermaid
+flowchart LR
+    A["Operation boundary<br/>GeoJSON"] --> C
+    B["Corrected HRDPS cells<br/>geojson_corrected<br/>z, id, x, y"] --> C["Classify by elevation<br/>BTL / TL / ALP"]
+    D["Cell SMETs<br/>/SMET/&lt;op&gt;/&lt;id&gt;.smet<br/>lapse-corrected"] --> E
+    C --> E["Per band:<br/>all cells in band"]
+    E --> F["Timestamp-wise median<br/>DW = circular mean"]
+    F --> G["Final SMETs<br/>band_medians/&lt;op&gt;/<br/>BTL · TL · ALP"]
+```
+
+<p class="fig-caption"><strong>Figure 6.</strong> Spatial aggregation of elevation-corrected HRDPS cell SMETs to one BTL / TL / ALP representative SMET per operation.</p>
+
+<div class="note-box">
+<p class="note-box__title">Spatial_to_single_point Notebook</p>
+<div class="note-box__body">
+<a href="file:///Users/machtl/Documents/Projects_Data/DEM/Spatial_to_single_point.ipynb">/Users/machtl/Documents/Projects_Data/DEM/Spatial_to_single_point.ipynb</a>
+</div>
+</div>

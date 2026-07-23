@@ -442,66 +442,36 @@ flowchart LR
 
 ### 2.5 Single Point
 
-<p class="section-updated">Last updated: 18 Jul 2026</p>
+<p class="section-updated">Last updated: 22 Jul 2026</p>
 
-<div class="note-box">
-<p class="note-box__title">Single-Point Investigation Notebook</p>
-<div class="note-box__body">
-<a href="file:///Users/machtl/Documents/Projects_Data/DEM/single_point_investigation.ipynb">/Users/machtl/Documents/Projects_Data/DEM/single_point_investigation.ipynb</a>
-</div>
-</div>
+#### Spatial Aggregation to One Point: Spatial_to_single_point
 
-#### Single-Point / Band Approach (Config 3) — Documentation Summary
+Each heliski operation is treated as one massif. Corrected HRDPS cell points (`geojson_corrected`, elevation `z` from MRDEM) inside the operation boundary are split into three bands relative to that operation’s treeline (±100 m): **BTL**, **TL**, and **ALP**. Band membership uses the corrected DEM elevation only; aspect is not used.
 
-##### Concept
+For every massif × band, the notebook loads the existing elevation-corrected cell SMETs from [`/Volumes/Machtl_1.1/SMET/<op>/`](file:///Volumes/Machtl_1.1/SMET/) (already lapse-adjusted with `dz_hr`). At each timestamp it takes the median across all cells in the band for ILWR, ISWR, PSUM, RH, TA, and VW, and a circular mean for wind direction DW. No second lapse is applied.
 
-Following the French SAFRAN–Crocus idea: each operation is treated as **1 massif**, with **3 elevation bands**. The representative forcing for each band is the **median of all HRDPS points** within that elevation band.
+The result is three representative SMETs per operation (`BTL.smet`, `TL.smet`, `ALP.smet`) under [`/Volumes/Machtl_1.1/SMET/band_medians/<op>/`](file:///Volumes/Machtl_1.1/SMET/band_medians/). The SMET header uses the band’s median corrected altitude and the geographic median of cell centres as lat/lon (map anchor only).
 
-For each massif × band:
-
-1. Select all HRDPS cells in that band inside the operation
-2. Load their SMET time series
-3. At each timestamp, take the **median** across cells (circular mean for wind direction)
-
-That median series is the band’s single representative meteorological forcing. Map markers at the geographic median of cell centres are **display anchors only**.
-
-##### Conceptual Workflow
+See also [HRDPS §6](hrdps.md#6-spatial-aggregation-to-one-point-spatial_to_single_point).
 
 ```mermaid
-flowchart TD
-    A[Operation boundary<br/>= massif] --> B[Corrected HRDPS cells<br/>inside massif]
-    B --> C{Classify by elevation}
-    C --> D1[BTL]
-    C --> D2[TL]
-    C --> D3[Alpine]
-    D1 --> E1[All SMETs in BTL]
-    D2 --> E2[All SMETs in TL]
-    D3 --> E3[All SMETs in Alpine]
-    E1 --> F1[Median time series<br/>BTL]
-    E2 --> F2[Median time series<br/>TL]
-    E3 --> F3[Median time series<br/>Alpine]
-    F1 --> G[3 representative forcings<br/>per massif]
-    F2 --> G
-    F3 --> G
-    G -.-> H[Later: snowpack / diagnostics]
-
-    style A fill:#1a6fad,color:#fff,stroke:#0d4a75
-    style B fill:#2d6a4f,color:#fff,stroke:#1b4332
-    style C fill:#ffe4c4,color:#5a3a1a,stroke:#e0a060
-    style D1 fill:#2d6a4f,color:#fff,stroke:#1b4332
-    style D2 fill:#2d6a4f,color:#fff,stroke:#1b4332
-    style D3 fill:#2d6a4f,color:#fff,stroke:#1b4332
-    style E1 fill:#e67e22,color:#fff,stroke:#b85e14
-    style E2 fill:#e67e22,color:#fff,stroke:#b85e14
-    style E3 fill:#e67e22,color:#fff,stroke:#b85e14
-    style F1 fill:#ffe4c4,color:#5a3a1a,stroke:#e0a060
-    style F2 fill:#ffe4c4,color:#5a3a1a,stroke:#e0a060
-    style F3 fill:#ffe4c4,color:#5a3a1a,stroke:#e0a060
-    style G fill:#1a6fad,color:#fff,stroke:#0d4a75
-    style H fill:#d9d9d9,color:#333,stroke:#9a9a9a
+flowchart LR
+    A["Operation boundary<br/>GeoJSON"] --> C
+    B["Corrected HRDPS cells<br/>geojson_corrected<br/>z, id, x, y"] --> C["Classify by elevation<br/>BTL / TL / ALP"]
+    D["Cell SMETs<br/>/SMET/&lt;op&gt;/&lt;id&gt;.smet<br/>lapse-corrected"] --> E
+    C --> E["Per band:<br/>all cells in band"]
+    E --> F["Timestamp-wise median<br/>DW = circular mean"]
+    F --> G["Final SMETs<br/>band_medians/&lt;op&gt;/<br/>BTL · TL · ALP"]
 ```
 
-<p class="fig-caption"><strong>Figure 19.</strong> Single-point / band workflow: massif → corrected HRDPS cells → BTL / TL / Alpine → median SMET time series → 3 representative forcings per massif.</p>
+<p class="fig-caption"><strong>Figure 19.</strong> Spatial aggregation of elevation-corrected HRDPS cell SMETs to one BTL / TL / ALP representative SMET per operation.</p>
+
+<div class="note-box">
+<p class="note-box__title">Spatial_to_single_point Notebook</p>
+<div class="note-box__body">
+<a href="file:///Users/machtl/Documents/Projects_Data/DEM/Spatial_to_single_point.ipynb">/Users/machtl/Documents/Projects_Data/DEM/Spatial_to_single_point.ipynb</a>
+</div>
+</div>
 
 ![Whistler Blackcomb — single-point / band median forcing anchors](assets/images/singlepoint_band_whistler.png)
 
