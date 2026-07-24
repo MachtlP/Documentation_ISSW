@@ -22,6 +22,7 @@ extra_javascript:
 
 hooks:
   - hooks/private_include.py
+  - hooks/daily_updates.py
   - hooks/todos.py
   - hooks/changelog.py
 

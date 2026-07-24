@@ -388,3 +388,36 @@ a.finder-link {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Home › Daily Updates */
+.daily-update-box {
+  border: 1px solid #b8c4ce;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0.35rem 0 1.35rem;
+  background: #f7f9fb;
+}
+
+.daily-update-box__body {
+  padding: 0.85rem 1rem;
+  color: #243447;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.daily-update-box__body p {
+  margin: 0 0 0.55rem;
+}
+
+.daily-update-box__body p:last-child {
+  margin-bottom: 0;
+}
+
+.daily-update-box__body ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.daily-update-box__body li {
+  margin: 0.2rem 0;
+}
