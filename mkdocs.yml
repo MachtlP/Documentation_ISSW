@@ -27,7 +27,8 @@ hooks:
 
 nav:
   - Home: index.md
-  - Avapro General: avapro/general.md
+  - AvaPro v1: avapro/v1.md
+  - AvaPro v2: avapro/v2.md
   - Avapro Point Location: avapro/index.md
   - Spatial Config: spatial-config.md
   - HRDPS: hrdps.md

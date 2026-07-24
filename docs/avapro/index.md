@@ -431,7 +431,24 @@ NWP-station SNOWPACK outputs (`.pro` / `.smet`) live here:
 
 <p class="fig-caption"><strong>Figure 5.</strong> Whistler Rendezvous NWP run — flat + eight virtual-slope <code>.pro</code> stacks (grain type, Sk38, <em>P</em><sub>unstable</sub>). Click a miniature to maximize.</p>
 
-### 1.3 Validation Dataset
+### 1.3 Avapro v1
+
+<p class="section-updated">Last updated: 23 Jul 2026</p>
+
+**Avapro v1** is the current AvaPro pipeline in [`avapro_jul26`](file:///Users/machtl/Documents/Projects_PhD/avapro_jul26) (AvaPro:Jul26). It reads SNOWPACK `.pro` / `.smet` pairs for flat + virtual slopes, tracks weak layers over the season (`find_aps`), and assigns daily avalanche problems (new snow, wind slab, persistent / aging-persistent, wet) via threshold-based post-processing. Aspect selects which SNP file to load; azimuth is unused; slope angle projects heights; instability uses a fixed `alp = 38°`.
+
+For setup, slope/aspect rules, `SNP_NAMING = insert`, and the four NWP-station inis, see **[AvaPro v1 › AvaPro_Jul26](v1.md#2-avapro_jul26)**. Redesign: **[AvaPro v2](v2.md)**.
+
+NWP-station pickle outputs (Bow Summit, Fidelity, MWHS, Whistler Rendezvous):
+
+<div class="note-box">
+<p class="note-box__title">Avapro v1 Outputs (NWP Stations)</p>
+<div class="note-box__body">
+<a href="file:///Users/machtl/Documents/Projects_PhD/avapro_jul26/output/2026/NWP_stations">/Users/machtl/Documents/Projects_PhD/avapro_jul26/output/2026/NWP_stations</a>
+</div>
+</div>
+
+### 1.4 Validation Dataset
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 The validation set is built from operational forecast products:

@@ -51,7 +51,8 @@ def page_label(rel: str) -> str:
 # Friendly page names (nav titles)
 PAGE_TITLES = {
     "index.md": "ISSW Project Overview",
-    "avapro/general.md": "Avapro General",
+    "avapro/v1.md": "AvaPro v1",
+    "avapro/v2.md": "AvaPro v2",
     "avapro/index.md": "Avapro Point Location",
     "spatial-config.md": "Spatial Config",
     "hrdps.md": "HRDPS",
