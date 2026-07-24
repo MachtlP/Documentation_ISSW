@@ -488,7 +488,7 @@ flowchart LR
 
 ### 2.6 Terrain Informed Grid
 
-<p class="section-updated">Last updated: 15 Jul 2026</p>
+<p class="section-updated">Last updated: 23 Jul 2026</p>
 
 For the terrain-informed grid we will use avalanche release areas from **autoATES v3** (PRA model output) to sample HRDPS / SNOWPACK points in likely start-zone terrain rather than every grid cell.
 
@@ -505,11 +505,27 @@ Below: mail from John:
 </div>
 </div>
 
+#### PRA Segmentation Example (Lake Louise)
+
+Screenshot of the PRA segmentation approach from Lake Louise. The polygons cover the extent of the “typical” start zone scenario. The red color shows the mean start zone likelihood for each polygon. These are created using an image segmentation approach that groups similar terrain based on PRA likelihood, aspect, curvature, elevation, and forest density.
+
+If these polygons seem too noisy / small scale, options to test:
+
+- develop a custom approach to group neighboring polygons based on mean start zone likelihood, or
+- tune parameters in the PRA segmentation approach to create larger polygons
+
+Either approach would be easy to test.
+
+![PRA segmentation — Lake Louise, typical start zone scenario](assets/images/pra_segmentation_lake_louise.png)
+
+<p class="fig-caption"><strong>Figure 21.</strong> PRA segmentation around Lake Louise (typical start zone scenario). Polygons group similar terrain (PRA likelihood, aspect, curvature, elevation, forest density); red shows mean start zone likelihood per polygon.</p>
+
 <div class="todo-box">
 <p class="todo-box__title">Next to do's — Spatial Config › 2.6 Terrain Informed Grid</p>
 <div class="todo-box__body">
 <ul>
-<li>get johns maps</li>
+<li>decide if polygon scale is OK or regroup / retune</li>
+<li>get john to run for study areas</li>
 <li>choose grid strategie</li>
 <li>run sim</li>
 </ul>

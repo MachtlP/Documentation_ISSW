@@ -340,3 +340,51 @@ a.finder-link {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
+
+/* Click-to-maximize miniature grids (e.g. .pro evolution panels) */
+.pro-evo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.45rem;
+  margin: 1rem 0 0.35rem;
+}
+
+.pro-evo-grid__item {
+  margin: 0;
+  min-width: 0;
+}
+
+.pro-evo-grid__item a.glightbox {
+  display: block;
+  border: 1px solid #c5d4e0;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #f4f7fa;
+  cursor: zoom-in;
+}
+
+.pro-evo-grid__item a.glightbox:hover {
+  border-color: #1a6fad;
+}
+
+.pro-evo-grid__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.pro-evo-grid__label {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  line-height: 1.25;
+  color: #555;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .pro-evo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
