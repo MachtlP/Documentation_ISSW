@@ -187,66 +187,249 @@ NWP-station SNOWPACK outputs (`.pro` / `.smet`) live here:
 </div>
 </div>
 
-**First operation — Banff Bow Summit** (`Banff_Bowsumit_HRDPS_2026`): flat + eight virtual slopes. Miniatures below; click any panel to maximize (grain type, Sk38, P_unstable).
+**Banff Bow Summit** (`Banff_Bowsumit_HRDPS_2026`): flat + eight virtual slopes. Miniatures below; click any panel to maximize (grain type, Sk38, P_unstable).
 
 <div class="pro-evo-grid">
   <div class="pro-evo-grid__item">
-    <a href="../assets/images/nwp_pro_bow_summit/00_flat.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — flat (0° / azi 0°)">
+    <a href="../assets/images/nwp_pro_bow_summit/00_flat.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — flat (0° / azi 0° N)">
       <img src="../assets/images/nwp_pro_bow_summit/00_flat.png" alt="Bow Summit flat snowpack evolution stack" />
     </a>
-    <span class="pro-evo-grid__label">Flat · 0° / azi 0°</span>
+    <span class="pro-evo-grid__label">Flat · 0° / azi 0° N</span>
   </div>
   <div class="pro-evo-grid__item">
-    <a href="../assets/images/nwp_pro_bow_summit/01.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 0°">
-      <img src="../assets/images/nwp_pro_bow_summit/01.png" alt="Bow Summit 38° aspect 0° snowpack evolution stack" />
+    <a href="../assets/images/nwp_pro_bow_summit/01.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 0° N">
+      <img src="../assets/images/nwp_pro_bow_summit/01.png" alt="Bow Summit 38° aspect 0° N snowpack evolution stack" />
     </a>
-    <span class="pro-evo-grid__label">38° · azi 0°</span>
+    <span class="pro-evo-grid__label">38° · azi 0° N</span>
   </div>
   <div class="pro-evo-grid__item">
-    <a href="../assets/images/nwp_pro_bow_summit/02.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 45°">
-      <img src="../assets/images/nwp_pro_bow_summit/02.png" alt="Bow Summit 38° aspect 45° snowpack evolution stack" />
+    <a href="../assets/images/nwp_pro_bow_summit/02.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 45° NE">
+      <img src="../assets/images/nwp_pro_bow_summit/02.png" alt="Bow Summit 38° aspect 45° NE snowpack evolution stack" />
     </a>
-    <span class="pro-evo-grid__label">38° · azi 45°</span>
+    <span class="pro-evo-grid__label">38° · azi 45° NE</span>
   </div>
   <div class="pro-evo-grid__item">
-    <a href="../assets/images/nwp_pro_bow_summit/03.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 90°">
-      <img src="../assets/images/nwp_pro_bow_summit/03.png" alt="Bow Summit 38° aspect 90° snowpack evolution stack" />
+    <a href="../assets/images/nwp_pro_bow_summit/03.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 90° E">
+      <img src="../assets/images/nwp_pro_bow_summit/03.png" alt="Bow Summit 38° aspect 90° E snowpack evolution stack" />
     </a>
-    <span class="pro-evo-grid__label">38° · azi 90°</span>
+    <span class="pro-evo-grid__label">38° · azi 90° E</span>
   </div>
   <div class="pro-evo-grid__item">
-    <a href="../assets/images/nwp_pro_bow_summit/04.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 270°">
-      <img src="../assets/images/nwp_pro_bow_summit/04.png" alt="Bow Summit 38° aspect 270° snowpack evolution stack" />
+    <a href="../assets/images/nwp_pro_bow_summit/04.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 270° W">
+      <img src="../assets/images/nwp_pro_bow_summit/04.png" alt="Bow Summit 38° aspect 270° W snowpack evolution stack" />
     </a>
-    <span class="pro-evo-grid__label">38° · azi 270°</span>
+    <span class="pro-evo-grid__label">38° · azi 270° W</span>
   </div>
   <div class="pro-evo-grid__item">
-    <a href="../assets/images/nwp_pro_bow_summit/05.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 180°">
-      <img src="../assets/images/nwp_pro_bow_summit/05.png" alt="Bow Summit 38° aspect 180° snowpack evolution stack" />
+    <a href="../assets/images/nwp_pro_bow_summit/05.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 180° S">
+      <img src="../assets/images/nwp_pro_bow_summit/05.png" alt="Bow Summit 38° aspect 180° S snowpack evolution stack" />
     </a>
-    <span class="pro-evo-grid__label">38° · azi 180°</span>
+    <span class="pro-evo-grid__label">38° · azi 180° S</span>
   </div>
   <div class="pro-evo-grid__item">
-    <a href="../assets/images/nwp_pro_bow_summit/06.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 225°">
-      <img src="../assets/images/nwp_pro_bow_summit/06.png" alt="Bow Summit 38° aspect 225° snowpack evolution stack" />
+    <a href="../assets/images/nwp_pro_bow_summit/06.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 225° SW">
+      <img src="../assets/images/nwp_pro_bow_summit/06.png" alt="Bow Summit 38° aspect 225° SW snowpack evolution stack" />
     </a>
-    <span class="pro-evo-grid__label">38° · azi 225°</span>
+    <span class="pro-evo-grid__label">38° · azi 225° SW</span>
   </div>
   <div class="pro-evo-grid__item">
-    <a href="../assets/images/nwp_pro_bow_summit/07.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 270°">
-      <img src="../assets/images/nwp_pro_bow_summit/07.png" alt="Bow Summit 38° aspect 270° snowpack evolution stack" />
+    <a href="../assets/images/nwp_pro_bow_summit/07.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 270° W">
+      <img src="../assets/images/nwp_pro_bow_summit/07.png" alt="Bow Summit 38° aspect 270° W snowpack evolution stack" />
     </a>
-    <span class="pro-evo-grid__label">38° · azi 270°</span>
+    <span class="pro-evo-grid__label">38° · azi 270° W</span>
   </div>
   <div class="pro-evo-grid__item">
-    <a href="../assets/images/nwp_pro_bow_summit/08.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 315°">
-      <img src="../assets/images/nwp_pro_bow_summit/08.png" alt="Bow Summit 38° aspect 315° snowpack evolution stack" />
+    <a href="../assets/images/nwp_pro_bow_summit/08.png" class="glightbox image-zoom" data-gallery="bow-summit-pro" data-type="image" data-title="Bow Summit — 38° / azi 315° NW">
+      <img src="../assets/images/nwp_pro_bow_summit/08.png" alt="Bow Summit 38° aspect 315° NW snowpack evolution stack" />
     </a>
-    <span class="pro-evo-grid__label">38° · azi 315°</span>
+    <span class="pro-evo-grid__label">38° · azi 315° NW</span>
   </div>
 </div>
 
 <p class="fig-caption"><strong>Figure 2.</strong> Banff Bow Summit NWP run — flat + eight virtual-slope <code>.pro</code> stacks (grain type, Sk38, <em>P</em><sub>unstable</sub>). Click a miniature to maximize.</p>
+
+**Rogers Pass Fidelity** (`Rogers_Fidelity_HRDPS_2026`): flat + eight virtual slopes. Miniatures below; click any panel to maximize (grain type, Sk38, P_unstable).
+
+<div class="pro-evo-grid">
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_fidelity/00_flat.png" class="glightbox image-zoom" data-gallery="fidelity-pro" data-type="image" data-title="Fidelity — flat (0° / azi 0° N)">
+      <img src="../assets/images/nwp_pro_fidelity/00_flat.png" alt="Fidelity Flat · 0° / azi 0° N snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">Flat · 0° / azi 0° N</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_fidelity/01.png" class="glightbox image-zoom" data-gallery="fidelity-pro" data-type="image" data-title="Fidelity — 38° / azi 0° N">
+      <img src="../assets/images/nwp_pro_fidelity/01.png" alt="Fidelity 38° · azi 0° N snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 0° N</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_fidelity/02.png" class="glightbox image-zoom" data-gallery="fidelity-pro" data-type="image" data-title="Fidelity — 38° / azi 45° NE">
+      <img src="../assets/images/nwp_pro_fidelity/02.png" alt="Fidelity 38° · azi 45° NE snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 45° NE</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_fidelity/03.png" class="glightbox image-zoom" data-gallery="fidelity-pro" data-type="image" data-title="Fidelity — 38° / azi 90° E">
+      <img src="../assets/images/nwp_pro_fidelity/03.png" alt="Fidelity 38° · azi 90° E snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 90° E</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_fidelity/04.png" class="glightbox image-zoom" data-gallery="fidelity-pro" data-type="image" data-title="Fidelity — 38° / azi 270° W">
+      <img src="../assets/images/nwp_pro_fidelity/04.png" alt="Fidelity 38° · azi 270° W snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 270° W</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_fidelity/05.png" class="glightbox image-zoom" data-gallery="fidelity-pro" data-type="image" data-title="Fidelity — 38° / azi 180° S">
+      <img src="../assets/images/nwp_pro_fidelity/05.png" alt="Fidelity 38° · azi 180° S snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 180° S</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_fidelity/06.png" class="glightbox image-zoom" data-gallery="fidelity-pro" data-type="image" data-title="Fidelity — 38° / azi 225° SW">
+      <img src="../assets/images/nwp_pro_fidelity/06.png" alt="Fidelity 38° · azi 225° SW snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 225° SW</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_fidelity/07.png" class="glightbox image-zoom" data-gallery="fidelity-pro" data-type="image" data-title="Fidelity — 38° / azi 270° W">
+      <img src="../assets/images/nwp_pro_fidelity/07.png" alt="Fidelity 38° · azi 270° W snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 270° W</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_fidelity/08.png" class="glightbox image-zoom" data-gallery="fidelity-pro" data-type="image" data-title="Fidelity — 38° / azi 315° NW">
+      <img src="../assets/images/nwp_pro_fidelity/08.png" alt="Fidelity 38° · azi 315° NW snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 315° NW</span>
+  </div>
+</div>
+
+<p class="fig-caption"><strong>Figure 3.</strong> Rogers Pass Fidelity NWP run — flat + eight virtual-slope <code>.pro</code> stacks (grain type, Sk38, <em>P</em><sub>unstable</sub>). Click a miniature to maximize.</p>
+
+**Mike Wiegele (Mt St Ann)** (`MWHS_MtStAnn_HRDPS_2026`): flat + eight virtual slopes. Miniatures below; click any panel to maximize (grain type, Sk38, P_unstable).
+
+<div class="pro-evo-grid">
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_mwhs/00_flat.png" class="glightbox image-zoom" data-gallery="mwhs-pro" data-type="image" data-title="MWHS Mt St Ann — flat (0° / azi 0° N)">
+      <img src="../assets/images/nwp_pro_mwhs/00_flat.png" alt="MWHS Mt St Ann Flat · 0° / azi 0° N snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">Flat · 0° / azi 0° N</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_mwhs/01.png" class="glightbox image-zoom" data-gallery="mwhs-pro" data-type="image" data-title="MWHS Mt St Ann — 38° / azi 0° N">
+      <img src="../assets/images/nwp_pro_mwhs/01.png" alt="MWHS Mt St Ann 38° · azi 0° N snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 0° N</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_mwhs/02.png" class="glightbox image-zoom" data-gallery="mwhs-pro" data-type="image" data-title="MWHS Mt St Ann — 38° / azi 45° NE">
+      <img src="../assets/images/nwp_pro_mwhs/02.png" alt="MWHS Mt St Ann 38° · azi 45° NE snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 45° NE</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_mwhs/03.png" class="glightbox image-zoom" data-gallery="mwhs-pro" data-type="image" data-title="MWHS Mt St Ann — 38° / azi 90° E">
+      <img src="../assets/images/nwp_pro_mwhs/03.png" alt="MWHS Mt St Ann 38° · azi 90° E snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 90° E</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_mwhs/04.png" class="glightbox image-zoom" data-gallery="mwhs-pro" data-type="image" data-title="MWHS Mt St Ann — 38° / azi 270° W">
+      <img src="../assets/images/nwp_pro_mwhs/04.png" alt="MWHS Mt St Ann 38° · azi 270° W snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 270° W</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_mwhs/05.png" class="glightbox image-zoom" data-gallery="mwhs-pro" data-type="image" data-title="MWHS Mt St Ann — 38° / azi 180° S">
+      <img src="../assets/images/nwp_pro_mwhs/05.png" alt="MWHS Mt St Ann 38° · azi 180° S snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 180° S</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_mwhs/06.png" class="glightbox image-zoom" data-gallery="mwhs-pro" data-type="image" data-title="MWHS Mt St Ann — 38° / azi 225° SW">
+      <img src="../assets/images/nwp_pro_mwhs/06.png" alt="MWHS Mt St Ann 38° · azi 225° SW snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 225° SW</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_mwhs/07.png" class="glightbox image-zoom" data-gallery="mwhs-pro" data-type="image" data-title="MWHS Mt St Ann — 38° / azi 270° W">
+      <img src="../assets/images/nwp_pro_mwhs/07.png" alt="MWHS Mt St Ann 38° · azi 270° W snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 270° W</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_mwhs/08.png" class="glightbox image-zoom" data-gallery="mwhs-pro" data-type="image" data-title="MWHS Mt St Ann — 38° / azi 315° NW">
+      <img src="../assets/images/nwp_pro_mwhs/08.png" alt="MWHS Mt St Ann 38° · azi 315° NW snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 315° NW</span>
+  </div>
+</div>
+
+<p class="fig-caption"><strong>Figure 4.</strong> Mike Wiegele Mt St Ann NWP run — flat + eight virtual-slope <code>.pro</code> stacks (grain type, Sk38, <em>P</em><sub>unstable</sub>). Click a miniature to maximize.</p>
+
+**Whistler Rendezvous** (`Whistler_Rendezvous_HRDPS_2026`): flat + eight virtual slopes. Miniatures below; click any panel to maximize (grain type, Sk38, P_unstable).
+
+<div class="pro-evo-grid">
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_whistler_rendezvous/00_flat.png" class="glightbox image-zoom" data-gallery="whistler-rendezvous-pro" data-type="image" data-title="Whistler Rendezvous — flat (0° / azi 0° N)">
+      <img src="../assets/images/nwp_pro_whistler_rendezvous/00_flat.png" alt="Whistler Rendezvous Flat · 0° / azi 0° N snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">Flat · 0° / azi 0° N</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_whistler_rendezvous/01.png" class="glightbox image-zoom" data-gallery="whistler-rendezvous-pro" data-type="image" data-title="Whistler Rendezvous — 38° / azi 0° N">
+      <img src="../assets/images/nwp_pro_whistler_rendezvous/01.png" alt="Whistler Rendezvous 38° · azi 0° N snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 0° N</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_whistler_rendezvous/02.png" class="glightbox image-zoom" data-gallery="whistler-rendezvous-pro" data-type="image" data-title="Whistler Rendezvous — 38° / azi 45° NE">
+      <img src="../assets/images/nwp_pro_whistler_rendezvous/02.png" alt="Whistler Rendezvous 38° · azi 45° NE snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 45° NE</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_whistler_rendezvous/03.png" class="glightbox image-zoom" data-gallery="whistler-rendezvous-pro" data-type="image" data-title="Whistler Rendezvous — 38° / azi 90° E">
+      <img src="../assets/images/nwp_pro_whistler_rendezvous/03.png" alt="Whistler Rendezvous 38° · azi 90° E snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 90° E</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_whistler_rendezvous/04.png" class="glightbox image-zoom" data-gallery="whistler-rendezvous-pro" data-type="image" data-title="Whistler Rendezvous — 38° / azi 270° W">
+      <img src="../assets/images/nwp_pro_whistler_rendezvous/04.png" alt="Whistler Rendezvous 38° · azi 270° W snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 270° W</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_whistler_rendezvous/05.png" class="glightbox image-zoom" data-gallery="whistler-rendezvous-pro" data-type="image" data-title="Whistler Rendezvous — 38° / azi 180° S">
+      <img src="../assets/images/nwp_pro_whistler_rendezvous/05.png" alt="Whistler Rendezvous 38° · azi 180° S snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 180° S</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_whistler_rendezvous/06.png" class="glightbox image-zoom" data-gallery="whistler-rendezvous-pro" data-type="image" data-title="Whistler Rendezvous — 38° / azi 225° SW">
+      <img src="../assets/images/nwp_pro_whistler_rendezvous/06.png" alt="Whistler Rendezvous 38° · azi 225° SW snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 225° SW</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_whistler_rendezvous/07.png" class="glightbox image-zoom" data-gallery="whistler-rendezvous-pro" data-type="image" data-title="Whistler Rendezvous — 38° / azi 270° W">
+      <img src="../assets/images/nwp_pro_whistler_rendezvous/07.png" alt="Whistler Rendezvous 38° · azi 270° W snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 270° W</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/nwp_pro_whistler_rendezvous/08.png" class="glightbox image-zoom" data-gallery="whistler-rendezvous-pro" data-type="image" data-title="Whistler Rendezvous — 38° / azi 315° NW">
+      <img src="../assets/images/nwp_pro_whistler_rendezvous/08.png" alt="Whistler Rendezvous 38° · azi 315° NW snowpack evolution stack" />
+    </a>
+    <span class="pro-evo-grid__label">38° · azi 315° NW</span>
+  </div>
+</div>
+
+<p class="fig-caption"><strong>Figure 5.</strong> Whistler Rendezvous NWP run — flat + eight virtual-slope <code>.pro</code> stacks (grain type, Sk38, <em>P</em><sub>unstable</sub>). Click a miniature to maximize.</p>
 
 ### 1.3 Validation Dataset
 
