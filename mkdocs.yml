@@ -28,6 +28,8 @@ hooks:
 
 nav:
   - Home: index.md
+  - Figures Plan: paper-figures-plan.md
+  - Status Update Aug 6: status-update-aug-6.md
   - AvaPro v1: avapro/v1.md
   - AvaPro v2: avapro/v2.md
   - Avapro Point Location: avapro/index.md

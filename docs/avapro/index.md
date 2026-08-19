@@ -62,7 +62,7 @@ Snowpack is simulated at point locations with a physics-based model forced by:
 
 Simulations produce the layered snowpack state (grain type, hardness, density, weak layers) that Avapro uses to flag avalanche problems over the season.
 
-#### SNP Runs for ISSW26
+#### 1.2.1 SNP Runs for ISSW26
 
 SNOWPACK research runs for ISSW26. The **SNOWPACK binary stays** in the install tree (`snowpack_vGitMaster`); this repo holds configs, forcing (SMET), initial profiles (`.sno`), and outputs.
 
@@ -165,7 +165,7 @@ Forcing / snow file stem: `Whistler_Rendezvous_HRDPS_2026_1`
 - [ ] `EXPERIMENT` set if you want labeled outputs
 - [ ] Binary path correct (`SNOWPACK_BIN` if not default)
 
-#### 1.2.1 .pro Simulations for NWP Run
+#### 1.2.2 .pro Simulations for NWP Run
 
 <p class="section-updated">Last updated: 23 Jul 2026</p>
 
@@ -448,7 +448,7 @@ NWP-station pickle outputs (Bow Summit, Fidelity, MWHS, Whistler Rendezvous):
 </div>
 </div>
 
-#### Whistler
+#### 1.3.1 Whistler
 
 <p class="section-updated">Last updated: 29 Jul 2026</p>
 
@@ -640,7 +640,7 @@ Combined AvAPro overview for Whistler Rendezvous (flatfield snowpack evolution +
 
 <p class="fig-caption"><strong>Figure 14.</strong> Whistler Rendezvous PAP detail — N / E / S / W. Click a miniature to maximize.</p>
 
-#### Bow Summit
+#### 1.3.2 Bow Summit
 
 <p class="section-updated">Last updated: 29 Jul 2026</p>
 
@@ -828,7 +828,7 @@ AvAPro overview for Banff Bow Summit (per-aspect snowpack evolution + avalanche 
 
 <p class="fig-caption"><strong>Figure 22.</strong> Banff Bow Summit PAP detail — N / E / S / W. Click a miniature to maximize.</p>
 
-#### Fidelity
+#### 1.3.3 Fidelity
 
 <p class="section-updated">Last updated: 29 Jul 2026</p>
 
@@ -1016,7 +1016,7 @@ AvAPro overview for Rogers Pass Fidelity (per-aspect snowpack evolution + avalan
 
 <p class="fig-caption"><strong>Figure 30.</strong> Rogers Pass Fidelity PAP detail — N / E / S / W. Click a miniature to maximize.</p>
 
-#### MWHS
+#### 1.3.4 MWHS
 
 <p class="section-updated">Last updated: 29 Jul 2026</p>
 
@@ -1227,7 +1227,8 @@ Output is a daily problem presence / type (and optionally severity) time series 
 
 ### 2.2 Daily Comparison
 
-<p class="section-updated">Last updated: 15 Jul 2026</p>
+<p class="section-updated">Last updated: 6 Aug 2026</p>
+
 For each site and day:
 
 1. Extract Avapro problem(s) from the AWS-forced and HRDPS-forced runs
@@ -1235,6 +1236,44 @@ For each site and day:
 3. Match on problem type (and optionally treat “any problem” vs “no problem” as a binary case)
 
 Comparisons are reported per problem type and pooled across types where useful.
+
+Operational **InfoEx vs AvCan** danger levels and avalanche problems (winter 2025/26) for the four study areas — miniatures below; click any panel to maximize.
+
+<div class="note-box">
+<p class="note-box__title">InfoEx / AvCan Avalanche Problems Overview Notebook</p>
+<div class="note-box__body">
+<a href="file:///Users/machtl/Documents/infoex/infoex_tools/notebooks/avalanche_problems_overview.ipynb">/Users/machtl/Documents/infoex/infoex_tools/notebooks/avalanche_problems_overview.ipynb</a>
+</div>
+</div>
+
+<div class="pro-evo-grid pro-evo-grid--2x2">
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/infoex_avcan_daily/banff.png" class="glightbox image-zoom" data-gallery="infoex-avcan-daily" data-type="image" data-title="Banff: InfoEx vs AvCan — danger levels + avalanche problems">
+      <img src="../assets/images/infoex_avcan_daily/banff.png" alt="Banff InfoEx vs AvCan danger levels and avalanche problems" />
+    </a>
+    <span class="pro-evo-grid__label">Banff</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/infoex_avcan_daily/glacier.png" class="glightbox image-zoom" data-gallery="infoex-avcan-daily" data-type="image" data-title="Glacier / Rogers Pass: InfoEx vs AvCan — danger levels + avalanche problems">
+      <img src="../assets/images/infoex_avcan_daily/glacier.png" alt="Glacier Rogers Pass InfoEx vs AvCan danger levels and avalanche problems" />
+    </a>
+    <span class="pro-evo-grid__label">Glacier / Rogers Pass</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/infoex_avcan_daily/mwhs.png" class="glightbox image-zoom" data-gallery="infoex-avcan-daily" data-type="image" data-title="MWHS: InfoEx vs AvCan — danger levels + avalanche problems">
+      <img src="../assets/images/infoex_avcan_daily/mwhs.png" alt="MWHS InfoEx vs AvCan danger levels and avalanche problems" />
+    </a>
+    <span class="pro-evo-grid__label">MWHS</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/infoex_avcan_daily/whistler_blackcomb.png" class="glightbox image-zoom" data-gallery="infoex-avcan-daily" data-type="image" data-title="Whistler Blackcomb: InfoEx vs AvCan — danger levels + avalanche problems">
+      <img src="../assets/images/infoex_avcan_daily/whistler_blackcomb.png" alt="Whistler Blackcomb InfoEx vs AvCan danger levels and avalanche problems" />
+    </a>
+    <span class="pro-evo-grid__label">Whistler Blackcomb</span>
+  </div>
+</div>
+
+<p class="fig-caption"><strong>Figure 39.</strong> InfoEx vs AvCan — daily danger levels and avalanche problems for Banff, Glacier / Rogers Pass, MWHS, and Whistler Blackcomb (winter 2025/26). Click a miniature to maximize.</p>
 
 ### 2.3 Evaluation Metrics
 
@@ -1263,7 +1302,7 @@ Results are reviewed with operational partners to check:
 
 ## 3. Results
 
-<p class="section-updated">Last updated: 15 Jul 2026</p>
+<p class="section-updated">Last updated: 6 Aug 2026</p>
 ### 3.1 Agreement Statistics
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
@@ -1289,6 +1328,419 @@ Side-by-side comparison of the two forcings:
 - **HRDPS** — spatially complete; may bias precipitation / wind and thus slab / weak-layer timing
 
 Report which forcing yields higher agreement overall and for which problem types the gap is largest.
+
+### 3.4 Storm Slab
+
+<p class="section-updated">Last updated: 6 Aug 2026</p>
+
+InfoEx Storm vs model NAP (AM/PM) for the four NWP stations. Miniatures use the small preview scale; click any panel to maximize.
+
+<div class="station-col-grid">
+  <div class="station-col">
+    <p class="station-col__title">Whistler</p>
+    <div class="station-col__figs">
+      <a href="../assets/images/results_storm_slab/whistler/overview_ampm.png" class="glightbox image-zoom" data-gallery="storm-slab-whistler" data-type="image" data-title="Storm Slab (AM/PM) · Whistler Rendezvous · Treeline aspects + TL hazard (InfoEx)">
+        <img src="../assets/images/results_storm_slab/whistler/overview_ampm.png" alt="Storm Slab AM/PM overview Whistler Rendezvous" />
+      </a>
+      <span class="pro-evo-grid__label">Overview · TL aspects + hazard</span>
+      <a href="../assets/images/results_storm_slab/whistler/detail_N.png" class="glightbox image-zoom" data-gallery="storm-slab-whistler" data-type="image" data-title="Storm Slab detail (AM/PM) · Whistler Rendezvous · N">
+        <img src="../assets/images/results_storm_slab/whistler/detail_N.png" alt="Storm Slab detail Whistler N" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · N</span>
+      <a href="../assets/images/results_storm_slab/whistler/detail_E.png" class="glightbox image-zoom" data-gallery="storm-slab-whistler" data-type="image" data-title="Storm Slab detail (AM/PM) · Whistler Rendezvous · E">
+        <img src="../assets/images/results_storm_slab/whistler/detail_E.png" alt="Storm Slab detail Whistler E" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · E</span>
+      <a href="../assets/images/results_storm_slab/whistler/detail_S.png" class="glightbox image-zoom" data-gallery="storm-slab-whistler" data-type="image" data-title="Storm Slab detail (AM/PM) · Whistler Rendezvous · S">
+        <img src="../assets/images/results_storm_slab/whistler/detail_S.png" alt="Storm Slab detail Whistler S" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · S</span>
+      <a href="../assets/images/results_storm_slab/whistler/detail_W.png" class="glightbox image-zoom" data-gallery="storm-slab-whistler" data-type="image" data-title="Storm Slab detail (AM/PM) · Whistler Rendezvous · W">
+        <img src="../assets/images/results_storm_slab/whistler/detail_W.png" alt="Storm Slab detail Whistler W" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · W</span>
+      <a href="../assets/images/results_storm_slab/whistler/trend_diagnostics.png" class="glightbox image-zoom" data-gallery="storm-slab-whistler" data-type="image" data-title="Trend diagnostics · Whistler Rendezvous · InfoEx Storm vs NAP">
+        <img src="../assets/images/results_storm_slab/whistler/trend_diagnostics.png" alt="Trend diagnostics Whistler Storm vs NAP" />
+      </a>
+      <span class="pro-evo-grid__label">Trend diagnostics</span>
+      <a href="../assets/images/results_storm_slab/whistler/confusion.png" class="glightbox image-zoom" data-gallery="storm-slab-whistler" data-type="image" data-title="Confusion matrix · Whistler Rendezvous · InfoEx Storm vs NAP">
+        <img src="../assets/images/results_storm_slab/whistler/confusion.png" alt="Confusion matrix Whistler Storm vs NAP" />
+      </a>
+      <span class="pro-evo-grid__label">Confusion matrix</span>
+      <a href="../assets/images/results_storm_slab/whistler/roc_poc.png" class="glightbox image-zoom" data-gallery="storm-slab-whistler" data-type="image" data-title="ROC / POC · Whistler Rendezvous · InfoEx Storm vs NAP (soft=7d)">
+        <img src="../assets/images/results_storm_slab/whistler/roc_poc.png" alt="ROC POC Whistler Storm vs NAP" />
+      </a>
+      <span class="pro-evo-grid__label">ROC / POC</span>
+      <a href="../assets/images/results_storm_slab/whistler/confusion_dl2.png" class="glightbox image-zoom" data-gallery="storm-slab-whistler" data-type="image" data-title="Confusion matrix · Whistler Rendezvous · InfoEx Storm vs NAP · DL≥2">
+        <img src="../assets/images/results_storm_slab/whistler/confusion_dl2.png" alt="Confusion matrix Whistler Storm vs NAP DL≥2" />
+      </a>
+      <span class="pro-evo-grid__label">Confusion · DL≥2</span>
+      <a href="../assets/images/results_storm_slab/whistler/roc_poc_dl2.png" class="glightbox image-zoom" data-gallery="storm-slab-whistler" data-type="image" data-title="ROC / POC · Whistler Rendezvous · InfoEx Storm vs NAP · DL≥2">
+        <img src="../assets/images/results_storm_slab/whistler/roc_poc_dl2.png" alt="ROC POC Whistler Storm vs NAP DL≥2" />
+      </a>
+      <span class="pro-evo-grid__label">ROC / POC · DL≥2</span>
+    </div>
+  </div>
+  <div class="station-col">
+    <p class="station-col__title">Bow Summit</p>
+    <div class="station-col__figs">
+      <a href="../assets/images/results_storm_slab/bow_summit/overview_ampm.png" class="glightbox image-zoom" data-gallery="storm-slab-bow" data-type="image" data-title="Storm Slab (AM/PM) · Bow Summit · Treeline aspects + TL hazard (InfoEx)">
+        <img src="../assets/images/results_storm_slab/bow_summit/overview_ampm.png" alt="Storm Slab AM/PM overview Bow Summit" />
+      </a>
+      <span class="pro-evo-grid__label">Overview · TL aspects + hazard</span>
+      <a href="../assets/images/results_storm_slab/bow_summit/detail_N.png" class="glightbox image-zoom" data-gallery="storm-slab-bow" data-type="image" data-title="Storm Slab detail (AM/PM) · Bow Summit · N">
+        <img src="../assets/images/results_storm_slab/bow_summit/detail_N.png" alt="Storm Slab detail Bow Summit N" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · N</span>
+      <a href="../assets/images/results_storm_slab/bow_summit/detail_E.png" class="glightbox image-zoom" data-gallery="storm-slab-bow" data-type="image" data-title="Storm Slab detail (AM/PM) · Bow Summit · E">
+        <img src="../assets/images/results_storm_slab/bow_summit/detail_E.png" alt="Storm Slab detail Bow Summit E" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · E</span>
+      <a href="../assets/images/results_storm_slab/bow_summit/detail_S.png" class="glightbox image-zoom" data-gallery="storm-slab-bow" data-type="image" data-title="Storm Slab detail (AM/PM) · Bow Summit · S">
+        <img src="../assets/images/results_storm_slab/bow_summit/detail_S.png" alt="Storm Slab detail Bow Summit S" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · S</span>
+      <a href="../assets/images/results_storm_slab/bow_summit/detail_W.png" class="glightbox image-zoom" data-gallery="storm-slab-bow" data-type="image" data-title="Storm Slab detail (AM/PM) · Bow Summit · W">
+        <img src="../assets/images/results_storm_slab/bow_summit/detail_W.png" alt="Storm Slab detail Bow Summit W" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · W</span>
+      <a href="../assets/images/results_storm_slab/bow_summit/trend_diagnostics.png" class="glightbox image-zoom" data-gallery="storm-slab-bow" data-type="image" data-title="Trend diagnostics · Bow Summit · InfoEx Storm vs NAP">
+        <img src="../assets/images/results_storm_slab/bow_summit/trend_diagnostics.png" alt="Trend diagnostics Bow Summit Storm vs NAP" />
+      </a>
+      <span class="pro-evo-grid__label">Trend diagnostics</span>
+      <a href="../assets/images/results_storm_slab/bow_summit/confusion.png" class="glightbox image-zoom" data-gallery="storm-slab-bow" data-type="image" data-title="Confusion matrix · Bow Summit · InfoEx Storm vs NAP">
+        <img src="../assets/images/results_storm_slab/bow_summit/confusion.png" alt="Confusion matrix Bow Summit Storm vs NAP" />
+      </a>
+      <span class="pro-evo-grid__label">Confusion matrix</span>
+      <a href="../assets/images/results_storm_slab/bow_summit/roc_poc.png" class="glightbox image-zoom" data-gallery="storm-slab-bow" data-type="image" data-title="ROC / POC · Bow Summit · InfoEx Storm vs NAP (soft=7d)">
+        <img src="../assets/images/results_storm_slab/bow_summit/roc_poc.png" alt="ROC POC Bow Summit Storm vs NAP" />
+      </a>
+      <span class="pro-evo-grid__label">ROC / POC</span>
+      <a href="../assets/images/results_storm_slab/bow_summit/confusion_dl2.png" class="glightbox image-zoom" data-gallery="storm-slab-bow" data-type="image" data-title="Confusion matrix · Bow Summit · InfoEx Storm vs NAP · DL≥2">
+        <img src="../assets/images/results_storm_slab/bow_summit/confusion_dl2.png" alt="Confusion matrix Bow Summit Storm vs NAP DL≥2" />
+      </a>
+      <span class="pro-evo-grid__label">Confusion · DL≥2</span>
+      <a href="../assets/images/results_storm_slab/bow_summit/roc_poc_dl2.png" class="glightbox image-zoom" data-gallery="storm-slab-bow" data-type="image" data-title="ROC / POC · Bow Summit · InfoEx Storm vs NAP · DL≥2">
+        <img src="../assets/images/results_storm_slab/bow_summit/roc_poc_dl2.png" alt="ROC POC Bow Summit Storm vs NAP DL≥2" />
+      </a>
+      <span class="pro-evo-grid__label">ROC / POC · DL≥2</span>
+    </div>
+  </div>
+  <div class="station-col">
+    <p class="station-col__title">Fidelity</p>
+    <div class="station-col__figs">
+      <a href="../assets/images/results_storm_slab/fidelity/overview_ampm.png" class="glightbox image-zoom" data-gallery="storm-slab-fidelity" data-type="image" data-title="Storm Slab (AM/PM) · Fidelity · Treeline aspects + TL hazard (InfoEx)">
+        <img src="../assets/images/results_storm_slab/fidelity/overview_ampm.png" alt="Storm Slab AM/PM overview Fidelity" />
+      </a>
+      <span class="pro-evo-grid__label">Overview · TL aspects + hazard</span>
+      <a href="../assets/images/results_storm_slab/fidelity/detail_N.png" class="glightbox image-zoom" data-gallery="storm-slab-fidelity" data-type="image" data-title="Storm Slab detail (AM/PM) · Fidelity · N">
+        <img src="../assets/images/results_storm_slab/fidelity/detail_N.png" alt="Storm Slab detail Fidelity N" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · N</span>
+      <a href="../assets/images/results_storm_slab/fidelity/detail_E.png" class="glightbox image-zoom" data-gallery="storm-slab-fidelity" data-type="image" data-title="Storm Slab detail (AM/PM) · Fidelity · E">
+        <img src="../assets/images/results_storm_slab/fidelity/detail_E.png" alt="Storm Slab detail Fidelity E" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · E</span>
+      <a href="../assets/images/results_storm_slab/fidelity/detail_S.png" class="glightbox image-zoom" data-gallery="storm-slab-fidelity" data-type="image" data-title="Storm Slab detail (AM/PM) · Fidelity · S">
+        <img src="../assets/images/results_storm_slab/fidelity/detail_S.png" alt="Storm Slab detail Fidelity S" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · S</span>
+      <a href="../assets/images/results_storm_slab/fidelity/detail_W.png" class="glightbox image-zoom" data-gallery="storm-slab-fidelity" data-type="image" data-title="Storm Slab detail (AM/PM) · Fidelity · W">
+        <img src="../assets/images/results_storm_slab/fidelity/detail_W.png" alt="Storm Slab detail Fidelity W" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · W</span>
+      <a href="../assets/images/results_storm_slab/fidelity/trend_diagnostics.png" class="glightbox image-zoom" data-gallery="storm-slab-fidelity" data-type="image" data-title="Trend diagnostics · Fidelity · InfoEx Storm vs NAP">
+        <img src="../assets/images/results_storm_slab/fidelity/trend_diagnostics.png" alt="Trend diagnostics Fidelity Storm vs NAP" />
+      </a>
+      <span class="pro-evo-grid__label">Trend diagnostics</span>
+      <a href="../assets/images/results_storm_slab/fidelity/confusion.png" class="glightbox image-zoom" data-gallery="storm-slab-fidelity" data-type="image" data-title="Confusion matrix · Fidelity · InfoEx Storm vs NAP">
+        <img src="../assets/images/results_storm_slab/fidelity/confusion.png" alt="Confusion matrix Fidelity Storm vs NAP" />
+      </a>
+      <span class="pro-evo-grid__label">Confusion matrix</span>
+      <a href="../assets/images/results_storm_slab/fidelity/roc_poc.png" class="glightbox image-zoom" data-gallery="storm-slab-fidelity" data-type="image" data-title="ROC / POC · Fidelity · InfoEx Storm vs NAP (soft=7d)">
+        <img src="../assets/images/results_storm_slab/fidelity/roc_poc.png" alt="ROC POC Fidelity Storm vs NAP" />
+      </a>
+      <span class="pro-evo-grid__label">ROC / POC</span>
+      <a href="../assets/images/results_storm_slab/fidelity/confusion_dl2.png" class="glightbox image-zoom" data-gallery="storm-slab-fidelity" data-type="image" data-title="Confusion matrix · Fidelity · InfoEx Storm vs NAP · DL≥2">
+        <img src="../assets/images/results_storm_slab/fidelity/confusion_dl2.png" alt="Confusion matrix Fidelity Storm vs NAP DL≥2" />
+      </a>
+      <span class="pro-evo-grid__label">Confusion · DL≥2</span>
+      <a href="../assets/images/results_storm_slab/fidelity/roc_poc_dl2.png" class="glightbox image-zoom" data-gallery="storm-slab-fidelity" data-type="image" data-title="ROC / POC · Fidelity · InfoEx Storm vs NAP · DL≥2">
+        <img src="../assets/images/results_storm_slab/fidelity/roc_poc_dl2.png" alt="ROC POC Fidelity Storm vs NAP DL≥2" />
+      </a>
+      <span class="pro-evo-grid__label">ROC / POC · DL≥2</span>
+    </div>
+  </div>
+  <div class="station-col">
+    <p class="station-col__title">MWHS</p>
+    <div class="station-col__figs">
+      <a href="../assets/images/results_storm_slab/mwhs/overview_ampm.png" class="glightbox image-zoom" data-gallery="storm-slab-mwhs" data-type="image" data-title="Storm Slab (AM/PM) · MWHS · Treeline aspects + TL hazard (InfoEx)">
+        <img src="../assets/images/results_storm_slab/mwhs/overview_ampm.png" alt="Storm Slab AM/PM overview MWHS" />
+      </a>
+      <span class="pro-evo-grid__label">Overview · TL aspects + hazard</span>
+      <a href="../assets/images/results_storm_slab/mwhs/detail_N.png" class="glightbox image-zoom" data-gallery="storm-slab-mwhs" data-type="image" data-title="Storm Slab detail (AM/PM) · MWHS · N">
+        <img src="../assets/images/results_storm_slab/mwhs/detail_N.png" alt="Storm Slab detail MWHS N" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · N</span>
+      <a href="../assets/images/results_storm_slab/mwhs/detail_E.png" class="glightbox image-zoom" data-gallery="storm-slab-mwhs" data-type="image" data-title="Storm Slab detail (AM/PM) · MWHS · E">
+        <img src="../assets/images/results_storm_slab/mwhs/detail_E.png" alt="Storm Slab detail MWHS E" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · E</span>
+      <a href="../assets/images/results_storm_slab/mwhs/detail_S.png" class="glightbox image-zoom" data-gallery="storm-slab-mwhs" data-type="image" data-title="Storm Slab detail (AM/PM) · MWHS · S">
+        <img src="../assets/images/results_storm_slab/mwhs/detail_S.png" alt="Storm Slab detail MWHS S" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · S</span>
+      <a href="../assets/images/results_storm_slab/mwhs/detail_W.png" class="glightbox image-zoom" data-gallery="storm-slab-mwhs" data-type="image" data-title="Storm Slab detail (AM/PM) · MWHS · W">
+        <img src="../assets/images/results_storm_slab/mwhs/detail_W.png" alt="Storm Slab detail MWHS W" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · W</span>
+      <a href="../assets/images/results_storm_slab/mwhs/trend_diagnostics.png" class="glightbox image-zoom" data-gallery="storm-slab-mwhs" data-type="image" data-title="Trend diagnostics · MWHS · InfoEx Storm vs NAP">
+        <img src="../assets/images/results_storm_slab/mwhs/trend_diagnostics.png" alt="Trend diagnostics MWHS Storm vs NAP" />
+      </a>
+      <span class="pro-evo-grid__label">Trend diagnostics</span>
+      <a href="../assets/images/results_storm_slab/mwhs/confusion.png" class="glightbox image-zoom" data-gallery="storm-slab-mwhs" data-type="image" data-title="Confusion matrix · MWHS · InfoEx Storm vs NAP">
+        <img src="../assets/images/results_storm_slab/mwhs/confusion.png" alt="Confusion matrix MWHS Storm vs NAP" />
+      </a>
+      <span class="pro-evo-grid__label">Confusion matrix</span>
+      <a href="../assets/images/results_storm_slab/mwhs/roc_poc.png" class="glightbox image-zoom" data-gallery="storm-slab-mwhs" data-type="image" data-title="ROC / POC · MWHS · InfoEx Storm vs NAP (soft=7d)">
+        <img src="../assets/images/results_storm_slab/mwhs/roc_poc.png" alt="ROC POC MWHS Storm vs NAP" />
+      </a>
+      <span class="pro-evo-grid__label">ROC / POC</span>
+      <a href="../assets/images/results_storm_slab/mwhs/confusion_dl2.png" class="glightbox image-zoom" data-gallery="storm-slab-mwhs" data-type="image" data-title="Confusion matrix · MWHS · InfoEx Storm vs NAP · DL≥2">
+        <img src="../assets/images/results_storm_slab/mwhs/confusion_dl2.png" alt="Confusion matrix MWHS Storm vs NAP DL≥2" />
+      </a>
+      <span class="pro-evo-grid__label">Confusion · DL≥2</span>
+      <a href="../assets/images/results_storm_slab/mwhs/roc_poc_dl2.png" class="glightbox image-zoom" data-gallery="storm-slab-mwhs" data-type="image" data-title="ROC / POC · MWHS · InfoEx Storm vs NAP · DL≥2">
+        <img src="../assets/images/results_storm_slab/mwhs/roc_poc_dl2.png" alt="ROC POC MWHS Storm vs NAP DL≥2" />
+      </a>
+      <span class="pro-evo-grid__label">ROC / POC · DL≥2</span>
+    </div>
+  </div>
+</div>
+
+<p class="fig-caption"><strong>Figure 40.</strong> Storm Slab results — Whistler, Bow Summit, Fidelity, and MWHS (overview, N/E/S/W detail, trend diagnostics, confusion / ROC; DL≥2 variants). Click a miniature to maximize.</p>
+
+### 3.5 Wind Slab
+
+<p class="section-updated">Last updated: 6 Aug 2026</p>
+
+InfoEx Wind vs model WSAP (AM/PM) for the four NWP stations. Miniatures use the small preview scale; click any panel to maximize.
+
+<div class="station-col-grid">
+  <div class="station-col">
+    <p class="station-col__title">Whistler</p>
+    <div class="station-col__figs">
+      <a href="../assets/images/results_wind_slab/whistler/overview_ampm.png" class="glightbox image-zoom" data-gallery="wind-slab-whistler" data-type="image" data-title="Wind Slab (AM/PM) · Whistler_Rendezvous · Alpine wind aspects + TL hazard (InfoEx)">
+        <img src="../assets/images/results_wind_slab/whistler/overview_ampm.png" alt="Wind Slab (AM/PM) Whistler_Rendezvous Alpine wind aspects + TL hazard (InfoEx)" />
+      </a>
+      <span class="pro-evo-grid__label">Overview · Alpine aspects + hazard</span>
+      <a href="../assets/images/results_wind_slab/whistler/detail_N.png" class="glightbox image-zoom" data-gallery="wind-slab-whistler" data-type="image" data-title="Wind / WSAP detail (AM/PM) · Whistler_Rendezvous · N">
+        <img src="../assets/images/results_wind_slab/whistler/detail_N.png" alt="Wind / WSAP detail (AM/PM) Whistler_Rendezvous N" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · N</span>
+      <a href="../assets/images/results_wind_slab/whistler/detail_E.png" class="glightbox image-zoom" data-gallery="wind-slab-whistler" data-type="image" data-title="Wind / WSAP detail (AM/PM) · Whistler_Rendezvous · E">
+        <img src="../assets/images/results_wind_slab/whistler/detail_E.png" alt="Wind / WSAP detail (AM/PM) Whistler_Rendezvous E" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · E</span>
+      <a href="../assets/images/results_wind_slab/whistler/detail_S.png" class="glightbox image-zoom" data-gallery="wind-slab-whistler" data-type="image" data-title="Wind / WSAP detail (AM/PM) · Whistler_Rendezvous · S">
+        <img src="../assets/images/results_wind_slab/whistler/detail_S.png" alt="Wind / WSAP detail (AM/PM) Whistler_Rendezvous S" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · S</span>
+      <a href="../assets/images/results_wind_slab/whistler/detail_W.png" class="glightbox image-zoom" data-gallery="wind-slab-whistler" data-type="image" data-title="Wind / WSAP detail (AM/PM) · Whistler_Rendezvous · W">
+        <img src="../assets/images/results_wind_slab/whistler/detail_W.png" alt="Wind / WSAP detail (AM/PM) Whistler_Rendezvous W" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · W</span>
+      <a href="../assets/images/results_wind_slab/whistler/trend_diagnostics.png" class="glightbox image-zoom" data-gallery="wind-slab-whistler" data-type="image" data-title="Trend diagnostics · Whistler_Rendezvous · InfoEx Wind vs WSAP">
+        <img src="../assets/images/results_wind_slab/whistler/trend_diagnostics.png" alt="Trend diagnostics Whistler_Rendezvous InfoEx Wind vs WSAP" />
+      </a>
+      <span class="pro-evo-grid__label">Trend diagnostics</span>
+      <a href="../assets/images/results_wind_slab/whistler/confusion.png" class="glightbox image-zoom" data-gallery="wind-slab-whistler" data-type="image" data-title="Confusion matrix · Whistler_Rendezvous · InfoEx Wind vs WSAP">
+        <img src="../assets/images/results_wind_slab/whistler/confusion.png" alt="Confusion matrix Whistler_Rendezvous InfoEx Wind vs WSAP" />
+      </a>
+      <span class="pro-evo-grid__label">Confusion matrix</span>
+      <a href="../assets/images/results_wind_slab/whistler/roc_poc.png" class="glightbox image-zoom" data-gallery="wind-slab-whistler" data-type="image" data-title="ROC / POC · Whistler_Rendezvous · InfoEx Wind vs WSAP (soft=7d)">
+        <img src="../assets/images/results_wind_slab/whistler/roc_poc.png" alt="ROC / POC Whistler_Rendezvous InfoEx Wind vs WSAP (soft=7d)" />
+      </a>
+      <span class="pro-evo-grid__label">ROC / POC</span>
+      <a href="../assets/images/results_wind_slab/whistler/confusion_dl2.png" class="glightbox image-zoom" data-gallery="wind-slab-whistler" data-type="image" data-title="Confusion matrix · Whistler_Rendezvous · InfoEx Wind vs WSAP · DL≥2">
+        <img src="../assets/images/results_wind_slab/whistler/confusion_dl2.png" alt="Confusion matrix Whistler_Rendezvous InfoEx Wind vs WSAP DL≥2" />
+      </a>
+      <span class="pro-evo-grid__label">Confusion · DL≥2</span>
+      <a href="../assets/images/results_wind_slab/whistler/roc_poc_dl2.png" class="glightbox image-zoom" data-gallery="wind-slab-whistler" data-type="image" data-title="ROC / POC · Whistler_Rendezvous · InfoEx Wind vs WSAP · DL≥2">
+        <img src="../assets/images/results_wind_slab/whistler/roc_poc_dl2.png" alt="ROC / POC Whistler_Rendezvous InfoEx Wind vs WSAP DL≥2" />
+      </a>
+      <span class="pro-evo-grid__label">ROC / POC · DL≥2</span>
+    </div>
+  </div>
+  <div class="station-col">
+    <p class="station-col__title">Bow Summit</p>
+    <div class="station-col__figs">
+      <a href="../assets/images/results_wind_slab/bow_summit/overview_ampm.png" class="glightbox image-zoom" data-gallery="wind-slab-bow" data-type="image" data-title="Wind Slab (AM/PM) · Bow_Summit · Alpine wind aspects + TL hazard (InfoEx)">
+        <img src="../assets/images/results_wind_slab/bow_summit/overview_ampm.png" alt="Wind Slab (AM/PM) Bow_Summit Alpine wind aspects + TL hazard (InfoEx)" />
+      </a>
+      <span class="pro-evo-grid__label">Overview · Alpine aspects + hazard</span>
+      <a href="../assets/images/results_wind_slab/bow_summit/detail_N.png" class="glightbox image-zoom" data-gallery="wind-slab-bow" data-type="image" data-title="Wind / WSAP detail (AM/PM) · Bow_Summit · N">
+        <img src="../assets/images/results_wind_slab/bow_summit/detail_N.png" alt="Wind / WSAP detail (AM/PM) Bow_Summit N" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · N</span>
+      <a href="../assets/images/results_wind_slab/bow_summit/detail_E.png" class="glightbox image-zoom" data-gallery="wind-slab-bow" data-type="image" data-title="Wind / WSAP detail (AM/PM) · Bow_Summit · E">
+        <img src="../assets/images/results_wind_slab/bow_summit/detail_E.png" alt="Wind / WSAP detail (AM/PM) Bow_Summit E" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · E</span>
+      <a href="../assets/images/results_wind_slab/bow_summit/detail_S.png" class="glightbox image-zoom" data-gallery="wind-slab-bow" data-type="image" data-title="Wind / WSAP detail (AM/PM) · Bow_Summit · S">
+        <img src="../assets/images/results_wind_slab/bow_summit/detail_S.png" alt="Wind / WSAP detail (AM/PM) Bow_Summit S" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · S</span>
+      <a href="../assets/images/results_wind_slab/bow_summit/detail_W.png" class="glightbox image-zoom" data-gallery="wind-slab-bow" data-type="image" data-title="Wind / WSAP detail (AM/PM) · Bow_Summit · W">
+        <img src="../assets/images/results_wind_slab/bow_summit/detail_W.png" alt="Wind / WSAP detail (AM/PM) Bow_Summit W" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · W</span>
+      <a href="../assets/images/results_wind_slab/bow_summit/trend_diagnostics.png" class="glightbox image-zoom" data-gallery="wind-slab-bow" data-type="image" data-title="Trend diagnostics · Bow_Summit · InfoEx Wind vs WSAP">
+        <img src="../assets/images/results_wind_slab/bow_summit/trend_diagnostics.png" alt="Trend diagnostics Bow_Summit InfoEx Wind vs WSAP" />
+      </a>
+      <span class="pro-evo-grid__label">Trend diagnostics</span>
+      <a href="../assets/images/results_wind_slab/bow_summit/confusion.png" class="glightbox image-zoom" data-gallery="wind-slab-bow" data-type="image" data-title="Confusion matrix · Bow_Summit · InfoEx Wind vs WSAP">
+        <img src="../assets/images/results_wind_slab/bow_summit/confusion.png" alt="Confusion matrix Bow_Summit InfoEx Wind vs WSAP" />
+      </a>
+      <span class="pro-evo-grid__label">Confusion matrix</span>
+      <a href="../assets/images/results_wind_slab/bow_summit/roc_poc.png" class="glightbox image-zoom" data-gallery="wind-slab-bow" data-type="image" data-title="ROC / POC · Bow_Summit · InfoEx Wind vs WSAP (soft=7d)">
+        <img src="../assets/images/results_wind_slab/bow_summit/roc_poc.png" alt="ROC / POC Bow_Summit InfoEx Wind vs WSAP (soft=7d)" />
+      </a>
+      <span class="pro-evo-grid__label">ROC / POC</span>
+      <a href="../assets/images/results_wind_slab/bow_summit/confusion_dl2.png" class="glightbox image-zoom" data-gallery="wind-slab-bow" data-type="image" data-title="Confusion matrix · Bow_Summit · InfoEx Wind vs WSAP · DL≥2">
+        <img src="../assets/images/results_wind_slab/bow_summit/confusion_dl2.png" alt="Confusion matrix Bow_Summit InfoEx Wind vs WSAP DL≥2" />
+      </a>
+      <span class="pro-evo-grid__label">Confusion · DL≥2</span>
+    </div>
+  </div>
+  <div class="station-col">
+    <p class="station-col__title">Fidelity</p>
+    <div class="station-col__figs">
+      <a href="../assets/images/results_wind_slab/fidelity/overview_ampm.png" class="glightbox image-zoom" data-gallery="wind-slab-fidelity" data-type="image" data-title="Wind Slab (AM/PM) · Fidelity · Alpine wind aspects + TL hazard (InfoEx)">
+        <img src="../assets/images/results_wind_slab/fidelity/overview_ampm.png" alt="Wind Slab (AM/PM) Fidelity Alpine wind aspects + TL hazard (InfoEx)" />
+      </a>
+      <span class="pro-evo-grid__label">Overview · Alpine aspects + hazard</span>
+      <a href="../assets/images/results_wind_slab/fidelity/detail_N.png" class="glightbox image-zoom" data-gallery="wind-slab-fidelity" data-type="image" data-title="Wind / WSAP detail (AM/PM) · Fidelity · N">
+        <img src="../assets/images/results_wind_slab/fidelity/detail_N.png" alt="Wind / WSAP detail (AM/PM) Fidelity N" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · N</span>
+      <a href="../assets/images/results_wind_slab/fidelity/detail_E.png" class="glightbox image-zoom" data-gallery="wind-slab-fidelity" data-type="image" data-title="Wind / WSAP detail (AM/PM) · Fidelity · E">
+        <img src="../assets/images/results_wind_slab/fidelity/detail_E.png" alt="Wind / WSAP detail (AM/PM) Fidelity E" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · E</span>
+      <a href="../assets/images/results_wind_slab/fidelity/detail_S.png" class="glightbox image-zoom" data-gallery="wind-slab-fidelity" data-type="image" data-title="Wind / WSAP detail (AM/PM) · Fidelity · S">
+        <img src="../assets/images/results_wind_slab/fidelity/detail_S.png" alt="Wind / WSAP detail (AM/PM) Fidelity S" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · S</span>
+      <a href="../assets/images/results_wind_slab/fidelity/detail_W.png" class="glightbox image-zoom" data-gallery="wind-slab-fidelity" data-type="image" data-title="Wind / WSAP detail (AM/PM) · Fidelity · W">
+        <img src="../assets/images/results_wind_slab/fidelity/detail_W.png" alt="Wind / WSAP detail (AM/PM) Fidelity W" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · W</span>
+      <a href="../assets/images/results_wind_slab/fidelity/trend_diagnostics.png" class="glightbox image-zoom" data-gallery="wind-slab-fidelity" data-type="image" data-title="Trend diagnostics · Fidelity · InfoEx Wind vs WSAP">
+        <img src="../assets/images/results_wind_slab/fidelity/trend_diagnostics.png" alt="Trend diagnostics Fidelity InfoEx Wind vs WSAP" />
+      </a>
+      <span class="pro-evo-grid__label">Trend diagnostics</span>
+    </div>
+  </div>
+  <div class="station-col">
+    <p class="station-col__title">MWHS</p>
+    <div class="station-col__figs">
+      <a href="../assets/images/results_wind_slab/mwhs/overview_ampm.png" class="glightbox image-zoom" data-gallery="wind-slab-mwhs" data-type="image" data-title="Wind Slab (AM/PM) · MWHS · Alpine wind aspects + TL hazard (InfoEx)">
+        <img src="../assets/images/results_wind_slab/mwhs/overview_ampm.png" alt="Wind Slab (AM/PM) MWHS Alpine wind aspects + TL hazard (InfoEx)" />
+      </a>
+      <span class="pro-evo-grid__label">Overview · Alpine aspects + hazard</span>
+      <a href="../assets/images/results_wind_slab/mwhs/detail_N.png" class="glightbox image-zoom" data-gallery="wind-slab-mwhs" data-type="image" data-title="Wind / WSAP detail (AM/PM) · MWHS · N">
+        <img src="../assets/images/results_wind_slab/mwhs/detail_N.png" alt="Wind / WSAP detail (AM/PM) MWHS N" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · N</span>
+      <a href="../assets/images/results_wind_slab/mwhs/detail_E.png" class="glightbox image-zoom" data-gallery="wind-slab-mwhs" data-type="image" data-title="Wind / WSAP detail (AM/PM) · MWHS · E">
+        <img src="../assets/images/results_wind_slab/mwhs/detail_E.png" alt="Wind / WSAP detail (AM/PM) MWHS E" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · E</span>
+      <a href="../assets/images/results_wind_slab/mwhs/detail_S.png" class="glightbox image-zoom" data-gallery="wind-slab-mwhs" data-type="image" data-title="Wind / WSAP detail (AM/PM) · MWHS · S">
+        <img src="../assets/images/results_wind_slab/mwhs/detail_S.png" alt="Wind / WSAP detail (AM/PM) MWHS S" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · S</span>
+      <a href="../assets/images/results_wind_slab/mwhs/detail_W.png" class="glightbox image-zoom" data-gallery="wind-slab-mwhs" data-type="image" data-title="Wind / WSAP detail (AM/PM) · MWHS · W">
+        <img src="../assets/images/results_wind_slab/mwhs/detail_W.png" alt="Wind / WSAP detail (AM/PM) MWHS W" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · W</span>
+      <a href="../assets/images/results_wind_slab/mwhs/trend_diagnostics.png" class="glightbox image-zoom" data-gallery="wind-slab-mwhs" data-type="image" data-title="Trend diagnostics · MWHS · InfoEx Wind vs WSAP">
+        <img src="../assets/images/results_wind_slab/mwhs/trend_diagnostics.png" alt="Trend diagnostics MWHS InfoEx Wind vs WSAP" />
+      </a>
+      <span class="pro-evo-grid__label">Trend diagnostics</span>
+      <a href="../assets/images/results_wind_slab/mwhs/confusion.png" class="glightbox image-zoom" data-gallery="wind-slab-mwhs" data-type="image" data-title="Confusion matrix · MWHS · InfoEx Wind vs WSAP">
+        <img src="../assets/images/results_wind_slab/mwhs/confusion.png" alt="Confusion matrix MWHS InfoEx Wind vs WSAP" />
+      </a>
+      <span class="pro-evo-grid__label">Confusion matrix</span>
+    </div>
+  </div>
+</div>
+
+<p class="fig-caption"><strong>Figure 41.</strong> Wind Slab results — Whistler, Bow Summit, Fidelity, and MWHS (overview, N/E/S/W detail, trend; confusion / ROC where available). Click a miniature to maximize.</p>
+
+### 3.6 Wet Problems
+
+<p class="section-updated">Last updated: 6 Aug 2026</p>
+
+InfoEx Loose wet + Wet slab vs model WAP (AM/PM) for the four NWP stations. Miniatures use the small preview scale; click any panel to maximize.
+
+<div class="station-col-grid">
+  <div class="station-col">
+    <p class="station-col__title">Whistler</p>
+    <div class="station-col__figs">
+      <a href="../assets/images/results_wet_problems/whistler/overview_ampm.png" class="glightbox image-zoom" data-gallery="wet-problems-whistler" data-type="image" data-title="Wet snow (AM/PM) · Whistler_Rendezvous · Treeline Loose wet + Wet slab + TL hazard (InfoEx)">
+        <img src="../assets/images/results_wet_problems/whistler/overview_ampm.png" alt="Wet snow (AM/PM) Whistler_Rendezvous Treeline Loose wet + Wet slab + TL hazard (InfoEx)" />
+      </a>
+      <span class="pro-evo-grid__label">Overview · Treeline aspects + hazard</span>
+      <a href="../assets/images/results_wet_problems/whistler/detail_lwc.png" class="glightbox image-zoom" data-gallery="wet-problems-whistler" data-type="image" data-title="Wet / WAP detail (AM/PM) · Whistler_Rendezvous · Treeline InfoEx Loose wet + Wet slab">
+        <img src="../assets/images/results_wet_problems/whistler/detail_lwc.png" alt="Wet / WAP detail (AM/PM) Whistler_Rendezvous Treeline InfoEx Loose wet + Wet slab" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · LWC by aspect</span>
+    </div>
+  </div>
+  <div class="station-col">
+    <p class="station-col__title">Bow Summit</p>
+    <div class="station-col__figs">
+      <a href="../assets/images/results_wet_problems/bow_summit/overview_ampm.png" class="glightbox image-zoom" data-gallery="wet-problems-bow" data-type="image" data-title="Wet snow (AM/PM) · Bow_Summit · Treeline Loose wet + Wet slab + TL hazard (InfoEx)">
+        <img src="../assets/images/results_wet_problems/bow_summit/overview_ampm.png" alt="Wet snow (AM/PM) Bow_Summit Treeline Loose wet + Wet slab + TL hazard (InfoEx)" />
+      </a>
+      <span class="pro-evo-grid__label">Overview · Treeline aspects + hazard</span>
+      <a href="../assets/images/results_wet_problems/bow_summit/detail_lwc.png" class="glightbox image-zoom" data-gallery="wet-problems-bow" data-type="image" data-title="Wet / WAP detail (AM/PM) · Bow_Summit · Treeline InfoEx Loose wet + Wet slab">
+        <img src="../assets/images/results_wet_problems/bow_summit/detail_lwc.png" alt="Wet / WAP detail (AM/PM) Bow_Summit Treeline InfoEx Loose wet + Wet slab" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · LWC by aspect</span>
+    </div>
+  </div>
+  <div class="station-col">
+    <p class="station-col__title">Fidelity</p>
+    <div class="station-col__figs">
+      <a href="../assets/images/results_wet_problems/fidelity/overview_ampm.png" class="glightbox image-zoom" data-gallery="wet-problems-fidelity" data-type="image" data-title="Wet snow (AM/PM) · Fidelity · Treeline Loose wet + Wet slab + TL hazard (InfoEx)">
+        <img src="../assets/images/results_wet_problems/fidelity/overview_ampm.png" alt="Wet snow (AM/PM) Fidelity Treeline Loose wet + Wet slab + TL hazard (InfoEx)" />
+      </a>
+      <span class="pro-evo-grid__label">Overview · Treeline aspects + hazard</span>
+      <a href="../assets/images/results_wet_problems/fidelity/detail_lwc.png" class="glightbox image-zoom" data-gallery="wet-problems-fidelity" data-type="image" data-title="Wet / WAP detail (AM/PM) · Fidelity · Treeline InfoEx Loose wet + Wet slab">
+        <img src="../assets/images/results_wet_problems/fidelity/detail_lwc.png" alt="Wet / WAP detail (AM/PM) Fidelity Treeline InfoEx Loose wet + Wet slab" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · LWC by aspect</span>
+    </div>
+  </div>
+  <div class="station-col">
+    <p class="station-col__title">MWHS</p>
+    <div class="station-col__figs">
+      <a href="../assets/images/results_wet_problems/mwhs/overview_ampm.png" class="glightbox image-zoom" data-gallery="wet-problems-mwhs" data-type="image" data-title="Wet snow (AM/PM) · MWHS · Treeline Loose wet + Wet slab + TL hazard (InfoEx)">
+        <img src="../assets/images/results_wet_problems/mwhs/overview_ampm.png" alt="Wet snow (AM/PM) MWHS Treeline Loose wet + Wet slab + TL hazard (InfoEx)" />
+      </a>
+      <span class="pro-evo-grid__label">Overview · Treeline aspects + hazard</span>
+      <a href="../assets/images/results_wet_problems/mwhs/detail_lwc.png" class="glightbox image-zoom" data-gallery="wet-problems-mwhs" data-type="image" data-title="Wet / WAP detail (AM/PM) · MWHS · Treeline InfoEx Loose wet + Wet slab">
+        <img src="../assets/images/results_wet_problems/mwhs/detail_lwc.png" alt="Wet / WAP detail (AM/PM) MWHS Treeline InfoEx Loose wet + Wet slab" />
+      </a>
+      <span class="pro-evo-grid__label">Detail · LWC by aspect</span>
+    </div>
+  </div>
+</div>
+
+<p class="fig-caption"><strong>Figure 42.</strong> Wet Problems results — Whistler, Bow Summit, Fidelity, and MWHS (overview + LWC-by-aspect detail). Click a miniature to maximize.</p>
 
 ## 4. Discussion
 
