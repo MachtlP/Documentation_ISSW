@@ -68,19 +68,19 @@ Figure outputs: [`docs/figures/`](file:///Users/machtl/Documents/docker_fun/docs
 
 ### A. Method / study-area figures (ready for Methods; some usable as Results setup)
 
-Base dir: [`Documentation_ISSW/docs/assets/images/`](../assets/images/)  
+Base dir: [`Documentation_ISSW/docs/assets/images/`](assets/images/)  
 Catalogued in: [`spatial-config.md`](spatial-config.md)
 
 | ID | Description | Figure file | Notebook / script |
 |----|-------------|----------------|-------------------|
-| G1 | HRDPS orography, 4 ops | [dem_hrdps_orography_sites.png](../assets/images/dem_hrdps_orography_sites.png) | [explore_dem_topography.ipynb](file:///Users/machtl/Documents/Projects_Data/DEM/explore_dem_topography.ipynb) |
-| G2 | HRDPS elevation bands | [dem_elevation_bands.png](../assets/images/dem_elevation_bands.png) | same |
-| G3 | HRDPS hypsometry | [dem_hypsometry.png](../assets/images/dem_hypsometry.png) | same |
-| G4–G6 | MRDEM-30 orography / bands / hypsometry | [mrdem30_orography_sites.png](../assets/images/mrdem30_orography_sites.png) · [mrdem30_elevation_bands.png](../assets/images/mrdem30_elevation_bands.png) · [mrdem30_hypsometry.png](../assets/images/mrdem30_hypsometry.png) | [download_mrdem30…](file:///Users/machtl/Documents/Projects_Data/DEM/download_mrdem30_for_research_areas.ipynb) + explore DEM |
-| G7–G10 | Elevation correction Δz, corrected orography/bands, hypsometry compare | [hrdps_elevation_correction_delta.png](../assets/images/hrdps_elevation_correction_delta.png) · [hrdps_corrected_orography.png](../assets/images/hrdps_corrected_orography.png) · [hrdps_corrected_elevation_bands.png](../assets/images/hrdps_corrected_elevation_bands.png) · [hypsometry_hrdps_mrdem30_corrected.png](../assets/images/hypsometry_hrdps_mrdem30_corrected.png) | DEM notebooks |
-| G13–G14 | Lapse-rate TA/RH example (Whistler) | [lapse_rate_ta_whistler_example.png](../assets/images/lapse_rate_ta_whistler_example.png) · [lapse_rate_rh_whistler_example.png](../assets/images/lapse_rate_rh_whistler_example.png) | [Lapsrate_correction.ipynb](file:///Users/machtl/Documents/Projects_Data/DEM/Lapsrate_correction.ipynb) · [`grib2smet.py`](file:///Users/machtl/Documents/Projects_Data/DEM/grib2smet.py) |
-| G16–G18 | Hex domain three-zone, HRDPS-in-hex, Whistler per-hex hypsometry | [semidist_hex_three_zone.png](../assets/images/semidist_hex_three_zone.png) · [semidist_hex_hrdps_points.png](../assets/images/semidist_hex_hrdps_points.png) · [semidist_hex_hypsometry_whistler.png](../assets/images/semidist_hex_hypsometry_whistler.png) | [Semi_distributed_initial_investigation.ipynb](file:///Users/machtl/Documents/Projects_Data/DEM/Semi_distributed_initial_investigation.ipynb) · also [HRDPS_hex_grid_to_SMET.ipynb](file:///Users/machtl/Documents/Projects_Data/DEM/HRDPS_hex_grid_to_SMET.ipynb) |
-| G20 | Single-point / 1-location anchors (Whistler) | [singlepoint_band_whistler.png](../assets/images/singlepoint_band_whistler.png) | [Spatial_to_single_point.ipynb](file:///Users/machtl/Documents/Projects_Data/DEM/Spatial_to_single_point.ipynb) · [extract_single_point_HRDPS_to_SMET_elevation_corrected.ipynb](file:///Users/machtl/Documents/Projects_Data/DEM/extract_single_point_HRDPS_to_SMET_elevation_corrected.ipynb) |
+| G1 | HRDPS orography, 4 ops | [dem_hrdps_orography_sites.png](assets/images/dem_hrdps_orography_sites.png) | [explore_dem_topography.ipynb](file:///Users/machtl/Documents/Projects_Data/DEM/explore_dem_topography.ipynb) |
+| G2 | HRDPS elevation bands | [dem_elevation_bands.png](assets/images/dem_elevation_bands.png) | same |
+| G3 | HRDPS hypsometry | [dem_hypsometry.png](assets/images/dem_hypsometry.png) | same |
+| G4–G6 | MRDEM-30 orography / bands / hypsometry | [mrdem30_orography_sites.png](assets/images/mrdem30_orography_sites.png) · [mrdem30_elevation_bands.png](assets/images/mrdem30_elevation_bands.png) · [mrdem30_hypsometry.png](assets/images/mrdem30_hypsometry.png) | [download_mrdem30…](file:///Users/machtl/Documents/Projects_Data/DEM/download_mrdem30_for_research_areas.ipynb) + explore DEM |
+| G7–G10 | Elevation correction Δz, corrected orography/bands, hypsometry compare | [hrdps_elevation_correction_delta.png](assets/images/hrdps_elevation_correction_delta.png) · [hrdps_corrected_orography.png](assets/images/hrdps_corrected_orography.png) · [hrdps_corrected_elevation_bands.png](assets/images/hrdps_corrected_elevation_bands.png) · [hypsometry_hrdps_mrdem30_corrected.png](assets/images/hypsometry_hrdps_mrdem30_corrected.png) | DEM notebooks |
+| G13–G14 | Lapse-rate TA/RH example (Whistler) | [lapse_rate_ta_whistler_example.png](assets/images/lapse_rate_ta_whistler_example.png) · [lapse_rate_rh_whistler_example.png](assets/images/lapse_rate_rh_whistler_example.png) | [Lapsrate_correction.ipynb](file:///Users/machtl/Documents/Projects_Data/DEM/Lapsrate_correction.ipynb) · [`grib2smet.py`](file:///Users/machtl/Documents/Projects_Data/DEM/grib2smet.py) |
+| G16–G18 | Hex domain three-zone, HRDPS-in-hex, Whistler per-hex hypsometry | [semidist_hex_three_zone.png](assets/images/semidist_hex_three_zone.png) · [semidist_hex_hrdps_points.png](assets/images/semidist_hex_hrdps_points.png) · [semidist_hex_hypsometry_whistler.png](assets/images/semidist_hex_hypsometry_whistler.png) | [Semi_distributed_initial_investigation.ipynb](file:///Users/machtl/Documents/Projects_Data/DEM/Semi_distributed_initial_investigation.ipynb) · also [HRDPS_hex_grid_to_SMET.ipynb](file:///Users/machtl/Documents/Projects_Data/DEM/HRDPS_hex_grid_to_SMET.ipynb) |
+| G20 | Single-point / 1-location anchors (Whistler) | [singlepoint_band_whistler.png](assets/images/singlepoint_band_whistler.png) | [Spatial_to_single_point.ipynb](file:///Users/machtl/Documents/Projects_Data/DEM/Spatial_to_single_point.ipynb) · [extract_single_point_HRDPS_to_SMET_elevation_corrected.ipynb](file:///Users/machtl/Documents/Projects_Data/DEM/extract_single_point_HRDPS_to_SMET_elevation_corrected.ipynb) |
 
 **Interpretation (Methods group A):** These establish *how* configs are built (orography, bands, hex aggregation, 1-location downscale). They support Methods and §4.1 setup — they do **not** replace Results CDFs/prevalence.
 
@@ -120,7 +120,7 @@ Catalogued in: [`spatial-config.md`](spatial-config.md)
 
 | Asset | Link |
 |-------|------|
-| Method map | [`singlepoint_band_whistler.png`](../assets/images/singlepoint_band_whistler.png) |
+| Method map | [`singlepoint_band_whistler.png`](assets/images/singlepoint_band_whistler.png) |
 | Spatial → single-point notebook | [`Spatial_to_single_point.ipynb`](file:///Users/machtl/Documents/Projects_Data/DEM/Spatial_to_single_point.ipynb) |
 | Extract 1-location HRDPS→SMET | [`extract_single_point_HRDPS_to_SMET_elevation_corrected.ipynb`](file:///Users/machtl/Documents/Projects_Data/DEM/extract_single_point_HRDPS_to_SMET_elevation_corrected.ipynb) |
 | Band-median SMETs (per op) | [`/Volumes/Machtl_1.1/SMET/band_medians/`](file:///Volumes/Machtl_1.1/SMET/band_medians/) (e.g. `whistler_combined/{BTL,TL,ALP}.smet`) |
@@ -172,17 +172,17 @@ Catalogued in: [`spatial-config.md`](spatial-config.md)
 
 ### A. Curated status-update / ISSW doc figures (best “paper-ready” set)
 
-Base: [`Documentation_ISSW/docs/assets/images/`](../assets/images/)  
+Base: [`Documentation_ISSW/docs/assets/images/`](assets/images/)  
 Narrated in: [`status-update-aug-6.md`](status-update-aug-6.md)
 
 | Set | Description | Example links | Approx. n |
 |-----|-------------|---------------|-----------|
-| Storm slab vs InfoEx | overview AM/PM, aspect detail, trend, confusion, ROC | [whistler/overview_ampm.png](../assets/images/results_storm_slab/whistler/overview_ampm.png) · folder [results_storm_slab/](../assets/images/results_storm_slab) | **40** |
-| Wind slab vs InfoEx | same structure | [results_wind_slab/](../assets/images/results_wind_slab) | **32** |
-| Wet problems vs InfoEx | overview-focused | [results_wet_problems/](../assets/images/results_wet_problems) | **8** |
-| Station galleries (overview / NAP / PAP / wind / wet) | per-op aspect panels | [avapro_whistler/](../assets/images/avapro_whistler) · [avapro_fidelity/](../assets/images/avapro_fidelity) · [avapro_bow_summit/](../assets/images/avapro_bow_summit) · [avapro_mwhs/](../assets/images/avapro_mwhs) | **~97** |
-| AvaPro v0 flowcharts | methods schematic | [avapro_v0_flowcharts/](../assets/images/avapro_v0_flowcharts) | **4** |
-| NWP PRO galleries | profile stacks | [nwp_pro_whistler_rendezvous/](../assets/images/nwp_pro_whistler_rendezvous) (+ bow/fidelity/mwhs) | **36** |
+| Storm slab vs InfoEx | overview AM/PM, aspect detail, trend, confusion, ROC | [whistler/overview_ampm.png](assets/images/results_storm_slab/whistler/overview_ampm.png) · folder [results_storm_slab/](assets/images/results_storm_slab) | **40** |
+| Wind slab vs InfoEx | same structure | [results_wind_slab/](assets/images/results_wind_slab) | **32** |
+| Wet problems vs InfoEx | overview-focused | [results_wet_problems/](assets/images/results_wet_problems) | **8** |
+| Station galleries (overview / NAP / PAP / wind / wet) | per-op aspect panels | [avapro_whistler/](assets/images/avapro_whistler) · [avapro_fidelity/](assets/images/avapro_fidelity) · [avapro_bow_summit/](assets/images/avapro_bow_summit) · [avapro_mwhs/](assets/images/avapro_mwhs) | **~97** |
+| AvaPro v0 flowcharts | methods schematic | [avapro_v0_flowcharts/](assets/images/avapro_v0_flowcharts) | **4** |
+| NWP PRO galleries | profile stacks | [nwp_pro_whistler_rendezvous/](assets/images/nwp_pro_whistler_rendezvous) (+ bow/fidelity/mwhs) | **36** |
 
 **Interpretation (curated P2 set):** Storm/wind packages are the strongest paper-ready evidence; wet/persistent need parity; galleries support Methods/supplement.
 
