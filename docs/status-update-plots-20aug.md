@@ -100,8 +100,7 @@ Offset of hex (min/max, median) and single-point relative to the grid mean (μ),
 
 Means over those days only. `mean_off_*` = config − grid mean (mm); `mean_rel_*` = (config − μ)/μ; `mean_rank_*` ≈ 50 if unbiased; `season_rel_*` from season sums; single-point is flat Config III.
 
-<details class="table-dropdown">
-<summary><strong>Whistler</strong> — click to expand</summary>
+**Whistler**
 
 | band | n_days | n_grid | n_hex | mean_off_hex_min | mean_off_hex_med | mean_off_hex_max | mean_off_sp | mean_rel_hex_med | mean_rel_sp | mean_rank_hex_med | mean_rank_sp | %days hex covers μ | Σ grid mean mm | Σ hex med mm | Σ SP mm | season_rel_hex_med | season_rel_sp |
 |------|--------|--------|-------|------------------|------------------|------------------|-------------|---------------|-------------|-------------|--------------|--------------------|----------------|--------------|---------|--------------------|---------------|
@@ -109,10 +108,7 @@ Means over those days only. `mean_off_*` = config − grid mean (mm); `mean_rel_
 | TL | 173 | 165 | 25 | −21.164 | −1.713 | 22.763 | −1.610 | −0.095 | −0.090 | 60.266 | 56.805 | 85.549 | 17016.298 | 16720.015 | 16737.85 | −0.017 | −0.016 |
 | BTL | 168 | 145 | 20 | 5.107 | 26.613 | 48.791 | 2.959 | 0.846 | −0.059 | 79.620 | 64.100 | 54.762 | 12161.496 | 16632.450 | 12658.55 | 0.368 | 0.041 |
 
-</details>
-
-<details class="table-dropdown">
-<summary><strong>Rogers / GNP</strong> — click to expand</summary>
+**Rogers / GNP**
 
 | band | n_days | n_grid | n_hex | mean_off_hex_min | mean_off_hex_med | mean_off_hex_max | mean_off_sp | mean_rel_hex_med | mean_rel_sp | mean_rank_hex_med | mean_rank_sp | %days hex covers μ | Σ grid mean mm | Σ hex med mm | Σ SP mm | season_rel_hex_med | season_rel_sp |
 |------|--------|--------|-------|------------------|------------------|------------------|-------------|---------------|-------------|-------------|--------------|--------------------|----------------|--------------|---------|--------------------|---------------|
@@ -120,10 +116,7 @@ Means over those days only. `mean_off_*` = config − grid mean (mm); `mean_rel_
 | TL | 177 | 200 | 10 | −49.821 | −41.124 | −32.426 | −8.555 | −0.666 | −0.169 | 37.062 | 51.356 | 15.254 | 11987.502 | 4708.595 | 10473.25 | −0.607 | −0.126 |
 | BTL | 172 | 380 | 10 | −17.301 | −5.533 | 6.235 | −20.461 | 0.288 | −0.449 | 57.421 | 47.945 | 47.674 | 10775.933 | 9824.230 | 7256.59 | −0.088 | −0.327 |
 
-</details>
-
-<details class="table-dropdown">
-<summary><strong>Banff</strong> — click to expand</summary>
+**Banff**
 
 | band | n_days | n_grid | n_hex | mean_off_hex_min | mean_off_hex_med | mean_off_hex_max | mean_off_sp | mean_rel_hex_med | mean_rel_sp | mean_rank_hex_med | mean_rank_sp | %days hex covers μ | Σ grid mean mm | Σ hex med mm | Σ SP mm | season_rel_hex_med | season_rel_sp |
 |------|--------|--------|-------|------------------|------------------|------------------|-------------|---------------|-------------|-------------|--------------|--------------------|----------------|--------------|---------|--------------------|---------------|
@@ -131,10 +124,7 @@ Means over those days only. `mean_off_*` = config − grid mean (mm); `mean_rel_
 | TL | 170 | 391 | 15 | −22.391 | −12.647 | 6.144 | −10.821 | −0.434 | −0.372 | 55.298 | 53.723 | 53.529 | 8650.472 | 6500.55 | 6810.86 | −0.249 | −0.213 |
 | BTL | 159 | 870 | 15 | −24.545 | −5.737 | 17.539 | −16.552 | −0.159 | −0.564 | 60.244 | 50.043 | 63.522 | 7038.274 | 6126.04 | 4406.55 | −0.130 | −0.374 |
 
-</details>
-
-<details class="table-dropdown">
-<summary><strong>MWHS</strong> — click to expand</summary>
+**MWHS**
 
 | band | n_days | n_grid | n_hex | mean_off_hex_min | mean_off_hex_med | mean_off_hex_max | mean_off_sp | mean_rel_hex_med | mean_rel_sp | mean_rank_hex_med | mean_rank_sp | %days hex covers μ | Σ grid mean mm | Σ hex med mm | Σ SP mm | season_rel_hex_med | season_rel_sp |
 |------|--------|--------|-------|------------------|------------------|------------------|-------------|---------------|-------------|-------------|--------------|--------------------|----------------|--------------|---------|--------------------|---------------|
@@ -142,7 +132,63 @@ Means over those days only. `mean_off_*` = config − grid mean (mm); `mean_rel_
 | TL | 192 | 445 | 20 | −53.278 | −41.827 | −25.428 | −12.554 | −0.671 | −0.305 | 33.316 | 48.408 | 17.708 | 14918.136 | 6887.320 | 12507.75 | −0.538 | −0.162 |
 | BTL | 187 | 1490 | 30 | −45.586 | −16.262 | 47.405 | −23.643 | −0.455 | −0.590 | 52.192 | 46.059 | 86.096 | 12061.894 | 9020.965 | 7640.65 | −0.252 | −0.367 |
 
-</details>
+#### Interpretation — season HN24 offsets
+
+Numbers below are from **HN24 days, all aspects** (the first execute block). Precip-day and flat-only tables are almost the same for HN24; that is discussed at the end. Offsets are millimetres of 24 h new snow versus the **spatial grid mean** μ in that elevation band. Negative = the reduced config snows less than the full grid.
+
+##### How to read one operation (Banff ALP as the example)
+
+Take Banff alpine, 196 HN24 days, 480 grid members, 15 hex members (3 hexes × 5 aspects):
+
+| Column | Banff ALP | Meaning |
+|--------|-----------|---------|
+| `mean_off_hex_med` / `mean_off_sp` | −25 mm / −8 mm | Average daily (config − μ). Hex median is 2.5 cm too dry per snow day; Config III is 0.8 cm too dry. |
+| `season_rel_hex_med` / `season_rel_sp` | −47% / −14% | $(\Sigma\mathrm{config} - \Sigma\mu)/\Sigma\mu$ over those days. This is the “did we get the winter right” number. Prefer it over `mean_rel_*`. |
+| `mean_rel_*` | −70% / −31% | Mean of $(\mathrm{config}-\mu)/\mu$ per day. It **over-weights tiny snow days**, so it looks worse than the season total. |
+| `mean_rank_*` | 47 / 55 | Percentile of the config in that day’s grid. 50 = a typical cell. Rank and millimetre offset **disagree when the field is right-skewed**: a few deep cells pull μ above the median, so a config can sit near the median cell (rank ~50) and still be dry vs the mean. |
+| `pct_days_hex_covers_mean` | 27% | Share of days where μ lies between hex min and hex max. Low = the hex set does not even bracket the grid, so it is not a conservative envelope. |
+
+The same Banff table by band: hex dry-bias **shrinks** downslope (ALP −47% → TL −25% → BTL −13%) while Config III **grows** downslope (ALP −14% → TL −22% → BTL −38%). Hex centroids miss the high/wet ALP terrain; the band-median single point is a decent ALP cell but a poor match to a BTL field that includes valley bottoms.
+
+##### Climate comparison
+
+Whistler is **maritime**, Rogers / Glacier **transitional**, Banff and MWHS **continental**. Season Σμ (ALP, HN24 days) already shows the gradient: Whistler 17.4 m, Rogers 17.1 m, MWHS 17.9 m, Banff 10.4 m. MWHS is a high, snowy continental range; Banff is the dry continental end-member.
+
+**Maritime — Whistler.** ALP/TL hex medians sit within 5 mm of μ (season −5% / −2%), the hex envelope contains μ on ~80% of days, and Config III is within ±3% of the season total. Rank ~56–60: slightly above the median cell, slightly below or near the mean — the usual right-skew. The failure mode is **BTL hex**: median +28 mm, season **+37%**, rank 78, envelope covers μ only 46%. With only four BTL hexes in a 145-cell band, those hexes sit on the snowy side; hex *min* is already +5 mm above μ, so the envelope cannot recover. Config III stays honest at BTL (+4%).
+
+**Transitional — Rogers.** Sharp wet-west / dry-east (and elevation) gradients. ALP/TL hex medians are −52 / −39 mm (season **−60% / −61%**). Hex *max* is still 43 mm below μ in ALP; the envelope contains μ on **4% / 8%** of days. Two ALP hexes are systematically the dry part of the grid. Config III recovers ALP (−7%) and TL (−13%) far better than hex, then fails at BTL (−33%) for the same valley-bottom reason as Banff.
+
+**Continental — Banff.** Lower totals, same qualitative pattern as Rogers but less extreme at ALP: hex season −47 / −25 / −13%; Config III −14 / −22 / −38%. Envelope coverage 27 / 44 / 49% — better than Rogers, still not an envelope at ALP (hex max −5 mm vs μ).
+
+**Continental — MWHS.** Snowier than Banff, hex dry-bias like Rogers: ALP/TL season −58% / −54%, rank 29 / 37, coverage 14 / 13%. BTL is mixed: median still −25% but coverage **75%** because six hexes in a 1490-cell band make a wide min–max even when the median is dry. Config III: −10 / −16 / −37%, the same elevation pattern as Banff and Rogers.
+
+##### What holds across climates
+
+1. **Config III beats hex for ALP season totals everywhere except Whistler**, where both are already close. Hex is not a safer substitute for the grid at Rogers or MWHS ALP — the whole hex range sits below μ.
+2. **Where the reduced config breaks depends on climate and elevation.** Maritime: hex BTL too *wet* (undersampled snowy hexes). Transitional/continental: hex ALP/TL too *dry* (centroids miss orographic maxima); Config III too *dry* at BTL (band median is not a valley).
+3. **Absolute millimetres vs relative error.** Whistler ALP hex −5 mm is −5% of a big winter. Banff ALP hex −25 mm is −47% of a smaller winter. Continental operations look worse in `season_rel_*` even when the millimetre offset is comparable to Rogers.
+4. **Rank is not a substitute for bias.** Rogers ALP hex rank 31 matches the dry bias. Banff ALP hex rank 47 looks almost unbiased while season_rel is −47% — use both.
+
+##### HN24 days vs precip days, and all aspects vs flat
+
+Precip-day tables change `n_days` by a few days and leave `season_rel_*` essentially unchanged: winter ΣHN24 is dominated by days that both precipitate and produce new snow. Flat-only vs F+4 also barely moves HN24 (Banff ALP hex season_rel −47.4% both ways). New snow is precip-driven; aspect mainly changes energy, not HN24. Use the HN24-day, all-aspect block as the paper numbers unless you are explicitly discussing rain vs snow or aspect.
+
+**Cross-climate summary** (HN24 days). `season_rel_*` is $(\Sigma\mathrm{config} - \Sigma\mu)/\Sigma\mu$; `mean_off_*` is mm/day; rank 50 = typical grid cell. Full frame: `season_compare(days, aspects)`.
+
+| label | climate | band | n_days | n_grid | n_hex | mean_off_hex_med | mean_off_sp | season_rel_hex_med | season_rel_sp | mean_rank_hex_med | mean_rank_sp | %days hex covers μ | Σ grid mean mm |
+|-------|---------|------|--------|--------|-------|------------------|-------------|--------------------|---------------|-------------------|--------------|--------------------|----------------|
+| Whistler | maritime | ALP | 176 | 225 | 25 | −4.882 | 2.945 | −0.049 | 0.030 | 55.634 | 59.951 | 81.250 | 17412.188 |
+| Whistler | maritime | TL | 166 | 165 | 25 | −1.879 | −1.771 | −0.018 | −0.017 | 58.205 | 54.598 | 79.518 | 17031.917 |
+| Whistler | maritime | BTL | 160 | 145 | 20 | 27.799 | 2.962 | 0.365 | 0.039 | 78.017 | 61.703 | 46.250 | 12184.689 |
+| Rogers / GNP | transitional | ALP | 197 | 230 | 10 | −52.103 | −6.072 | −0.599 | −0.070 | 30.952 | 53.098 | 4.061 | 17125.795 |
+| Rogers / GNP | transitional | TL | 185 | 200 | 10 | −39.488 | −8.328 | −0.608 | −0.128 | 39.162 | 52.838 | 8.108 | 12013.891 |
+| Rogers / GNP | transitional | BTL | 174 | 380 | 10 | −5.426 | −20.435 | −0.087 | −0.329 | 57.016 | 47.649 | 38.506 | 10812.298 |
+| Banff | continental | ALP | 196 | 480 | 15 | −25.219 | −7.691 | −0.474 | −0.145 | 47.487 | 55.422 | 27.041 | 10431.951 |
+| Banff | continental | TL | 179 | 390 | 15 | −12.245 | −10.511 | −0.252 | −0.216 | 56.559 | 55.063 | 43.575 | 8692.381 |
+| Banff | continental | BTL | 178 | 870 | 15 | −5.226 | −15.003 | −0.131 | −0.377 | 63.596 | 54.481 | 48.876 | 7077.057 |
+| MWHS | continental | ALP | 207 | 270 | 15 | −50.319 | −8.814 | −0.580 | −0.102 | 28.757 | 49.618 | 14.010 | 17947.359 |
+| MWHS | continental | TL | 206 | 445 | 20 | −39.105 | −11.821 | −0.539 | −0.163 | 37.335 | 51.402 | 13.107 | 14942.854 |
+| MWHS | continental | BTL | 199 | 1490 | 30 | −15.374 | −22.310 | −0.253 | −0.368 | 54.679 | 48.917 | 75.377 | 12080.432 |
 
 ### 2.2 Season overview — flat only
 
@@ -256,9 +302,71 @@ Same season window and HN24 > 0 day filter, but **flat aspect only**.
 
 </details>
 
-### 2.3 Detail period
+### 2.3 Low / avg / high precip days
 
-Candidate window **17–31 Dec 2025**: daily 00:00 grid violin + hex beeswarm + median HRDPS (PSUM 24h).
+HN24 offsets split by local precip terciles (aspects=all): season relative error \((\Sigma\text{config} - \Sigma\mu)/\Sigma\mu\) and mean daily offset (config − grid mean, mm).
+
+<div class="pro-evo-grid">
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/precip_tercile_season_rel.png" class="glightbox image-zoom" data-gallery="status-precip-tercile" data-type="image" data-title="HN24 season relative offset by precip tercile · aspects=all · (Σconfig − Σμ) / Σμ">
+      <img src="../assets/images/paper_config/precip_tercile_season_rel.png" alt="HN24 season relative offset by precip tercile" />
+    </a>
+    <span class="pro-evo-grid__label">Season rel %</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/precip_tercile_mean_off.png" class="glightbox image-zoom" data-gallery="status-precip-tercile" data-type="image" data-title="HN24 mean daily offset by precip tercile · aspects=all · config – grid mean (mm)">
+      <img src="../assets/images/paper_config/precip_tercile_mean_off.png" alt="HN24 mean daily offset by precip tercile" />
+    </a>
+    <span class="pro-evo-grid__label">Mean daily offset mm</span>
+  </div>
+</div>
+
+<p class="fig-caption"><strong>Figure 5.</strong> HN24 by precip tercile (low / avg / high) — season relative offset and mean daily offset vs grid mean, aspects=all. Click a miniature to maximize.</p>
+
+#### Interpretation by operation and band
+
+Terciles are local. A Banff “high” ALP day is ≥ ~6 mm grid-mean precip; a Whistler “high” ALP day is ≥ ~14 mm. Millimetre offsets (`mean_off_*`) show where the winter is won or lost; `season_rel_*` on low days is noisy because μ is small.
+
+**Whistler (maritime)**
+
+- **Alpine.** Hex is a few millimetres dry in every tercile. Relative error collapses on the days that matter: −38% on low days (tiny totals) → −9% average → **−2% on high days** (Σμ ≈ 13 m of the 17 m winter). Config III turns **wet** on high days (+6%, +13 mm/day). Hex envelope coverage rises from 73% to 95% as storms get bigger — maritime ALP hexes sample the same storms as the grid.
+- **Treeline.** Same pattern, even closer: hex high-day season rel −0.6%. Config III is slightly dry on average days (−8%) and near zero on high days (+1%).
+- **Below treeline.** The season-level +37% hex wet bias is a **high-precip** problem: +64 mm/day and **+41%** of those days’ ΣHN24, and the envelope contains μ on only 32% of high days. Low days are almost unbiased (+4%). Four BTL hexes sit on the snowy side of the band, and that mismatch is expressed when it snows hard. Config III stays within +9% on high BTL days.
+
+**Rogers / GNP (transitional)**
+
+- **Alpine.** Hex millimetre bias scales with the storm: −8 / −43 / **−117 mm/day**. Relative error stays brutal (−75 / −70 / −56%). On high days the hex *max* never reaches μ (coverage **0%**). Two ALP hexes are the dry side of a sharp orographic gradient, and storms make that worse in millimetres. Config III is the opposite: relative error is small on high days (**−5%**) — the band-median cell is a decent ALP storm sampler.
+- **Treeline.** Hex ~−60% in every tercile (−92 mm/day on high). Config III improves toward high days (−30% → −10%).
+- **Below treeline.** Hex is only mildly dry (−6% high). Config III is the failure mode: **−53% / −37% / −30%**, and −43 mm/day on high BTL days. Valley bottoms in the grid have no analogue in the band-median point.
+
+**Banff (continental)**
+
+Cuts are lower (ALP 1.2 / 6.1 mm). High-day Σ still dominates the winter (ALP 8.1 of 10.4 m).
+
+- **Alpine.** Hex relative error looks worst on low days (−88%) because μ is tiny; high days are −45% and **−59 mm/day**, coverage 21%. Config III high days are only **−9%** — same “good ALP storm cell” as Rogers.
+- **Treeline.** Hex −71% → −23% from low to high; Config III −51% → −16%. Both improve relatively as precip increases; hex remains the drier of the two on high days (−26 vs −19 mm).
+- **Below treeline.** Hex almost recovers on storms (−9% high). Config III does not (−32%, −32 mm/day). Continental BTL is where a single band-median point cannot represent a field that includes valley rain/snow shadows.
+
+**MWHS (continental, snowier)**
+
+Cuts resemble Rogers (ALP 3.2 / 11.5 mm), totals resemble Whistler.
+
+- **Alpine.** Hex −12 / −47 / **−104 mm/day** (−89 / −70 / −52%). Coverage falls to 9% on high days. Config III high days **−6%**. Same transitional/continental ALP story: hex centroids miss the wet high terrain when it actually precipitates.
+- **Treeline.** Hex −78 / −65 / −49%; Config III high −11%.
+- **Below treeline.** Hex envelope is wide (coverage 73 → 95%) so it *contains* μ even while the median stays dry (−22% high, −30 mm/day). Config III is worse on every tercile at BTL (−77 / −47 / −30%, −42 mm/day on high).
+
+#### What the split changes in the paper story
+
+1. **Hex millimetre errors live on high precip days** — the third of days that hold most of ΣHN24. Reporting only a season mean hides that Rogers/MWHS ALP hex is ~10 cm/day too dry in storms.
+2. **Config III relative error lives on low days and at BTL.** On high ALP days it is within ~5–10% of the grid in every climate. It is the wrong tool for light days and for valley BTL.
+3. **Whistler BTL hex wet bias is not a drizzle artefact** — it is +64 mm/day on the high tercile.
+4. Do not compare “high” millimetres across climates without the cuts. Banff high ≈ Whistler average.
+
+### 2.4 Detailed period
+
+Candidate window **17–31 Dec 2025**: daily grid violin + hex beeswarm + median HRDPS.
+
+**PSUM 24h**
 
 <div class="pro-evo-grid pro-evo-grid--2x2">
   <div class="pro-evo-grid__item">
@@ -287,7 +395,7 @@ Candidate window **17–31 Dec 2025**: daily 00:00 grid violin + hex beeswarm + 
   </div>
 </div>
 
-<p class="fig-caption"><strong>Figure 5.</strong> Detail period — PSUM 24h daily grid violin + hex beeswarm + median HRDPS (17–31 Dec 2025). Click a miniature to maximize.</p>
+<p class="fig-caption"><strong>Figure 6.</strong> Detailed period — PSUM 24h daily grid violin + hex beeswarm + median HRDPS (17–31 Dec 2025). Click a miniature to maximize.</p>
 
 **PSUM 24h** (Whistler, 17–31 Dec 2025)
 
@@ -336,3 +444,134 @@ Candidate window **17–31 Dec 2025**: daily 00:00 grid violin + hex beeswarm + 
 | ALP | 55 | 3 | 15 | 12.182 | −0.741 | −5.197 | 47.273 | 26.182 | 50.182 | 86.667 | 100.0 | 26.667 | 26.788 | 0.574 |
 | TL | 89 | 4 | 15 | 10.215 | −0.993 | −3.586 | 39.326 | 22.697 | 48.315 | 86.667 | 100.0 | 40.000 | 26.891 | 0.365 |
 | BTL | 585 | 6 | 15 | 7.845 | −1.096 | 0.187 | 38.803 | 26.427 | 48.752 | 86.667 | 100.0 | 73.333 | 64.615 | 0.924 |
+
+**PSUM 24h — rank / offset / hex coverage**
+
+<div class="pro-evo-grid pro-evo-grid--2x2">
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/precip_detail_psum_rank_whistler.png" class="glightbox image-zoom" data-gallery="status-precip-detail-psum-rank" data-type="image" data-title="Whistler · PSUM_24h · rank | offset vs grid mean | hex coverage · 2025-12-17 → 2025-12-31">
+      <img src="../assets/images/paper_config/precip_detail_psum_rank_whistler.png" alt="Whistler PSUM 24h rank offset hex coverage" />
+    </a>
+    <span class="pro-evo-grid__label">Whistler</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/precip_detail_psum_rank_rogers.png" class="glightbox image-zoom" data-gallery="status-precip-detail-psum-rank" data-type="image" data-title="Rogers / GNP · PSUM_24h · rank | offset vs grid mean | hex coverage · 2025-12-17 → 2025-12-31">
+      <img src="../assets/images/paper_config/precip_detail_psum_rank_rogers.png" alt="Rogers GNP PSUM 24h rank offset hex coverage" />
+    </a>
+    <span class="pro-evo-grid__label">Rogers / GNP</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/precip_detail_psum_rank_banff.png" class="glightbox image-zoom" data-gallery="status-precip-detail-psum-rank" data-type="image" data-title="Banff · PSUM_24h · rank | offset vs grid mean | hex coverage · 2025-12-17 → 2025-12-31">
+      <img src="../assets/images/paper_config/precip_detail_psum_rank_banff.png" alt="Banff PSUM 24h rank offset hex coverage" />
+    </a>
+    <span class="pro-evo-grid__label">Banff</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/precip_detail_psum_rank_mwhs.png" class="glightbox image-zoom" data-gallery="status-precip-detail-psum-rank" data-type="image" data-title="MWHS · PSUM_24h · rank | offset vs grid mean | hex coverage · 2025-12-17 → 2025-12-31">
+      <img src="../assets/images/paper_config/precip_detail_psum_rank_mwhs.png" alt="MWHS PSUM 24h rank offset hex coverage" />
+    </a>
+    <span class="pro-evo-grid__label">MWHS</span>
+  </div>
+</div>
+
+<p class="fig-caption"><strong>Figure 7.</strong> Detailed period — PSUM 24h daily rank, offset vs grid mean, and hex coverage (17–31 Dec 2025). Click a miniature to maximize.</p>
+
+**PSUM 24h — pooled ECDF**
+
+<div class="pro-evo-grid">
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/precip_detail_psum_ecdf_whistler.png" class="glightbox image-zoom" data-gallery="status-precip-detail-psum-ecdf" data-type="image" data-title="Whistler · PSUM_24h · pooled ECDF over 2025-12-17 → 2025-12-31 (cell-days)">
+      <img src="../assets/images/paper_config/precip_detail_psum_ecdf_whistler.png" alt="Whistler PSUM 24h pooled ECDF" />
+    </a>
+    <span class="pro-evo-grid__label">Whistler</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/precip_detail_psum_ecdf_rogers.png" class="glightbox image-zoom" data-gallery="status-precip-detail-psum-ecdf" data-type="image" data-title="Rogers / GNP · PSUM_24h · pooled ECDF over 2025-12-17 → 2025-12-31 (cell-days)">
+      <img src="../assets/images/paper_config/precip_detail_psum_ecdf_rogers.png" alt="Rogers GNP PSUM 24h pooled ECDF" />
+    </a>
+    <span class="pro-evo-grid__label">Rogers / GNP</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/precip_detail_psum_ecdf_banff.png" class="glightbox image-zoom" data-gallery="status-precip-detail-psum-ecdf" data-type="image" data-title="Banff · PSUM_24h · pooled ECDF over 2025-12-17 → 2025-12-31 (cell-days)">
+      <img src="../assets/images/paper_config/precip_detail_psum_ecdf_banff.png" alt="Banff PSUM 24h pooled ECDF" />
+    </a>
+    <span class="pro-evo-grid__label">Banff</span>
+  </div>
+</div>
+
+<p class="fig-caption"><strong>Figure 8.</strong> Detailed period — PSUM 24h pooled ECDF (grid vs hex vs single-point cell-days), 17–31 Dec 2025. MWHS ECDF not included yet. Click a miniature to maximize.</p>
+
+**HN24**
+
+<div class="pro-evo-grid pro-evo-grid--2x2">
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/precip_detail_hn24_whistler.png" class="glightbox image-zoom" data-gallery="status-precip-detail-hn24" data-type="image" data-title="Whistler · HN24 · daily grid violins + hex beeswarm + median HRDPS · 2025-12-17 → 2025-12-31">
+      <img src="../assets/images/paper_config/precip_detail_hn24_whistler.png" alt="Whistler HN24 detail period violin and hex beeswarm" />
+    </a>
+    <span class="pro-evo-grid__label">Whistler</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/precip_detail_hn24_rogers.png" class="glightbox image-zoom" data-gallery="status-precip-detail-hn24" data-type="image" data-title="Rogers / GNP · HN24 · daily grid violins + hex beeswarm + median HRDPS · 2025-12-17 → 2025-12-31">
+      <img src="../assets/images/paper_config/precip_detail_hn24_rogers.png" alt="Rogers GNP HN24 detail period violin and hex beeswarm" />
+    </a>
+    <span class="pro-evo-grid__label">Rogers / GNP</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/precip_detail_hn24_banff.png" class="glightbox image-zoom" data-gallery="status-precip-detail-hn24" data-type="image" data-title="Banff · HN24 · daily grid violins + hex beeswarm + median HRDPS · 2025-12-17 → 2025-12-31">
+      <img src="../assets/images/paper_config/precip_detail_hn24_banff.png" alt="Banff HN24 detail period violin and hex beeswarm" />
+    </a>
+    <span class="pro-evo-grid__label">Banff</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/precip_detail_hn24_mwhs.png" class="glightbox image-zoom" data-gallery="status-precip-detail-hn24" data-type="image" data-title="MWHS · HN24 · daily grid violins + hex beeswarm + median HRDPS · 2025-12-17 → 2025-12-31">
+      <img src="../assets/images/paper_config/precip_detail_hn24_mwhs.png" alt="MWHS HN24 detail period violin and hex beeswarm" />
+    </a>
+    <span class="pro-evo-grid__label">MWHS</span>
+  </div>
+</div>
+
+<p class="fig-caption"><strong>Figure 9.</strong> Detailed period — HN24 daily grid violin + hex beeswarm + median HRDPS (17–31 Dec 2025). Click a miniature to maximize.</p>
+
+#### Interpretation — Dec storm window (17–31 Dec 2025)
+
+**Whistler (maritime)**
+
+This storm is wet: ALP Σμ ≈ 2.2 m of HN24 in two weeks.
+
+- **Alpine.** Hex −4% / −6 mm/day; Config III −3%. Rank ~60, hex brackets μ on 87% of days, r = 0.99. Both reduced configs track the grid.
+- **Treeline.** Hex −7%, Config III −6%. Still close.
+- **Below treeline.** Hex HN24 −6%; Config III −12%. Hex precip is almost unbiased (−2% PSUM) while Config III precip is −10% — the band-median point is a poorer BTL sampler. Hex coverage drops to 60%.
+- This storm does **not** reproduce the season-level BTL hex wet bias (+37%). Here hex is slightly dry. One maritime cyclone is not the winter.
+
+**Rogers / GNP (transitional)**
+
+ALP Σμ is also ~2.2 m — as snowy as Whistler aloft, but the hexes miss it.
+
+- **Alpine.** Hex −52% HN24 (−77 mm/day, snow-day MAE 95 mm), rank 21, brackets μ on 7% of days. PSUM hex −58%, coverage 0%. Two ALP hexes are the dry side of the wet-west / dry-east gradient, and this storm makes that obvious in millimetres. Config III is −7% HN24 and PSUM, rank 50 — a single well-chosen ALP cell beats two badly placed hexes.
+- **Treeline.** Hex −31%, Config III −8%. Same pattern, milder.
+- **Below treeline.** Hex and Config III both −22% HN24. The band-median point has no valley analogue; the two BTL hexes are not enough either.
+
+**Banff (continental)**
+
+Drier storm: ALP Σμ 1.4 m (about 2/3 of Whistler/Rogers).
+
+- **Alpine.** Hex −38% (−36 mm/day), rank 29, coverage 27%. Config III −11%. PSUM matches HN24, so again it is sampling, not microphysics.
+- **Treeline.** Hex −14%, Config III −15% — about the same.
+- **Below treeline.** Hex −13% (coverage 60%); Config III −26%. Hex is the better BTL reduced config in this storm; Config III gets worse downslope, as in the season.
+
+**MWHS (continental, snowier)**
+
+ALP Σμ 1.9 m — continental totals, Rogers-like hex errors.
+
+- **Alpine.** Hex −38% (−49 mm/day), rank 23, coverage 20%. Config III −10%.
+- **Treeline.** Hex −38%, Config III −12%.
+- **Below treeline.** Hex −12% but coverage 93% (six hexes → a wide min–max that contains μ even when the median is dry). Config III −29%. Same split as Banff: hex fails ALP, Config III fails BTL.
+
+##### Comparison across climates
+
+1. **Maritime vs the interior.** Whistler ALP/TL stay within ~7% of the grid. Rogers, Banff, and MWHS ALP hexes lose 38–52% of storm HN24. The reduced-config problem in this window is orographic sampling, not a maritime rain/snow issue.
+2. **Config III vs hex at ALP.** Config III is within 7–11% of ALP ΣHN24 in every climate. Hex is only competitive at Whistler. At Rogers the whole hex range sits below μ.
+3. **Where each config breaks.** Hex millimetre error is an ALP (and Rogers TL) storm problem. Config III error grows downslope (Whistler BTL −12%, Banff −26%, MWHS −29%, Rogers −22%). That is the band-median vs valley-bottom mismatch.
+4. **PSUM vs HN24.** Rogers/Banff/MWHS ALP hex dryness shows up in PSUM at about the same relative size → blame hex placement in the HRDPS field. Whistler BTL is the exception: hex precip is fine, Config III precip is not.
+5. **Season vs this storm.** Same climate ranking (Whistler OK; interior ALP hex too dry; Config III too dry at BTL). Magnitudes differ: this is one wet sequence, and Whistler BTL even flips sign vs the winter hex wet bias. Use the season terciles for climate; use this window as the worked storm example.
+
