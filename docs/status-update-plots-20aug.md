@@ -575,3 +575,118 @@ ALP Σμ 1.9 m — continental totals, Rogers-like hex errors.
 4. **PSUM vs HN24.** Rogers/Banff/MWHS ALP hex dryness shows up in PSUM at about the same relative size → blame hex placement in the HRDPS field. Whistler BTL is the exception: hex precip is fine, Config III precip is not.
 5. **Season vs this storm.** Same climate ranking (Whistler OK; interior ALP hex too dry; Config III too dry at BTL). Magnitudes differ: this is one wet sequence, and Whistler BTL even flips sign vs the winter hex wet bias. Use the season terciles for climate; use this window as the worked storm example.
 
+## 3. AvAPro
+
+<div class="note-box">
+<p class="note-box__title">AvAPro analysis</p>
+<div class="note-box__body">
+<a href="file:///Users/machtl/Documents/docker_fun/docs/notebooks/AvAPro_analysis.ipynb">/Users/machtl/Documents/docker_fun/docs/notebooks/AvAPro_analysis.ipynb</a>
+</div>
+</div>
+
+Problem prevalence (fraction of profiles) for storm, wind, persistent, deep persistent, and wet — grid vs hex vs median HRDPS, **20–23 Dec 2025 18Z**.
+
+<div class="pro-evo-grid">
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/avapro_prevalence_all_aspects.png" class="glightbox image-zoom" data-gallery="status-avapro-prevalence" data-type="image" data-title="AvAPro prevalence · grid vs hex vs median HRDPS · all aspects · fraction of profiles · 2025-12-20 → 2025-12-23 18Z">
+      <img src="../assets/images/paper_config/avapro_prevalence_all_aspects.png" alt="AvAPro prevalence all aspects grid vs hex vs median HRDPS" />
+    </a>
+    <span class="pro-evo-grid__label">All aspects</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/avapro_prevalence_flat.png" class="glightbox image-zoom" data-gallery="status-avapro-prevalence" data-type="image" data-title="AvAPro prevalence · grid vs hex vs median HRDPS · flat (F) only · fraction of profiles · 2025-12-20 → 2025-12-23 18Z">
+      <img src="../assets/images/paper_config/avapro_prevalence_flat.png" alt="AvAPro prevalence flat aspect grid vs hex vs median HRDPS" />
+    </a>
+    <span class="pro-evo-grid__label">Flat only</span>
+  </div>
+</div>
+
+<p class="fig-caption"><strong>Figure 10.</strong> AvAPro prevalence — grid vs hex vs median HRDPS by operation and elevation band (20–23 Dec 2025 18Z): all aspects and flat only. Click a miniature to maximize.</p>
+
+#### Interpretation
+
+The bars are the fraction of **profiles** (cell × aspect) that flagged each problem over **20–23 Dec 18Z**. Grid is the spatial truth for that window; hex and Config III (median HRDPS) are small samples of the same domain. Hex bias is **not one-sided** — it over-flags in some climates and under-flags in others.
+
+**How to read Config III.** Each median bar is only ~20 profiles per band (3 stations × 5 aspects × 4 days). It is often 0 or 1, not a spatial prevalence. Treat it as “did the band-median profile fire?” not “how much of the forecast area had the problem.”
+
+**Whistler (maritime).** Full grid has a clear elevation drop: ALP storm / wind / deep persistent ≈ 0.42 / 0.56 / 0.59, TL similar, **BTL much quieter** (0.13 / 0.08 / 0.17). Hex saturates every band (storm ~0.8–0.9, deep persistent **1.0**, any-problem **1.0**), including BTL. Config III matches that over-flag at ALP/TL (all 1.0) and still keeps BTL storm/deep persistent high, though it drops BTL wind to 0 — the one place it agrees with the quiet grid BTL. Hex/Config III look like “the Coast is always a problem”; the grid says that is only true for a subset of ALP/TL cells.
+
+That fits the precip result: Whistler hex BTL was the wet outlier. The hexes sit in the snowy part of the maritime domain, so AvAPro never sees the quiet BTL majority.
+
+**Rogers / GNP (transitional).** Opposite error. Grid ALP is almost always flagged (storm 0.79, wind 0.83, deep persistent 0.91); TL/BTL stay high on deep persistent (~0.8) with less storm/wind. Hex ALP has **storm = 0, wind = 0, deep persistent only 0.45**; hex TL is nearly empty. Config III ALP saturates like the grid (1/1/1); Config III TL is “deep persistent only.” Hex misses the orographic ALP maximum that the full grid (and even the single median ALP profile) still sees — same pattern as hex ALP HN24 ~−60%.
+
+**MWHS (snowy continental).** Same ALP miss as Rogers: grid ALP wind 0.93 and deep persistent 1.0 vs hex ALP **0 / 0 / 0.47**. Config III ALP tracks the grid (0.75 / 1.0 / 1.0). Lower down, hex TL keeps deep persistent (~0.84 vs grid 0.94) but drops wind to 0 (grid 0.55) and invents extra persistent (0.32 vs 0.04). Hex BTL is closer on storm, under on wind and deep persistent, and is the only place **wet** shows up (~0.17). Config III again follows grid ALP and then collapses wind at TL/BTL.
+
+**Banff (continental).** Grid is the quiet domain: ALP any-problem only 0.17; storm ~0.02 everywhere; wind peaks at TL (0.32); deep persistent 0.10–0.22. Hex and Config III **manufacture a windy, persistent Banff**: hex TL wind = 1.0 and persistent ~0.57; hex ALP persistent 0.37 vs grid 0.02; Config III ALP/TL wind = 1.0 and deep persistent 0.50–0.60. Storm stays near 0 on all three — everyone agrees there was little new snow — but the sparse configs turn a mostly-no-problem grid into a persistent/wind-slab forecast.
+
+##### What the three settings actually do
+
+1. **Full grid** keeps the elevation structure: storm and wind decrease ALP → BTL; deep persistent stays high into BTL at Rogers and MWHS, not at Whistler or Banff.
+2. **Hex** often **erases that structure**. Whistler hex BTL looks alpine; Rogers/MWHS hex ALP looks empty. With only 2–7 hexes per op, one misplaced ALP hex is enough to flip the bar.
+3. **Config III** is not a middle ground. At **ALP** it tracks the **grid** at Rogers/MWHS (saturated) and the **hex** at Whistler/Banff (over-flag). It cannot represent partial coverage: if the median profile fires, the bar is ~1 even when the grid is 0.2.
+
+##### Cross-climate takeaway
+
+Coarsening is not conservatively high or low. Hex/Config III **over-represent** problems in maritime Whistler and dry Banff, and **under-represent** them at ALP in the orographic interiors (Rogers, MWHS). Persistent and wet are rare on the grid in this window; hex Banff persistent and hex MWHS wet are sampling artifacts, not a second problem type the grid missed. For the paper: AvAPro prevalence is sensitive to *where* the reduced grid sits, not just to how many cells you keep.
+
+## 4. QMAH stability comp
+
+<div class="note-box">
+<p class="note-box__title">Stability analysis QMAH</p>
+<div class="note-box__body">
+<a href="file:///Users/machtl/Documents/docker_fun/docs/notebooks/Stability_analysis_QMAH.ipynb">/Users/machtl/Documents/docker_fun/docs/notebooks/Stability_analysis_QMAH.ipynb</a>
+</div>
+</div>
+
+QMAH GeoJSON, daily **18:00 UTC**, **all aspects**. Whistler window: **20–23 Dec 2025**. Grid violin + hex beeswarm (W2–W6) + median HRDPS (Config III). Slab height is the QMAH critical-layer `depth` (cm); SK38 / Punstable / CCL can pick different layers.
+
+### 4.1 Whistler — SK38, Punstable, CCL
+
+<div class="pro-evo-grid">
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/qmah_whistler_sk38.png" class="glightbox image-zoom" data-gallery="status-qmah-whistler" data-type="image" data-title="Whistler · SK38 · daily 18Z all aspects · grid violin + hex beeswarm + median HRDPS · 2025-12-20 → 2025-12-23">
+      <img src="../assets/images/paper_config/qmah_whistler_sk38.png" alt="Whistler SK38 grid violin vs hex beeswarm and median HRDPS" />
+    </a>
+    <span class="pro-evo-grid__label">SK38</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/qmah_whistler_punstable.png" class="glightbox image-zoom" data-gallery="status-qmah-whistler" data-type="image" data-title="Whistler · P unstable · daily 18Z all aspects · grid violin + hex beeswarm + median HRDPS · 2025-12-20 → 2025-12-23">
+      <img src="../assets/images/paper_config/qmah_whistler_punstable.png" alt="Whistler Punstable grid violin vs hex beeswarm and median HRDPS" />
+    </a>
+    <span class="pro-evo-grid__label">P unstable</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/qmah_whistler_ccl.png" class="glightbox image-zoom" data-gallery="status-qmah-whistler" data-type="image" data-title="Whistler · Critical cut length (m) · daily 18Z all aspects · grid violin + hex beeswarm + median HRDPS · 2025-12-20 → 2025-12-23">
+      <img src="../assets/images/paper_config/qmah_whistler_ccl.png" alt="Whistler CCL grid violin vs hex beeswarm and median HRDPS" />
+    </a>
+    <span class="pro-evo-grid__label">Critical cut length</span>
+  </div>
+</div>
+
+<p class="fig-caption"><strong>Figure 11.</strong> Whistler QMAH — SK38, Punstable, and critical cut length: daily 18Z grid violins vs hex beeswarm and median HRDPS by elevation band (20–23 Dec 2025, all aspects). Click a miniature to maximize.</p>
+
+### 4.2 Whistler — slab height (critical-layer depth)
+
+<div class="pro-evo-grid">
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/qmah_whistler_sk38_slab.png" class="glightbox image-zoom" data-gallery="status-qmah-whistler-slab" data-type="image" data-title="Whistler · Slab height · SK38 layer (cm) · daily 18Z all aspects · grid violin + hex beeswarm + median HRDPS · 2025-12-20 → 2025-12-23">
+      <img src="../assets/images/paper_config/qmah_whistler_sk38_slab.png" alt="Whistler SK38 slab height grid violin vs hex and median HRDPS" />
+    </a>
+    <span class="pro-evo-grid__label">SK38 slab</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/qmah_whistler_pu_slab.png" class="glightbox image-zoom" data-gallery="status-qmah-whistler-slab" data-type="image" data-title="Whistler · Slab height · Punstable layer (cm) · daily 18Z all aspects · grid violin + hex beeswarm + median HRDPS · 2025-12-20 → 2025-12-23">
+      <img src="../assets/images/paper_config/qmah_whistler_pu_slab.png" alt="Whistler Punstable slab height grid violin vs hex and median HRDPS" />
+    </a>
+    <span class="pro-evo-grid__label">Punstable slab</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/paper_config/qmah_whistler_ccl_slab.png" class="glightbox image-zoom" data-gallery="status-qmah-whistler-slab" data-type="image" data-title="Whistler · Slab height · CCL layer (cm) · daily 18Z all aspects · grid violin + hex beeswarm + median HRDPS · 2025-12-20 → 2025-12-23">
+      <img src="../assets/images/paper_config/qmah_whistler_ccl_slab.png" alt="Whistler CCL slab height grid violin vs hex and median HRDPS" />
+    </a>
+    <span class="pro-evo-grid__label">CCL slab</span>
+  </div>
+</div>
+
+<p class="fig-caption"><strong>Figure 12.</strong> Whistler QMAH — slab height (critical-layer depth, cm) for the SK38, Punstable, and CCL layers: daily 18Z grid violins vs hex beeswarm and median HRDPS by elevation band (20–23 Dec 2025, all aspects). Click a miniature to maximize.</p>
+
