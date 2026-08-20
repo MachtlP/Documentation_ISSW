@@ -1,4 +1,4 @@
-# SNOWPACK
+# VI. SNOWPACK
 
 <p class="section-updated">Last updated: 19 Jul 2026</p>
 

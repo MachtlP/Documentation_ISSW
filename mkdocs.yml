@@ -27,13 +27,14 @@ hooks:
   - hooks/changelog.py
 
 nav:
-  - Home: index.md
-  - Figures Plan: paper-figures-plan.md
-  - Status Update Aug 6: status-update-aug-6.md
-  - AvaPro v1: avapro/v1.md
-  - AvaPro v2: avapro/v2.md
-  - Avapro Point Location: avapro/index.md
-  - Spatial Config: spatial-config.md
-  - HRDPS: hrdps.md
-  - SNOWPACK: snowpack.md
-  - Info Ex: info-ex.md
+  - I. Home: index.md
+  - II. Spatial Config: spatial-config.md
+  - III. HRDPS: hrdps.md
+  - IV. Info Ex: info-ex.md
+  - V. Avapro Point Location: avapro/index.md
+  - VI. SNOWPACK: snowpack.md
+  - VII. AvaPro v1: avapro/v1.md
+  - VIII. AvaPro v2: avapro/v2.md
+  - IX. Status Update Aug 6: status-update-aug-6.md
+  - X. Figures Plan: paper-figures-plan.md
+  - XI. Plots for Paper Config: plots-for-paper-config.md

@@ -1,4 +1,4 @@
-# Spatial Config
+# II. Spatial Config
 
 <p class="section-updated">Last updated: 15 Jul 2026</p>
 
