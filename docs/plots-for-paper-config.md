@@ -269,6 +269,8 @@ Full HRDPS-grid forcing for the candidate window (17–31 Dec 2025): TA spaghett
 
 ## 4. Precip distribution comparison
 
+Season-scale hex vs grid HN24: **[II. Spatial Config › Full Grid to Hex Precip Deep Dive](spatial-config.md#3-full-grid-to-hex-precip-deep-dive)**.
+
 Side-by-side comparison of single-point, hex (min/median/max), and full-grid distributions for the candidate window. Click any panel to maximize.
 
 ### 4.1 Whistler

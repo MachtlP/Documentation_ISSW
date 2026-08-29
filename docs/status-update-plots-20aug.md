@@ -17,6 +17,8 @@ That page collects exploratory plots for how InfoEx / AvCan danger and avalanche
 
 ## 2. Precip
 
+Full-grid vs hex HN24: **[II. Spatial Config › Full Grid to Hex Precip Deep Dive](spatial-config.md#3-full-grid-to-hex-precip-deep-dive)**.
+
 <div class="note-box">
 <p class="note-box__title">Precipitation analysis notebook</p>
 <div class="note-box__body">

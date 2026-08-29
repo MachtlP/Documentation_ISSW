@@ -531,3 +531,57 @@ Either approach would be easy to test.
 </ul>
 </div>
 </div>
+
+## 3. Full Grid to Hex Precip Deep Dive
+
+<p class="section-updated">Last updated: 27 Aug 2026</p>
+
+<div class="note-box">
+<p class="note-box__title">Hex / full-grid precip notebook</p>
+<div class="note-box__body">
+<a href="file:///Users/machtl/Documents/docker_fun/docs/notebooks/hex_full_precip_analysis.ipynb">/Users/machtl/Documents/docker_fun/docs/notebooks/hex_full_precip_analysis.ipynb</a>
+</div>
+</div>
+
+Daily distribution of **HN24** for the elevation-specific full-grid points that fall inside each hexagon (Whistler, early December). Each panel is one hex (W1–W6). Violin + dots = those in-hex grid members at that band; black bars = p10 / p50 / p90; pink × = single-point.
+
+<div class="pro-evo-grid">
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/hex_precip/whistler_hn24_alpine.png" class="glightbox image-zoom" data-gallery="hex-full-precip-hn24" data-type="image" data-title="Whistler · Alpine · daily HN24 per hex (in-hex grid members vs single-point)">
+      <img src="../assets/images/hex_precip/whistler_hn24_alpine.png" alt="Whistler alpine daily HN24 distribution per hexagon" />
+    </a>
+    <span class="pro-evo-grid__label">Alpine</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/hex_precip/whistler_hn24_treeline.png" class="glightbox image-zoom" data-gallery="hex-full-precip-hn24" data-type="image" data-title="Whistler · Treeline · daily HN24 per hex (in-hex grid members vs single-point)">
+      <img src="../assets/images/hex_precip/whistler_hn24_treeline.png" alt="Whistler treeline daily HN24 distribution per hexagon" />
+    </a>
+    <span class="pro-evo-grid__label">Treeline</span>
+  </div>
+  <div class="pro-evo-grid__item">
+    <a href="../assets/images/hex_precip/whistler_hn24_btl.png" class="glightbox image-zoom" data-gallery="hex-full-precip-hn24" data-type="image" data-title="Whistler · Below treeline · daily HN24 per hex (in-hex grid members vs single-point)">
+      <img src="../assets/images/hex_precip/whistler_hn24_btl.png" alt="Whistler below-treeline daily HN24 distribution per hexagon" />
+    </a>
+    <span class="pro-evo-grid__label">Below treeline</span>
+  </div>
+</div>
+
+<p class="fig-caption"><strong>Figure 22.</strong> Daily HN24 (mm) for elevation-specific full-grid points inside each Whistler hex. Click a column to maximize.</p>
+
+### 3.1 ChatGPT explanation
+
+<p class="section-updated">Last updated: 27 Aug 2026</p>
+
+**HRDPS Precipitation Aggregation to 15 km Hexagons: Why Hexagon Medians Can Exceed the Regional Median**
+
+#### Executive summary
+
+Yes. Aggregating nominal 2.5 km HRDPS precipitation values into 15 km hexagons using the within-hexagon median can produce a distribution of hexagon medians whose median is higher than the median of the original fine-grid precipitation field, and it can make low precipitation values—especially zeros and traces—appear less frequently in the aggregated product. This is statistically plausible and, under some precipitation regimes, quite likely. It is not primarily caused by “right skewness” in isolation. The strongest mechanism is the combination of a nonlinear two-stage statistic (median within each hexagon, then comparison across hexagons), spatial heterogeneity in wet-area fraction, zero inflation near the 50% occupancy threshold, and change of spatial support. HRDPS's main pan-Canadian grid is nominally about 2.5 km, so aggregation to a roughly 15 km support changes the scale at which the precipitation field is represented.
+
+The particularly important precipitation-specific fact is that the median is an occupancy statistic as much as an intensity statistic. If at least half of the fine cells in a hexagon are dry, its precipitation median is normally zero; once slightly more than half are wet, the median abruptly becomes a positive wet-cell quantile. Thus two neighboring hexagons with 49% and 51% wet coverage can have qualitatively different medians even though their areal precipitation amounts are very similar. Precipitation is naturally intermittent and commonly modeled by separating occurrence from positive wet-day amounts, while positive precipitation itself is strongly right-skewed. Gamma distributions have long been used for wet precipitation, including formulations that explicitly accommodate zeros.
+
+There is, however, an important qualification: the median does not intrinsically favor high extremes over low extremes. It suppresses both tails. An isolated convective maximum occupying 10–20% of a hexagon has essentially no influence on its median, just as isolated dry cells have no influence once more than half the hexagon is wet. The apparent asymmetry arises because precipitation has a hard lower bound at zero and often a large probability mass there, whereas its positive upper range is continuous and very broad. Spatially coherent moderate-to-heavy precipitation can therefore survive the 50% median filter while scattered zeros and light precipitation disappear. Conversely, highly localized convective peaks are often suppressed even more aggressively than low values. Convective precipitation is especially scale-sensitive relative to more spatially extensive stratiform precipitation.
+
+For a quantity intended to mean areal precipitation depth, precipitation rate, or water volume over the hexagon, an exact area-weighted mean is generally the defensible default, because it conserves the spatial integral when the fine-grid values are interpreted consistently over their source support. A median instead represents something closer to the precipitation of a “typical fine-grid element” within the hexagon. Its major advantage is robustness: the sample median has a breakdown point approaching 50%, whereas the arithmetic mean can be strongly affected by a single extreme observation. For modeled precipitation, however, physically real extremes are often signal rather than contamination; robustness alone is therefore not sufficient reason to prefer the median.
+
+A critical qualification for this report is that the temporal aggregation of your HRDPS precipitation variable is unspecified. The effect can differ substantially among instantaneous precipitation rate, one-hour accumulation, six-hour accumulation, daily accumulation, and other windows. Short-duration fields tend to be more intermittent and spatially heterogeneous, making the 50% wet-area threshold and scale effects stronger; precipitation variability and aggregation effects change with temporal as well as spatial scale.
