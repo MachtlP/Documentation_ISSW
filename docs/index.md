@@ -1,6 +1,6 @@
 # I. ISSW Project Overview
 
-<p class="section-updated">Last updated: 19 Aug 2026</p>
+<p class="section-updated">Last updated: 13 Oct 2026</p>
 
 Documentation for the ISSW project.
 
